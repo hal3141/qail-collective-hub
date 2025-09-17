@@ -16,7 +16,7 @@
         <img src="{{ url_for('static', filename='logo_simple.png') }}" alt="Qail Collective" class="logo-small">
         <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
         <a href="{{ url_for('messages') }}">{{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}</a>
-        <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
+        <a id="logout" href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
 
     <div class="content">
@@ -26,9 +26,13 @@
         <div class="news-feed">
             {% for item in news|reverse %}
             <div class="news-item">
+              <div class="news-item-header">
                 <h2>{{ item.title }}</h2>
                 <p class="timestamp">{{ item.timestamp }}</p>
-                <p>{{ item.content }}</p>
+              </div>
+              <div class="news-item-content">
+                <p class="">{{ item.content }}</p>
+              </div>
             </div>
             {% endfor %}
         </div>

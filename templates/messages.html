@@ -20,7 +20,7 @@
         <a href="{{ url_for('messages') }}">
             {{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}
         </a>
-        <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
+        <a id="logout" href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
 
     <div class="content">

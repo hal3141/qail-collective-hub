@@ -66,6 +66,14 @@ h1.title, h2.subtitle {
   color: #66e0ff;
 }
 
+#logout {
+  margin-left: auto;
+}
+
+.content, .topbar {
+  padding: 20px;
+}
+
 /* Login container */
 .login-container {
   background: rgba(0, 20, 40, 0.85);
@@ -94,6 +102,10 @@ input, textarea, select {
   border: 2px solid #3399ff;
   color: #33ccff;
   font-family: 'Englibesh', monospace;
+}
+
+textarea {
+  min-height: 200px;
 }
 
 form label, button {
@@ -129,10 +141,38 @@ button:hover {
   box-shadow: 0 0 10px #3399ff;
 }
 
+.news-feed {
+  padding: 0;
+}
 .news-item, .message-item {
   margin-bottom: 15px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed #66ccff;
+}
+
+.news-item-header {
+  display: flex;
+  padding: 0 2em;
+  background: rgba(0,0,0,0.3);
+}
+
+.news-item-header h2 {
+    margin-bottom: 1em;
+}
+
+.news-item-header .timestamp {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.news-item-content {
+  background: rgba(255,255,255,0.1);
+  padding: 2em;
+}
+
+.news-item-content p {
+  margin: 0;
 }
 
 .timestamp {
@@ -143,11 +183,30 @@ button:hover {
 /* Chat list */
 .chat-list {
   list-style: none;
-  padding: 0;
+  padding: 20px 0;;
 }
 .chat-list li {
   margin: 8px 0;
+  position: relative;
+  padding: 15px;
+  padding-left: 3rem;
+  border: 2px solid #3399ff;
+  margin: 15px 0;
+  background: rgba(0, 20, 40, 0.85);
+  box-shadow: 0 0 10px #3399ff;
 }
+
+.chat-list li::before {
+  content: "";                    /* Pseudo-Element sichtbar machen */
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  width: 24px;
+  height: 24px;
+  background: no-repeat center / contain;
+  background-image: url("/static/icon_message.png"); /* PNG/SVG möglich */
+}
+
 .chat-list a {
   color: #66e0ff;
   text-decoration: none;
