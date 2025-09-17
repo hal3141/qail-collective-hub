@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GM Dashboard - Qail Collective</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+    @font-face {
+      font-family: 'Englibesh';
+      src: url("{{ url_for('static', filename='fonts/Englibesh.ttf') }}") format("truetype");
+    }
+  </style>
+</head>
+<body class="starwars-bg">
+
+    <div class="topbar">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
+        <span class="welcome">Game Master Dashboard</span>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="content">
+
+        <h1 class="title">Manage News</h1>
+        <form method="POST">
+            <input type="text" name="title" placeholder="News title" required>
+            <textarea name="content" placeholder="News content" required></textarea>
+            <button type="submit" name="post_news">Post News</button>
+        </form>
+
+        <hr>
+
+        <h1 class="title">Manage Player Messages</h1>
+        <form method="POST">
+            <label>Recipient:</label>
+            <select name="recipient">
+                {% for player in players %}
+                <option value="{{ player }}">{{ player }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Chat Name:</label>
+            <input type="text" name="chat_name" placeholder="e.g. Docking Orders" required>
+
+            <label>Sender Name:</label>
+            <input type="text" name="sender_name" placeholder="e.g. Qail Security" required>
+
+            <label>Message:</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit" name="send_message">Send Message</button>
+        </form>
+
+        <hr>
+
+        <h1 class="title">Player Conversations</h1>
+        {% for player, chats in messages.items() %}
+        <div class="player-chats">
+            <h2>{{ player }}</h2>
+            {% for chat_name, chat in chats.items() %}
+            <h3>Chat: {{ chat_name }}{% if chat.unread %} <span class="unread">(NEW)</span>{% endif %}</h3>
+            <div class="chat-thread">
+                {% for msg in chat.messages %}
+                <p><span class="timestamp">[{{ msg.timestamp }}]</span> <b>{{ msg.from }}:</b> {{ msg.content }}</p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

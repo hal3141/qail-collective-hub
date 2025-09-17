@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user }}'s Messages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+    @font-face {
+      font-family: 'Englibesh';
+      src: url("{{ url_for('static', filename='fonts/Englibesh.ttf') }}") format("truetype");
+    }
+  </style>
+</head>
+<body class="starwars-bg">
+
+    <div class="topbar">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
+        <span class="welcome">Messages for {{ user }}</span>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('messages') }}">
+            Messages{% if unread_count > 0 %} ({{ unread_count }}){% endif %}
+        </a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="content">
+
+        {% if not chat_name %}
+        <h1 class="title">Your Conversations</h1>
+        {% if chats %}
+        <ul class="chat-list">
+            {% for name, chat in chats.items() %}
+            <li>
+                <a href="{{ url_for('messages', chat=name) }}">
+                    {{ name }}{% if chat.unread %} <span class="unread">(NEW)</span>{% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No conversations yet. Await GM instructions.</p>
+        {% endif %}
+
+        <h2 class="subtitle">Start a New Conversation</h2>
+        <form method="POST" action="{{ url_for('messages') }}">
+            <label for="recipient">Recipient:</label>
+            <input type="text" id="recipient" name="recipient" placeholder="Enter recipient name" required>
+
+            <label for="chat_name">Chat Name:</label>
+            <input type="text" id="chat_name" name="chat_name" placeholder="e.g. Secret Transmission" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
+
+            <button type="submit" name="start_chat">Start Chat</button>
+        </form>
+
+        {% else %}
+        <h1 class="title">Chat: {{ chat_name }}</h1>
+
+        {% if messages %}
+        <div class="chat-thread">
+            {% for msg in messages %}
+            <p><span class="timestamp">[{{ msg.timestamp }}]</span> <b>{{ msg.from }}:</b> {{ msg.content }}</p>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No messages yet in this conversation.</p>
+        {% endif %}
+
+        <h2 class="subtitle">Send a Reply</h2>
+        <form method="POST" action="{{ url_for('messages', chat=chat_name) }}">
+            <textarea name="reply" placeholder="Type your reply here..." required></textarea>
+            <button type="submit">Send Reply</button>
+        </form>
+
+        <p><a href="{{ url_for('messages') }}">⬅ Back to Conversations</a></p>
+        {% endif %}
+
+    </div>
+</body>
+</html>

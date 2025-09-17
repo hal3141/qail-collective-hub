@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qail Collective Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+    @font-face {
+      font-family: 'Englibesh';
+      src: url("{{ url_for('static', filename='fonts/Englibesh.ttf') }}") format("truetype");
+    }
+  </style>
+</head>
+<body class="starwars-bg">
+    <div class="topbar">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
+        <span class="welcome">Welcome, {{ user }}</span>
+        <a href="{{ url_for('messages') }}">Messages{% if unread_count > 0 %} ({{ unread_count }}){% endif %}</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="content">
+        <h1 class="title">Qail Collective News</h1>
+
+        {% if news %}
+        <div class="news-feed">
+            {% for item in news|reverse %}
+            <div class="news-item">
+                <h2>{{ item.title }}</h2>
+                <p class="timestamp">{{ item.timestamp }}</p>
+                <p>{{ item.content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No news at the moment.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

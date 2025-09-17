@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'Englibesh';
+  src: url("../fonts/Englibesh.ttf") format("truetype");
+}
+
+body.starwars-bg {
+  background-color: #000;
+  color: #33ccff;
+  font-family: 'Englibesh', monospace;
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(circle at 50% 50%, #000a1a, #000000 90%);
+}
+
+/* Blue scanline overlay */
+body.starwars-bg::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 150, 255, 0.08),
+    rgba(0, 150, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 9999;
+}
+
+h1.title, h2.subtitle {
+  color: #33ccff;
+  text-shadow: 0 0 8px #33ccff;
+}
+
+.error {
+  color: #ff5555;
+  font-weight: bold;
+  text-shadow: 0 0 6px #ff0000;
+}
+
+/* Top bar */
+.topbar {
+  background: #001122;
+  border-bottom: 2px solid #3399ff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar .logo-small {
+  height: 40px;
+}
+
+.topbar a {
+  color: #33ccff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 6px #33ccff;
+}
+.topbar a:hover {
+  color: #66e0ff;
+}
+
+/* Login container */
+.login-container {
+  background: rgba(0, 20, 40, 0.85);
+  border: 2px solid #3399ff;
+  padding: 20px;
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  box-shadow: 0 0 15px #3399ff;
+}
+
+.login-container .logo {
+  max-width: 120px;
+  margin-bottom: 20px;
+}
+
+input, textarea, select {
+  width: 75%;
+  padding: 10px;
+  margin: 10px 0;
+  background: black;
+  border: 2px solid #3399ff;
+  color: #33ccff;
+  font-family: 'Englibesh', monospace;
+}
+
+button {
+  padding: 10px 15px;
+  background: black;
+  color: #33ccff;
+  border: 2px solid #3399ff;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Englibesh', monospace;
+  text-shadow: 0 0 6px #33ccff;
+}
+button:hover {
+  background: #001a33;
+}
+
+/* News and Messages */
+.news-feed, .messages-list, .chat-thread {
+  border: 2px solid #3399ff;
+  padding: 15px;
+  margin: 15px 0;
+  background: rgba(0, 20, 40, 0.85);
+  box-shadow: 0 0 10px #3399ff;
+}
+
+.news-item, .message-item {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #66ccff;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #66e0ff;
+}
+
+/* Chat list */
+.chat-list {
+  list-style: none;
+  padding: 0;
+}
+.chat-list li {
+  margin: 8px 0;
+}
+.chat-list a {
+  color: #66e0ff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 5px #66e0ff;
+}
+.chat-list a:hover {
+  color: #99f2ff;
+}
+
+/* Unread indicator */
+.unread {
+  color: #ffcc00;
+  font-weight: bold;
+  text-shadow: 0 0 6px #ffcc00;
+}

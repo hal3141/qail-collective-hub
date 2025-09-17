@@ -1,0 +1,144 @@
+{
+  "A. Ceeda": {
+    "Docking Orders": {
+      "messages": [
+        {
+          "from": "Qail Security",
+          "content": "Proceed to Docking Bay 12 immediately for inspection.",
+          "timestamp": "2025-09-17 09:12"
+        }
+      ],
+      "unread": false
+    },
+    "Brudi": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "Voll die Testnachricht.",
+          "timestamp": "2025-09-17 20:26"
+        }
+      ],
+      "unread": false
+    },
+    "Unknown Contact": {
+      "messages": [
+        {
+          "from": "S. Nito",
+          "content": "Jaja, ich antworte ja schon",
+          "timestamp": "2025-09-17 20:28"
+        }
+      ],
+      "unread": true
+    }
+  },
+  "F.M. Latatga": {
+    "Family Matters": {
+      "messages": [
+        {
+          "from": "F.M. Latatga",
+          "content": "Sister, we must keep this secret from the Collective.",
+          "timestamp": "2025-09-17 09:25"
+        },
+        {
+          "from": "J. Latatga",
+          "content": "I agree. No one must know about the artifact.",
+          "timestamp": "2025-09-17 09:27"
+        }
+      ],
+      "unread": false
+    }
+  },
+  "J. Latatga": {
+    "Family Matters": {
+      "messages": [
+        {
+          "from": "F.M. Latatga",
+          "content": "Sister, we must keep this secret from the Collective.",
+          "timestamp": "2025-09-17 09:25"
+        },
+        {
+          "from": "J. Latatga",
+          "content": "I agree. No one must know about the artifact.",
+          "timestamp": "2025-09-17 09:27"
+        }
+      ],
+      "unread": true
+    }
+  },
+  "S. Nito": {
+    "Unknown Contact": {
+      "messages": [
+        {
+          "from": "S. Nito",
+          "content": "I received your signal. Who are you?",
+          "timestamp": "2025-09-17 09:45"
+        }
+      ],
+      "unread": false
+    }
+  },
+  "GM": {
+    "Docking Orders": {
+      "messages": [
+        {
+          "from": "Qail Security",
+          "content": "Proceed to Docking Bay 12 immediately for inspection.",
+          "timestamp": "2025-09-17 09:12"
+        }
+      ],
+      "unread": false
+    },
+    "Family Matters": {
+      "messages": [
+        {
+          "from": "F.M. Latatga",
+          "content": "Sister, we must keep this secret from the Collective.",
+          "timestamp": "2025-09-17 09:25"
+        },
+        {
+          "from": "J. Latatga",
+          "content": "I agree. No one must know about the artifact.",
+          "timestamp": "2025-09-17 09:27"
+        }
+      ],
+      "unread": true
+    },
+    "Unknown Contact": {
+      "messages": [
+        {
+          "from": "S. Nito",
+          "content": "I received your signal. Who are you?",
+          "timestamp": "2025-09-17 09:45"
+        },
+        {
+          "from": "S. Nito",
+          "content": "Jaja, ich antworte ja schon",
+          "timestamp": "2025-09-17 20:28"
+        }
+      ],
+      "unread": false
+    },
+    "Brudi": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "Voll die Testnachricht.",
+          "timestamp": "2025-09-17 20:26"
+        }
+      ],
+      "unread": true
+    }
+  },
+  "V. Kulata": {
+    "Brudi": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "Voll die Testnachricht.",
+          "timestamp": "2025-09-17 20:26"
+        }
+      ],
+      "unread": false
+    }
+  }
+}

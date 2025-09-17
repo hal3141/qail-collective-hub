@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qail Collective Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+    @font-face {
+      font-family: 'Englibesh';
+      src: url("{{ url_for('static', filename='fonts/Englibesh.ttf') }}") format("truetype");
+    }
+  </style>
+</head>
+<body class="starwars-bg">
+
+<div class="login-container">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo">
+
+    <h1 class="title">Qail Collective Data Hub</h1>
+    <h2 class="subtitle">Login to Access</h2>
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
