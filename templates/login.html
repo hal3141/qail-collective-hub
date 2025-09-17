@@ -28,7 +28,7 @@
         <p class="error">{{ error }}</p>
         {% endif %}
 
-        <form method="POST">
+        <form method="POST" id="login-form">
             <label for="username">{{ t["username"] }}</label>
             <input type="text" id="username" name="username" required>
 
@@ -38,6 +38,30 @@
             <button type="submit" id="login">{{ t["login_button"] }}</button>
         </form>
     </div>
+
+    <!-- Sounds -->
+    <audio id="login-sound" src="{{ url_for('static', filename='sounds/login.wav') }}"></audio>
+    <audio id="logout-sound" src="{{ url_for('static', filename='sounds/logout.wav') }}"></audio>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const loginForm = document.getElementById("login-form");
+        const loginSound = document.getElementById("login-sound");
+        const logoutSound = document.getElementById("logout-sound");
+
+        // Play login sound on form submit
+        loginForm.addEventListener("submit", () => {
+          setTimeout(() => loginSound.play(), 300);
+          loginSound.play();
+        });
+
+        // Play logout sound if the logout flag is set
+        {% if session.get('just_logged_out') %}
+          // Delay a bit so it doesn't block render
+         // setTimeout(() => logoutSound.play(), 300);
+        {% endif %}
+      });
+    </script>
 
 </body>
 </html>

@@ -15,7 +15,11 @@
     <div class="topbar">
         <img src="{{ url_for('static', filename='logo_simple.png') }}" alt="Qail Collective" class="logo-small">
         <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
+        <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
         <a href="{{ url_for('messages') }}">{{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}</a>
+        <a href="{{ url_for('files', filetype='personnel') }}">{{ t["personnel"] }}</a>
+        <a href="{{ url_for('files', filetype='security') }}">{{ t["security"] }}</a>
+        <a href="{{ url_for('files', filetype='medical') }}">{{ t["medical"] }}</a>
         <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
 
@@ -36,5 +40,19 @@
         <p>{{ t["no_news"] }}</p>
         {% endif %}
     </div>
+
+    <audio id="logout-sound" src="{{ url_for('static', filename='sounds/logout.wav') }}"></audio>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const logoutSound = document.getElementById("logout-sound");
+        const logoutLink = document.querySelector('a[href="{{ url_for("logout") }}"]');
+
+        if (logoutLink) {
+          logoutLink.addEventListener("click", () => {
+            logoutSound.play();
+          });
+        }
+      });
+    </script>
 </body>
 </html>

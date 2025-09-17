@@ -15,11 +15,14 @@
 
     <div class="topbar">
         <img src="{{ url_for('static', filename='logo_simple.png') }}" alt="Qail Collective" class="logo-small">
-        <span class="welcome">{{ t["messages_for"] }} {{ user }}</span>
+        <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
         <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
         <a href="{{ url_for('messages') }}">
             {{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}
         </a>
+        <a href="{{ url_for('files', filetype='personnel') }}">{{ t["personnel"] }}</a>
+        <a href="{{ url_for('files', filetype='security') }}">{{ t["security"] }}</a>
+        <a href="{{ url_for('files', filetype='medical') }}">{{ t["medical"] }}</a>
         <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
 
@@ -42,7 +45,7 @@
         {% endif %}
 
         <h2 class="subtitle">{{ t["start_new_conversation"] }}</h2>
-        <form method="POST" action="{{ url_for('messages') }}">
+        <form method="POST" id="startConvoForm" action="{{ url_for('messages') }}">
             <label for="recipient">{{ t["recipient"] }}:</label>
             <input type="text" id="recipient" name="recipient" placeholder='{{ t["recipient_ph"] }}' required>
 
@@ -69,14 +72,27 @@
         {% endif %}
 
         <h2 class="subtitle">{{ t["send_reply_title"] }}</h2>
-        <form method="POST" action="{{ url_for('messages', chat=chat_name) }}">
+        <form method="POST" id="replyForm" action="{{ url_for('messages', chat=chat_name) }}">
             <textarea name="reply" placeholder='{{ t["reply_ph"] }}' required></textarea>
-            <button type="submit">{{ t["send_reply"] }}</button>
+            <button type="submit" id="replyButton">{{ t["send_reply"] }}</button>
         </form>
 
         <p><a href="{{ url_for('messages') }}">{{ t["back_to_conversations"] }}</a></p>
         {% endif %}
-
     </div>
+
+    <audio id="send-sound" src="{{ url_for('static', filename='sounds/beep.mp3') }}"></audio>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const sendSound = document.getElementById("send-sound");
+        const forms = document.querySelectorAll("form");
+        forms.forEach(form => {
+          form.addEventListener("submit", () => {
+            setTimeout(() => sendSound.play(), 300);
+          });
+        });
+      });
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user }}'s Messages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+    @font-face {
+      font-family: 'Englibesh';
+      src: url("{{ url_for('static', filename='fonts/Englibesh.ttf') }}") format("truetype");
+    }
+  </style>
+</head>
+<body class="starwars-bg">
+
+    <div class="topbar">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
+        <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
+        <a href="{{ url_for('dashboard') }}">{{ t["news"] }}</a>
+        <a href="{{ url_for('messages') }}">{{ t["messages"] }}</a>
+        <a href="{{ url_for('files', filetype='personnel') }}">{{ t["personnel"] }}</a>
+        <a href="{{ url_for('files', filetype='security') }}">{{ t["security"] }}</a>
+        <a href="{{ url_for('files', filetype='medical') }}">{{ t["medical"] }}</a>
+        <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
+    </div>
+
+    <div class="content">
+        <h1 class="title">{{ filetype|capitalize }} {{ t["files"] }}</h1>
+
+        {% if files %}
+        {% for name, content in files.items() %}
+        <div class="file-entry">
+            <h2>{{ name }}</h2>
+            <p>{{ content }}</p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>{{ t["no_files"] }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

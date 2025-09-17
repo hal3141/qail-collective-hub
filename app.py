@@ -38,14 +38,22 @@ GM_PASS = "qail-123"
 
 NEWS_FILE = "data/news.json"
 MESSAGES_FILE = "data/messages.json"
+FILES_FILE = "data/files.json"
 
 
 def load_json(filename):
     if not os.path.exists(filename):
-        return {}
+        return {} if filename.endswith(".json") else []
     with open(filename, "r", encoding="utf-8") as f:
         return json.load(f)
 
+
+def save_json(filename, data):
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+
+# --- Translation ---
 def load_translation(lang):
     path = os.path.join("translations", f"{lang}.json")
     if os.path.exists(path):
@@ -53,37 +61,39 @@ def load_translation(lang):
             return json.load(f)
     return {}
 
-@app.route("/set_lang/<lang>")
-def set_lang(lang):
-    if lang in ["en", "de"]:
-        session["lang"] = lang
-    return redirect(request.referrer or url_for("login"))
-
-def save_json(filename, data):
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
 
 @app.before_request
 def ensure_lang():
     if "lang" not in session:
         session["lang"] = "en"
 
+
+@app.route("/set_lang/<lang>")
+def set_lang(lang):
+    if lang in ["en", "de"]:
+        session["lang"] = lang
+    return redirect(request.referrer or url_for("login"))
+
+
 @app.route("/", methods=["GET", "POST"])
 def login():
+    t = load_translation(session["lang"])
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
 
         if username == GM_USER and password == GM_PASS:
             session["user"] = GM_USER
+            session["just_logged_in"] = True
             return redirect(url_for("gm_dashboard"))
         elif username in characters and characters[username] == password:
             session["user"] = username
+            session["just_logged_in"] = True
             return redirect(url_for("dashboard"))
         else:
-            return render_template("login.html", error="Invalid credentials.", t=load_translation(session["lang"]))
+            return render_template("login.html", error="Invalid credentials.", t=t)
 
-    return render_template("login.html", t=load_translation(session["lang"]))
+    return render_template("login.html", t=t)
 
 
 @app.route("/dashboard")
@@ -96,7 +106,11 @@ def dashboard():
     user_chats = messages.get(session["user"], {})
     unread_count = sum(1 for c in user_chats.values() if c.get("unread"))
 
-    return render_template("dashboard.html", user=session["user"], news=news, unread_count=unread_count, t=load_translation(session["lang"]))
+    t = load_translation(session["lang"])
+    session.pop("just_logged_in", None)
+    session.pop("just_logged_out", None)
+
+    return render_template("dashboard.html", user=session["user"], news=news, unread_count=unread_count, t=t)
 
 
 @app.route("/messages", methods=["GET", "POST"])
@@ -171,16 +185,16 @@ def messages():
 
     if chat_name:
         chat_thread = user_chats.get(chat_name, {"messages": [], "unread": False})
-        # Mark as read
         chat_thread["unread"] = False
         save_json(MESSAGES_FILE, all_messages)
+        t = load_translation(session["lang"])
         return render_template("messages.html", user=user, chat_name=chat_name,
                                messages=chat_thread["messages"], chats=user_chats,
-                               unread_count=sum(1 for c in user_chats.values() if c.get("unread")),
-                               t=load_translation(session["lang"]))
+                               unread_count=sum(1 for c in user_chats.values() if c.get("unread")), t=t)
     else:
         unread_count = sum(1 for c in user_chats.values() if c.get("unread"))
-        return render_template("messages.html", user=user, chats=user_chats, chat_name=None, unread_count=unread_count, t=load_translation(session["lang"]))
+        t = load_translation(session["lang"])
+        return render_template("messages.html", user=user, chats=user_chats, chat_name=None, unread_count=unread_count, t=t)
 
 
 @app.route("/gm", methods=["GET", "POST"])
@@ -218,7 +232,6 @@ def gm_dashboard():
             messages[recipient][chat_name]["messages"].append(new_msg)
             messages[recipient][chat_name]["unread"] = True
 
-            # Log under GM
             if "GM" not in messages:
                 messages["GM"] = {}
             if chat_name not in messages["GM"]:
@@ -228,11 +241,52 @@ def gm_dashboard():
 
             save_json(MESSAGES_FILE, messages)
 
-    return render_template("gm_dashboard.html", news=news, messages=messages, players=list(characters.keys()), t=load_translation(session["lang"]))
+    t = load_translation(session["lang"])
+    return render_template("gm_dashboard.html", news=news, messages=messages, players=list(characters.keys()), t=t)
 
+@app.route("/files/<filetype>")
+def files(filetype):
+    if "user" not in session or session["user"] == GM_USER:
+        return redirect(url_for("login"))
+
+    user = session["user"]
+    files = load_json(FILES_FILE)
+
+    allowed = {}
+
+    # Leadership: all files
+    if user in ["T. Qail", "H. Lastal"]:
+        allowed = {name: f[filetype] for name, f in files.items()}
+
+    # Team leads: all personnel
+    elif filetype == "personnel" and user in ["E.P. Rinsmitt", "Q. Dran", "T. Qail", "T. Shaaret", "A. Ceeda", "H. Lastal"]:
+        allowed = {name: f["personnel"] for name, f in files.items()}
+
+    # Security team: all security
+    elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
+        allowed = {name: f["security"] for name, f in files.items()}
+
+    # Medics: all medical
+    elif filetype == "medical" and user in ["Q. Dran", "D. Scafcar"]:
+        allowed = {name: f["medical"] for name, f in files.items()}
+
+    # Every player: their own personnel
+    if filetype == "personnel" and user in files:
+        allowed[user] = files[user]["personnel"]
+
+    # Security can always access their own security file
+    if filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
+        allowed[user] = files[user]["security"]
+
+    # Medics can always access their own medical file
+    if filetype == "medical" and user in ["Q. Dran", "D. Scafcar"]:
+        allowed[user] = files[user]["medical"]
+
+    return render_template("files.html", user=user, filetype=filetype, files=allowed, t=load_translation(session["lang"]))
 
 @app.route("/logout")
 def logout():
+    session["just_logged_out"] = True
     session.pop("user", None)
     return redirect(url_for("login"))
 
@@ -243,4 +297,6 @@ if __name__ == "__main__":
         save_json(NEWS_FILE, [])
     if not os.path.exists(MESSAGES_FILE):
         save_json(MESSAGES_FILE, {})
+    if not os.path.exists(FILES_FILE):
+        save_json(FILES_FILE, {})
     app.run(debug=True)
