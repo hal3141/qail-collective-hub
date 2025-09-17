@@ -46,11 +46,27 @@ def load_json(filename):
     with open(filename, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def load_translation(lang):
+    path = os.path.join("translations", f"{lang}.json")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+@app.route("/set_lang/<lang>")
+def set_lang(lang):
+    if lang in ["en", "de"]:
+        session["lang"] = lang
+    return redirect(request.referrer or url_for("login"))
 
 def save_json(filename, data):
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
+@app.before_request
+def ensure_lang():
+    if "lang" not in session:
+        session["lang"] = "en"
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -65,9 +81,9 @@ def login():
             session["user"] = username
             return redirect(url_for("dashboard"))
         else:
-            return render_template("login.html", error="Invalid credentials.")
+            return render_template("login.html", error="Invalid credentials.", t=load_translation(session["lang"]))
 
-    return render_template("login.html")
+    return render_template("login.html", t=load_translation(session["lang"]))
 
 
 @app.route("/dashboard")
@@ -80,7 +96,7 @@ def dashboard():
     user_chats = messages.get(session["user"], {})
     unread_count = sum(1 for c in user_chats.values() if c.get("unread"))
 
-    return render_template("dashboard.html", user=session["user"], news=news, unread_count=unread_count)
+    return render_template("dashboard.html", user=session["user"], news=news, unread_count=unread_count, t=load_translation(session["lang"]))
 
 
 @app.route("/messages", methods=["GET", "POST"])
@@ -160,10 +176,11 @@ def messages():
         save_json(MESSAGES_FILE, all_messages)
         return render_template("messages.html", user=user, chat_name=chat_name,
                                messages=chat_thread["messages"], chats=user_chats,
-                               unread_count=sum(1 for c in user_chats.values() if c.get("unread")))
+                               unread_count=sum(1 for c in user_chats.values() if c.get("unread")),
+                               t=load_translation(session["lang"]))
     else:
         unread_count = sum(1 for c in user_chats.values() if c.get("unread"))
-        return render_template("messages.html", user=user, chats=user_chats, chat_name=None, unread_count=unread_count)
+        return render_template("messages.html", user=user, chats=user_chats, chat_name=None, unread_count=unread_count, t=load_translation(session["lang"]))
 
 
 @app.route("/gm", methods=["GET", "POST"])
@@ -211,7 +228,7 @@ def gm_dashboard():
 
             save_json(MESSAGES_FILE, messages)
 
-    return render_template("gm_dashboard.html", news=news, messages=messages, players=list(characters.keys()))
+    return render_template("gm_dashboard.html", news=news, messages=messages, players=list(characters.keys()), t=load_translation(session["lang"]))
 
 
 @app.route("/logout")

@@ -14,49 +14,49 @@
 <body class="starwars-bg">
 
     <div class="topbar">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
-        <span class="welcome">Messages for {{ user }}</span>
-        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <img src="{{ url_for('static', filename='logo_simple.png') }}" alt="Qail Collective" class="logo-small">
+        <span class="welcome">{{ t["messages_for"] }} {{ user }}</span>
+        <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
         <a href="{{ url_for('messages') }}">
-            Messages{% if unread_count > 0 %} ({{ unread_count }}){% endif %}
+            {{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}
         </a>
-        <a href="{{ url_for('logout') }}">Logout</a>
+        <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
 
     <div class="content">
 
         {% if not chat_name %}
-        <h1 class="title">Your Conversations</h1>
+        <h1 class="title">{{ t["your_conversations"] }}</h1>
         {% if chats %}
         <ul class="chat-list">
             {% for name, chat in chats.items() %}
             <li>
                 <a href="{{ url_for('messages', chat=name) }}">
-                    {{ name }}{% if chat.unread %} <span class="unread">(NEW)</span>{% endif %}
+                    {{ name }}{% if chat.unread %} <span class="unread">{{ t["new"] }}</span>{% endif %}
                 </a>
             </li>
             {% endfor %}
         </ul>
         {% else %}
-        <p>No conversations yet. Await GM instructions.</p>
+        <p>{{ t["no_conversations"] }}</p>
         {% endif %}
 
-        <h2 class="subtitle">Start a New Conversation</h2>
+        <h2 class="subtitle">{{ t["start_new_conversation"] }}</h2>
         <form method="POST" action="{{ url_for('messages') }}">
-            <label for="recipient">Recipient:</label>
-            <input type="text" id="recipient" name="recipient" placeholder="Enter recipient name" required>
+            <label for="recipient">{{ t["recipient"] }}:</label>
+            <input type="text" id="recipient" name="recipient" placeholder='{{ t["recipient_ph"] }}' required>
 
-            <label for="chat_name">Chat Name:</label>
-            <input type="text" id="chat_name" name="chat_name" placeholder="e.g. Secret Transmission" required>
+            <label for="chat_name">{{ t["chat_name"] }}:</label>
+            <input type="text" id="chat_name" name="chat_name" placeholder='{{ t["chat_name_ph"] }}' required>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
+            <label for="message">{{ t["message"] }}:</label>
+            <textarea id="message" name="message" placeholder='{{ t["message_ph"] }}' required></textarea>
 
-            <button type="submit" name="start_chat">Start Chat</button>
+            <button type="submit" name="start_chat">{{ t["start_chat"] }}</button>
         </form>
 
         {% else %}
-        <h1 class="title">Chat: {{ chat_name }}</h1>
+        <h1 class="title">{{ t["start_chat_title"] }}: {{ chat_name }}</h1>
 
         {% if messages %}
         <div class="chat-thread">
@@ -65,16 +65,16 @@
             {% endfor %}
         </div>
         {% else %}
-        <p>No messages yet in this conversation.</p>
+        <p>{{ t["no_messages"] }}</p>
         {% endif %}
 
-        <h2 class="subtitle">Send a Reply</h2>
+        <h2 class="subtitle">{{ t["send_reply_title"] }}</h2>
         <form method="POST" action="{{ url_for('messages', chat=chat_name) }}">
-            <textarea name="reply" placeholder="Type your reply here..." required></textarea>
-            <button type="submit">Send Reply</button>
+            <textarea name="reply" placeholder='{{ t["reply_ph"] }}' required></textarea>
+            <button type="submit">{{ t["send_reply"] }}</button>
         </form>
 
-        <p><a href="{{ url_for('messages') }}">⬅ Back to Conversations</a></p>
+        <p><a href="{{ url_for('messages') }}">{{ t["back_to_conversations"] }}</a></p>
         {% endif %}
 
     </div>

@@ -13,26 +13,31 @@
 </head>
 <body class="starwars-bg">
 
-<div class="login-container">
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo">
+    <div class="lang-switcher">
+        <a href="{{ url_for('set_lang', lang='en') }}">EN</a> |
+        <a href="{{ url_for('set_lang', lang='de') }}">DE</a>
+    </div>
 
-    <h1 class="title">Qail Collective Data Hub</h1>
-    <h2 class="subtitle">Login to Access</h2>
+    <div class="login-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo">
 
-    {% if error %}
-    <p class="error">{{ error }}</p>
-    {% endif %}
+        <h1 class="title">{{ t["title"] }}</h1>
+        <h2 class="subtitle">{{ t["login_title"] }}</h2>
 
-    <form method="POST">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <form method="POST">
+            <label for="username">{{ t["username"] }}</label>
+            <input type="text" id="username" name="username" required>
 
-        <button type="submit">Login</button>
-    </form>
-</div>
+            <label for="password">{{ t["password"] }}</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" id="login">{{ t["login_button"] }}</button>
+        </form>
+    </div>
 
 </body>
 </html>

@@ -82,6 +82,10 @@ h1.title, h2.subtitle {
   margin-bottom: 20px;
 }
 
+.login-container button {
+    display: inline;
+}
+
 input, textarea, select {
   width: 75%;
   padding: 10px;
@@ -90,6 +94,15 @@ input, textarea, select {
   border: 2px solid #3399ff;
   color: #33ccff;
   font-family: 'Englibesh', monospace;
+}
+
+form label, button {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #33ccff;
+  text-shadow: 0 0 6px #33ccff;
 }
 
 button {
@@ -102,6 +115,7 @@ button {
   font-family: 'Englibesh', monospace;
   text-shadow: 0 0 6px #33ccff;
 }
+
 button:hover {
   background: #001a33;
 }
@@ -149,4 +163,18 @@ button:hover {
   color: #ffcc00;
   font-weight: bold;
   text-shadow: 0 0 6px #ffcc00;
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.lang-switcher a {
+  color: #33ccff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.lang-switcher a:hover {
+  color: #66e0ff;
 }

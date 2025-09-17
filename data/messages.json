@@ -29,6 +29,21 @@
         }
       ],
       "unread": true
+    },
+    "Bierchen?": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "Lass mal was zu Feierabend machen",
+          "timestamp": "2025-09-17 22:24"
+        },
+        {
+          "from": "Absolutely not a. Ceeda",
+          "content": "Na klaro",
+          "timestamp": "2025-09-17 22:26"
+        }
+      ],
+      "unread": true
     }
   },
   "F.M. Latatga": {
@@ -127,6 +142,36 @@
         }
       ],
       "unread": true
+    },
+    "Deine Mudda": {
+      "messages": [
+        {
+          "from": "Deine Mudda",
+          "content": "Krasse Testnachricht!",
+          "timestamp": "2025-09-17 22:22"
+        },
+        {
+          "from": "V. Kulata",
+          "content": "Antwort",
+          "timestamp": "2025-09-17 22:23"
+        }
+      ],
+      "unread": true
+    },
+    "Bierchen?": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "Lass mal was zu Feierabend machen",
+          "timestamp": "2025-09-17 22:24"
+        },
+        {
+          "from": "Absolutely not a. Ceeda",
+          "content": "Na klaro",
+          "timestamp": "2025-09-17 22:26"
+        }
+      ],
+      "unread": false
     }
   },
   "V. Kulata": {
@@ -136,6 +181,31 @@
           "from": "V. Kulata",
           "content": "Voll die Testnachricht.",
           "timestamp": "2025-09-17 20:26"
+        }
+      ],
+      "unread": false
+    },
+    "Deine Mudda": {
+      "messages": [
+        {
+          "from": "Deine Mudda",
+          "content": "Krasse Testnachricht!",
+          "timestamp": "2025-09-17 22:22"
+        },
+        {
+          "from": "V. Kulata",
+          "content": "Antwort",
+          "timestamp": "2025-09-17 22:23"
+        }
+      ],
+      "unread": false
+    },
+    "Bierchen?": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "Lass mal was zu Feierabend machen",
+          "timestamp": "2025-09-17 22:24"
         }
       ],
       "unread": false

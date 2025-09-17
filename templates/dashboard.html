@@ -13,14 +13,14 @@
 </head>
 <body class="starwars-bg">
     <div class="topbar">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
-        <span class="welcome">Welcome, {{ user }}</span>
-        <a href="{{ url_for('messages') }}">Messages{% if unread_count > 0 %} ({{ unread_count }}){% endif %}</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
+        <img src="{{ url_for('static', filename='logo_simple.png') }}" alt="Qail Collective" class="logo-small">
+        <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
+        <a href="{{ url_for('messages') }}">{{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}</a>
+        <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
 
     <div class="content">
-        <h1 class="title">Qail Collective News</h1>
+        <h1 class="title">{{ t["news"] }}</h1>
 
         {% if news %}
         <div class="news-feed">
@@ -33,7 +33,7 @@
             {% endfor %}
         </div>
         {% else %}
-        <p>No news at the moment.</p>
+        <p>{{ t["no_news"] }}</p>
         {% endif %}
     </div>
 </body>
