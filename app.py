@@ -244,45 +244,89 @@ def gm_dashboard():
     t = load_translation(session["lang"])
     return render_template("gm_dashboard.html", news=news, messages=messages, players=list(characters.keys()), t=t)
 
-@app.route("/files/<filetype>")
+@app.route("/files/<filetype>", methods=["GET", "POST"])
 def files(filetype):
     if "user" not in session or session["user"] == GM_USER:
         return redirect(url_for("login"))
 
     user = session["user"]
-    files = load_json(FILES_FILE)
+    all_files = load_json(FILES_FILE)
 
     allowed = {}
+    error = None
 
-    # Leadership: all files
+    # --- T. Qail and H. Lastal have special rights ---
     if user in ["T. Qail", "H. Lastal"]:
-        allowed = {name: f[filetype] for name, f in files.items()}
+        allowed = {name: f[filetype] for name, f in all_files.items()}
+    else:
+        # Team leads: all personnel
+        if filetype == "personnel" and user in ["E.P. Rinsmitt", "Q. Dran", "T. Shaaret", "A. Ceeda"]:
+            allowed = {name: f["personnel"] for name, f in all_files.items() if name != "T. Qail"}
 
-    # Team leads: all personnel
-    elif filetype == "personnel" and user in ["E.P. Rinsmitt", "Q. Dran", "T. Qail", "T. Shaaret", "A. Ceeda", "H. Lastal"]:
-        allowed = {name: f["personnel"] for name, f in files.items()}
+        # Security team: all security
+        elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
+            allowed = {name: f["security"] for name, f in all_files.items() if name != "T. Qail"}
 
-    # Security team: all security
-    elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
-        allowed = {name: f["security"] for name, f in files.items()}
+        # Medics: all medical
+        elif filetype == "medical" and user in ["Q. Dran", "D. Scafcar"]:
+            allowed = {name: f["medical"] for name, f in all_files.items() if name != "T. Qail"}
 
-    # Medics: all medical
-    elif filetype == "medical" and user in ["Q. Dran", "D. Scafcar"]:
-        allowed = {name: f["medical"] for name, f in files.items()}
+        # Own personnel file
+        if filetype == "personnel" and user in all_files and user != "T. Qail":
+            allowed[user] = all_files[user]["personnel"]
 
-    # Every player: their own personnel
-    if filetype == "personnel" and user in files:
-        allowed[user] = files[user]["personnel"]
+        # Own security file
+        if filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"] and user != "T. Qail":
+            allowed[user] = all_files[user]["security"]
 
-    # Security can always access their own security file
-    if filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
-        allowed[user] = files[user]["security"]
+        # Own medical file
+        if filetype == "medical" and user in ["Q. Dran", "D. Scafcar"] and user != "T. Qail":
+            allowed[user] = all_files[user]["medical"]
 
-    # Medics can always access their own medical file
-    if filetype == "medical" and user in ["Q. Dran", "D. Scafcar"]:
-        allowed[user] = files[user]["medical"]
+    # --- Handle file updates (POST) ---
+    if request.method == "POST":
+        selected_char = request.form.get("char")
+        if selected_char and selected_char in all_files:
+            # T. Qail can edit everything
+            if user == "T. Qail":
+                for key in all_files[selected_char][filetype]:
+                    all_files[selected_char][filetype][key] = request.form.get(key, all_files[selected_char][filetype][key])
+                save_json(FILES_FILE, all_files)
 
-    return render_template("files.html", user=user, filetype=filetype, files=allowed, t=load_translation(session["lang"]))
+            # H. Lastal can edit personnel
+            elif filetype == "personnel" and user == "H. Lastal":
+                for key in all_files[selected_char]["personnel"]:
+                    all_files[selected_char]["personnel"][key] = request.form.get(key, all_files[selected_char]["personnel"][key])
+                save_json(FILES_FILE, all_files)
+
+            # Security can edit security
+            elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
+                for key in all_files[selected_char]["security"]:
+                    all_files[selected_char]["security"][key] = request.form.get(key, all_files[selected_char]["security"][key])
+                save_json(FILES_FILE, all_files)
+
+            # Medics can edit medical
+            elif filetype == "medical" and user in ["Q. Dran", "D. Scafcar"]:
+                for key in all_files[selected_char]["medical"]:
+                    all_files[selected_char]["medical"][key] = request.form.get(key, all_files[selected_char]["medical"][key])
+                save_json(FILES_FILE, all_files)
+
+    # --- Handle dropdown selection ---
+    selected_char = request.args.get("char") or request.form.get("char")
+    selected_file = None
+    if selected_char and selected_char in allowed:
+        selected_file = {selected_char: allowed[selected_char]}
+    elif selected_char == "T. Qail" and error:
+        selected_file = {"T. Qail": {"Access Denied": error}}
+
+    return render_template(
+        "files.html",
+        user=user,
+        filetype=filetype,
+        files=allowed,
+        selected_file=selected_file,
+        t=load_translation(session["lang"])
+    )
 
 @app.route("/logout")
 def logout():

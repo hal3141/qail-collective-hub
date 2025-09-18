@@ -17,9 +17,9 @@
         <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
         <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
         <a href="{{ url_for('messages') }}">{{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}</a>
-        <a href="{{ url_for('files', filetype='personnel') }}">{{ t["personnel"] }}</a>
-        <a href="{{ url_for('files', filetype='security') }}">{{ t["security"] }}</a>
-        <a href="{{ url_for('files', filetype='medical') }}">{{ t["medical"] }}</a>
+        <a href="{{ url_for('files', filetype='personnel') }}">{{ t["filetypes"].get("personnel") }}</a>
+        <a href="{{ url_for('files', filetype='security') }}">{{ t["filetypes"].get("security") }}</a>
+        <a href="{{ url_for('files', filetype='medical') }}">{{ t["filetypes"].get("medical") }}</a>
         <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
     </div>
 

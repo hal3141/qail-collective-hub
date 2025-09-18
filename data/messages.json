@@ -502,6 +502,16 @@
         }
       ],
       "unread": true
+    },
+    "Deine Tante": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "...spioniert dich aus!!!!!!!",
+          "timestamp": "2025-09-18 20:01"
+        }
+      ],
+      "unread": true
     }
   },
   "V. Kulata": {
@@ -676,6 +686,28 @@
           "from": "V. Kulata",
           "content": "aaa",
           "timestamp": "2025-09-18 00:24"
+        }
+      ],
+      "unread": false
+    },
+    "Deine Tante": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "...spioniert dich aus!!!!!!!",
+          "timestamp": "2025-09-18 20:01"
+        }
+      ],
+      "unread": false
+    }
+  },
+  "T. Qail": {
+    "Deine Tante": {
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "...spioniert dich aus!!!!!!!",
+          "timestamp": "2025-09-18 20:01"
         }
       ],
       "unread": false
