@@ -31,9 +31,34 @@ body.starwars-bg::after {
   z-index: 9999;
 }
 
+body.starwars-bg::before {
+  content: "";
+  position: fixed;
+  right: -100px;
+  bottom: -100px;
+  width: 500px;
+  aspect-ratio: 1/1;
+  background: no-repeat center / contain
+     url("/static/qail_logo.svg");
+  opacity: .1;
+  pointer-events: none;
+  z-index: 9999;
+
+}
+
 h1.title, h2.subtitle {
   color: #33ccff;
   text-shadow: 0 0 8px #33ccff;
+}
+
+hr {
+  border: 0;
+  border-bottom: 2px dashed #001d36;
+  margin: 1em 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .error {
@@ -43,7 +68,7 @@ h1.title, h2.subtitle {
 }
 
 /* Top bar */
-.topbar {
+.topbar, .subheader {
   background: #001122;
   border-bottom: 2px solid #3399ff;
   padding: 10px;
@@ -53,13 +78,15 @@ h1.title, h2.subtitle {
 }
 
 .topbar .logo-small {
-  height: 40px;
+  height: 50px;
 }
 
-.topbar a {
+.topbar a, .subheader a {
   color: #33ccff;
   text-decoration: none;
   font-weight: bold;
+}
+.topbar a:hover, .subheader a:hover {
   text-shadow: 0 0 6px #33ccff;
 }
 .topbar a:hover {
@@ -70,8 +97,30 @@ h1.title, h2.subtitle {
   margin-left: auto;
 }
 
-.content, .topbar {
+.content, .topbar, .subheader {
   padding: 20px;
+}
+.subheader {
+  display: flex;
+  background: #13283b;
+  position: relative;
+}
+
+.subheader a {
+  padding-right: 1em;
+  position: relative;
+  font-size: 1em;
+  line-height: 1em;
+}
+
+.subheader > a:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  right: -0.5em;
+  width: 12px;
+  height: 1em;
+  background: no-repeat center / contain;
+  background-image: url("/static/square_dot.png");
 }
 
 /* Login container */
@@ -183,7 +232,8 @@ button:hover {
 /* Chat list */
 .chat-list {
   list-style: none;
-  padding: 20px 0;;
+  padding: 0;
+  margin: 0 0 3em 0;
 }
 .chat-list li {
   margin: 8px 0;
@@ -204,7 +254,7 @@ button:hover {
   width: 24px;
   height: 24px;
   background: no-repeat center / contain;
-  background-image: url("/static/icon_message.png"); /* PNG/SVG möglich */
+  background-image: url("/static/icon_message.png");
 }
 
 .chat-list a {

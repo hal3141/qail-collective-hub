@@ -12,16 +12,7 @@
   </style>
 </head>
 <body class="starwars-bg">
-    <div class="topbar">
-        <img src="{{ url_for('static', filename='logo_simple.png') }}" alt="Qail Collective" class="logo-small">
-        <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
-        <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
-        <a href="{{ url_for('messages') }}">{{ t["messages"] }}{% if unread_count > 0 %} ({{ unread_count }}){% endif %}</a>
-        <a href="{{ url_for('files', filetype='personnel') }}">{{ t["filetypes"].get("personnel") }}</a>
-        <a href="{{ url_for('files', filetype='security') }}">{{ t["filetypes"].get("security") }}</a>
-        <a href="{{ url_for('files', filetype='medical') }}">{{ t["filetypes"].get("medical") }}</a>
-        <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
-    </div>
+    {% include "_header.html" %}
 
     <div class="content">
         <h1 class="title">{{ t["news"] }}</h1>

@@ -1,0 +1,12 @@
+<div class="topbar">
+    <img src="{{ url_for('static', filename='qail_logo.svg') }}" alt="Qail Collective" class="logo-small">
+    <span class="welcome">{{ t["welcome"] }}, <br> {{ user }}</span>
+    <a id="logout" href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
+</div>
+<div class="subheader">
+  <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
+  <a href="{{ url_for('messages') }}">{{ t["messages"] }}<span class="unread">{% if unread_count and unread_count > 0  %} ({{ unread_count }}){% endif %}</span></a>
+  <a href="{{ url_for('files', filetype='personnel') }}">{{ t["filetypes"].get("personnel") }}</a>
+  <a href="{{ url_for('files', filetype='security') }}">{{ t["filetypes"].get("security") }}</a>
+  <a href="{{ url_for('files', filetype='medical') }}">{{ t["filetypes"].get("medical") }}</a>
+</div>
