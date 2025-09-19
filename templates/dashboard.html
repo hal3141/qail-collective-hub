@@ -54,5 +54,142 @@
         }
       });
     </script>
+	
+
+	{% if hacking_data %}
+	  <button id="hack-btn">Initiate Hack</button>
+	  <div id="hack-overlay" style="display:none;">
+		<div id="hack-stream"></div>
+		<div id="hack-progress"><div id="hack-progress-bar"></div></div>
+		<div id="hack-result"></div>
+	  </div>
+	{% endif %}
+
+
+	<script>
+		{% if hacking_data %}
+		const hackBtn = document.getElementById("hack-btn");
+		const overlay = document.getElementById("hack-overlay");
+		const stream = document.getElementById("hack-stream");
+		const result = document.getElementById("hack-result");
+		const progressBar = document.getElementById("hack-progress-bar");
+		let hackUsed = false;
+
+		// Players list from Flask (except R. Kesyk)
+		const players = {{ hacking_data|tojson }};
+		delete players["R. Kesyk"];
+
+		function randomLine(len=60) {
+		  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		  let line = "";
+		  for (let i = 0; i < len; i++) {
+			line += chars.charAt(Math.floor(Math.random() * chars.length));
+		  }
+		  return line;
+		}
+
+		hackBtn.addEventListener("click", () => {
+		  if (hackUsed) return;
+		  hackUsed = true;
+
+		  overlay.style.display = "flex";
+		  stream.innerHTML = "";
+		  result.innerHTML = "";
+		  progressBar.style.width = "0%";
+
+		  let timer = 0;
+		  let lines = [];
+
+		  const interval = setInterval(() => {
+			// Add random line
+			lines.push(randomLine(60));
+			if (lines.length > 5) lines.shift(); // keep max 5
+			stream.innerHTML = lines.join("<br>");
+
+			// Update progress bar
+			timer += 500;
+			const progress = Math.min((timer / 30000) * 100, 100);
+			progressBar.style.width = progress + "%";
+
+			if (timer >= 30000) { // after 30s
+			  clearInterval(interval);
+
+			  // Pick random account
+			  const keys = Object.keys(players);
+			  const chosen = keys[Math.floor(Math.random() * keys.length)];
+			  const password = players[chosen];
+
+			  // Clear stream, show result
+			  stream.innerHTML = "";
+			  result.innerHTML = `<div class="hack-found">Login Data Found:<br>${chosen} / ${password}</div>`;
+
+			  // Show for 3s then hide overlay
+			  setTimeout(() => {
+				overlay.style.display = "none";
+				hackBtn.style.display = "none"; // remove button until next login
+			  }, 3000);
+			}
+		  }, 500);
+		});
+		{% endif %}
+	</script>
+
+
+	<style>
+		#hack-overlay {
+		  position: fixed;
+		  top: 25%; left: 10%;
+		  width: 80%; height: 50%;
+		  background: rgba(0, 0, 0, 0.9);
+		  font-family: 'Englibesh', monospace;
+		  color: #ff00ff;
+		  font-size: 14px;
+		  padding: 20px;
+		  z-index: 9999;
+		  display: none;
+		  flex-direction: column;
+		  align-items: center;
+		  justify-content: center;
+		  border: 2px solid #ff00ff;
+		  box-shadow: 0 0 20px #ff00ff;
+		}
+
+		#hack-stream {
+		  width: 100%;
+		  height: 60%;
+		  text-align: left;
+		  margin-bottom: 10px;
+		}
+
+		#hack-progress {
+		  width: 100%;
+		  height: 10px;
+		  background: #330033;
+		  border: 1px solid #ff00ff;
+		  margin-bottom: 15px;
+		}
+
+		#hack-progress-bar {
+		  width: 0%;
+		  height: 100%;
+		  background: #ff00ff;
+		  transition: width 0.5s linear;
+		}
+
+		.hack-found {
+		  background-color: #220022;
+		  color: #ff00ff;
+		  padding: 15px;
+		  border: 2px solid #ff00ff;
+		  border-radius: 6px;
+		  font-size: 18px;
+		  font-family: 'Englibesh', monospace;
+		  text-align: center;
+		  box-shadow: 0 0 12px #ff00ff;
+		}
+		</style>
+
+
+
 </body>
 </html>
