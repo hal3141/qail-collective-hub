@@ -263,6 +263,10 @@ def files(filetype):
         return redirect(url_for("login"))
 
     user = session["user"]
+
+    messages = load_json(MESSAGES_FILE)
+    user_chats = messages.get(user, {})
+
     all_files = load_json(FILES_FILE)
 
     allowed = {}
@@ -338,6 +342,7 @@ def files(filetype):
         filetype=filetype,
         files=allowed,
         selected_file=selected_file,
+        unread_count=sum(1 for c in user_chats.values() if c.get("unread")),
         t=load_translation(session["lang"])
     )
 
