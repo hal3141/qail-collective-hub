@@ -115,13 +115,26 @@ def dashboard():
     if user == "R. Kesyk":
         hacking_data = characters
 
+    # Player only sees their chats
+    # Count unread chats
+    all_chats = load_json(MESSAGES_FILE)
+    visible_chats = {
+    name: chat for name, chat in all_chats.items()
+    if user in chat.get("participants", [])
+    }
+    unread_count = sum(
+        1 for chat in visible_chats.values()
+        for m in chat["messages"]
+        if isinstance(m, dict) and not m.get("read") and m.get("from") != user
+    )
+
     return render_template(
         "dashboard.html",
         user=user,
         t=t,
         news=news,
         hacking_data=hacking_data,
-        unread_count=sum(1 for c in user_chats.values() if c.get("unread"))  # <-- FIX: now always available
+        unread_count=unread_count  # <-- FIX: now always available
     )
 
 @app.route("/messages", methods=["GET", "POST"])
@@ -257,6 +270,19 @@ def files(filetype):
 
     messages = load_json(MESSAGES_FILE)
     user_chats = messages.get(user, {})
+    
+    # Player only sees their chats
+    # Count unread chats
+    all_chats = load_json(MESSAGES_FILE)
+    visible_chats = {
+    name: chat for name, chat in all_chats.items()
+    if user in chat.get("participants", [])
+    }
+    unread_count = sum(
+        1 for chat in visible_chats.values()
+        for m in chat["messages"]
+        if isinstance(m, dict) and not m.get("read") and m.get("from") != user
+    )
 
     all_files = load_json(FILES_FILE)
 
@@ -333,7 +359,7 @@ def files(filetype):
         filetype=filetype,
         files=allowed,
         selected_file=selected_file,
-        unread_count=sum(1 for c in user_chats.values() if c.get("unread")),
+        unread_count=unread_count,
         t=load_translation(session["lang"])
     )
 
