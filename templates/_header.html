@@ -29,7 +29,7 @@
   const result = document.getElementById("hack-result");
   const progressBar = document.getElementById("hack-progress-bar");
   let hackUsed = localStorage.getItem("hackUsed");;
-  //if (hackUsed == "true") hackBtn.style.visibility = "hidden";
+  if (hackUsed == "true") hackBtn.style.visibility = "hidden";
 
   // Players list from Flask (except R. Kesyk)
   const players = {{ hacking_data|tojson }};
