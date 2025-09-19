@@ -103,7 +103,10 @@ def dashboard():
 
     user = session["user"]
     t = load_translation(session.get("lang", "en"))
-    
+
+    messages = load_json(MESSAGES_FILE)
+    user_chats = messages.get(user, {})
+
     # Load news
     news = load_json(NEWS_FILE)
 
@@ -112,24 +115,13 @@ def dashboard():
     if user == "R. Kesyk":
         hacking_data = characters
 
-    # --- Add unread messages count ---
-    messages = load_json(MESSAGES_FILE)
-    unread_count = 0
-    if user != GM_USER and user in messages:
-        for chat_name, chat in messages[user].items():
-            # Ensure chat["messages"] is a list of dicts
-            for m in chat.get("messages", []):
-                if isinstance(m, dict) and not m.get("read") and m.get("from") != user:
-                    unread_count += 1
-
-
     return render_template(
         "dashboard.html",
         user=user,
         t=t,
         news=news,
         hacking_data=hacking_data,
-        unread_count=unread_count  # <-- FIX: now always available
+        unread_count=sum(1 for c in user_chats.values() if c.get("unread"))  # <-- FIX: now always available
     )
 
 
@@ -271,6 +263,10 @@ def files(filetype):
         return redirect(url_for("login"))
 
     user = session["user"]
+
+    messages = load_json(MESSAGES_FILE)
+    user_chats = messages.get(user, {})
+
     all_files = load_json(FILES_FILE)
 
     allowed = {}
@@ -346,6 +342,7 @@ def files(filetype):
         filetype=filetype,
         files=allowed,
         selected_file=selected_file,
+        unread_count=sum(1 for c in user_chats.values() if c.get("unread")),
         t=load_translation(session["lang"])
     )
 

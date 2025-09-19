@@ -19,7 +19,7 @@
     "medical": "Medical Files"
   },
   "select_file": "Select file",
-  "no_files": "No accessible files.",
+  "no_files": "Access denied",
   "save_changes": "Save Changes",
   "select_employee": "Select an employee",
   "news": "Qail Collective News",

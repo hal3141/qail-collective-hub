@@ -31,9 +31,34 @@ body.starwars-bg::after {
   z-index: 9999;
 }
 
+body.starwars-bg::before {
+  content: "";
+  position: fixed;
+  right: -100px;
+  bottom: -100px;
+  width: 500px;
+  aspect-ratio: 1/1;
+  background: no-repeat center / contain
+     url("/static/qail_logo.svg");
+  opacity: .1;
+  pointer-events: none;
+  z-index: 9999;
+
+}
+
 h1.title, h2.subtitle {
   color: #33ccff;
   text-shadow: 0 0 8px #33ccff;
+}
+
+hr {
+  border: 0;
+  border-bottom: 2px dashed #001d36;
+  margin: 1em 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .error {
@@ -43,7 +68,7 @@ h1.title, h2.subtitle {
 }
 
 /* Top bar */
-.topbar {
+.topbar, .subheader {
   background: #001122;
   border-bottom: 2px solid #3399ff;
   padding: 10px;
@@ -53,18 +78,115 @@ h1.title, h2.subtitle {
 }
 
 .topbar .logo-small {
-  height: 40px;
+  height: 50px;
 }
 
-.topbar a {
+.topbar a, .subheader a {
   color: #33ccff;
   text-decoration: none;
   font-weight: bold;
+}
+.topbar a:hover, .subheader a:hover {
   text-shadow: 0 0 6px #33ccff;
 }
 .topbar a:hover {
   color: #66e0ff;
 }
+
+#logout {
+  margin-left: auto;
+}
+
+.content, .topbar, .subheader {
+  padding: 20px;
+}
+.subheader {
+  display: flex;
+  background: #13283b;
+  position: relative;
+}
+
+.subheader a {
+  padding-right: 1em;
+  position: relative;
+  font-size: 1em;
+  line-height: 1em;
+}
+
+.subheader > a:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  right: -0.5em;
+  width: 12px;
+  height: 1em;
+  background: no-repeat center / contain;
+  background-image: url("/static/square_dot.png");
+}
+
+
+
+#hack-btn {
+    opacity: 0.2;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
+
+#hack-btn:hover {
+  opacity: 1;
+}
+
+#hack-overlay {
+  position: fixed;
+  top: 25%; left: 10%;
+  width: 80%; height: 50%;
+  background: rgba(0, 0, 0, 0.9);
+  font-family: 'Englibesh', monospace;
+  color: #ff00ff;
+  font-size: 14px;
+  padding: 20px;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+#hack-stream {
+  width: 100%;
+  height: 60%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+#hack-progress {
+  width: 100%;
+  height: 10px;
+  background: #330033;
+  border: 1px solid #ff00ff;
+  margin-bottom: 15px;
+}
+
+#hack-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #ff00ff;
+  transition: width 0.5s linear;
+}
+
+.hack-found {
+  background-color: #220022;
+  color: #ff00ff;
+  padding: 15px;
+  border: 2px solid #ff00ff;
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: 'Englibesh', monospace;
+  text-align: center;
+  box-shadow: 0 0 12px #ff00ff;
+}
+
 
 /* Login container */
 .login-container {
@@ -94,6 +216,10 @@ input, textarea, select {
   border: 2px solid #3399ff;
   color: #33ccff;
   font-family: 'Englibesh', monospace;
+}
+
+textarea {
+  min-height: 200px;
 }
 
 form label, button {
@@ -129,10 +255,38 @@ button:hover {
   box-shadow: 0 0 10px #3399ff;
 }
 
+.news-feed {
+  padding: 0;
+}
 .news-item, .message-item {
   margin-bottom: 15px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed #66ccff;
+}
+
+.news-item-header {
+  display: flex;
+  padding: 0 2em;
+  background: rgba(0,0,0,0.3);
+}
+
+.news-item-header h2 {
+    margin-bottom: 1em;
+}
+
+.news-item-header .timestamp {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.news-item-content {
+  background: rgba(255,255,255,0.1);
+  padding: 2em;
+}
+
+.news-item-content p {
+  margin: 0;
 }
 
 .timestamp {
@@ -144,10 +298,30 @@ button:hover {
 .chat-list {
   list-style: none;
   padding: 0;
+  margin: 0 0 3em 0;
 }
 .chat-list li {
   margin: 8px 0;
+  position: relative;
+  padding: 15px;
+  padding-left: 3rem;
+  border: 2px solid #3399ff;
+  margin: 15px 0;
+  background: rgba(0, 20, 40, 0.85);
+  box-shadow: 0 0 10px #3399ff;
 }
+
+.chat-list li::before {
+  content: "";                    /* Pseudo-Element sichtbar machen */
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  width: 24px;
+  height: 24px;
+  background: no-repeat center / contain;
+  background-image: url("/static/icon_message.png");
+}
+
 .chat-list a {
   color: #66e0ff;
   text-decoration: none;
