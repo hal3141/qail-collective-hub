@@ -1,6 +1,16 @@
 <div class="topbar">
     <img src="{{ url_for('static', filename='qail_logo.svg') }}" alt="Qail Collective" class="logo-small">
     <span class="welcome">{{ t["welcome"] }}, <br> {{ user }}</span>
+
+    {% if hacking_data %}
+  	  <img id="hack-btn" src="/static/cryptic.png">
+  	  <div id="hack-overlay" style="display:none;">
+  		<div id="hack-stream"></div>
+  		<div id="hack-progress"><div id="hack-progress-bar"></div></div>
+  		<div id="hack-result"></div>
+  	  </div>
+  	{% endif %}
+
     <a id="logout" href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
 </div>
 <div class="subheader">
@@ -10,3 +20,73 @@
   <a href="{{ url_for('files', filetype='security') }}">{{ t["filetypes"].get("security") }}</a>
   <a href="{{ url_for('files', filetype='medical') }}">{{ t["filetypes"].get("medical") }}</a>
 </div>
+
+<script>
+  {% if hacking_data %}
+  const hackBtn = document.getElementById("hack-btn");
+  const overlay = document.getElementById("hack-overlay");
+  const stream = document.getElementById("hack-stream");
+  const result = document.getElementById("hack-result");
+  const progressBar = document.getElementById("hack-progress-bar");
+  let hackUsed = localStorage.getItem("hackUsed");;
+  //if (hackUsed == "true") hackBtn.style.visibility = "hidden";
+
+  // Players list from Flask (except R. Kesyk)
+  const players = {{ hacking_data|tojson }};
+  delete players["R. Kesyk"];
+
+  function randomLine(len=60) {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let line = "";
+    for (let i = 0; i < len; i++) {
+      line += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return line;
+  }
+
+  hackBtn.addEventListener("click", () => {
+    if (hackUsed == "true") return;
+    hackUsed = "true";
+    localStorage.setItem("hackUsed", "true");
+
+    overlay.style.display = "flex";
+    stream.innerHTML = "";
+    result.innerHTML = "";
+    progressBar.style.width = "0%";
+
+    let timer = 0;
+    let lines = [];
+
+    const interval = setInterval(() => {
+      // Add random line
+      lines.push(randomLine(60));
+      if (lines.length > 5) lines.shift(); // keep max 5
+      stream.innerHTML = lines.join("<br>");
+
+      // Update progress bar
+      timer += 500;
+      const progress = Math.min((timer / 30000) * 100, 100);
+      progressBar.style.width = progress + "%";
+
+      if (timer >= 30000) { // after 30s
+        clearInterval(interval);
+
+        // Pick random account
+        const keys = Object.keys(players);
+        const chosen = keys[Math.floor(Math.random() * keys.length)];
+        const password = players[chosen];
+
+        // Clear stream, show result
+        stream.innerHTML = "";
+        result.innerHTML = `<div class="hack-found">Login Data Found:<br>${chosen} / ${password}</div>`;
+
+        // Show for 3s then hide overlay
+        setTimeout(() => {
+          overlay.style.display = "none";
+          hackBtn.style.display = "none"; // remove button until next login
+        }, 3000);
+      }
+    }, 500);
+  });
+  {% endif %}
+</script>
