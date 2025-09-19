@@ -20,54 +20,102 @@
     </div>
 
     <div class="content">
+        <h1>GM Dashboard</h1>
 
-        <h1 class="title">Manage News</h1>
-        <form method="POST">
-            <input type="text" name="title" placeholder="News title" required>
-            <textarea name="content" placeholder="News content" required></textarea>
-            <button type="submit" name="post_news">Post News</button>
-        </form>
-
-        <hr>
-
-        <h1 class="title">Manage Player Messages</h1>
-        <form method="POST">
-            <label>Recipient:</label>
-            <select name="recipient">
-                {% for player in players %}
-                <option value="{{ player }}">{{ player }}</option>
-                {% endfor %}
-            </select>
-
-            <label>Chat Name:</label>
-            <input type="text" name="chat_name" placeholder="e.g. Docking Orders" required>
-
-            <label>Sender Name:</label>
-            <input type="text" name="sender_name" placeholder="e.g. Qail Security" required>
-
-            <label>Message:</label>
-            <textarea name="message" required></textarea>
-
-            <button type="submit" name="send_message">Send Message</button>
-        </form>
-
-        <hr>
-
-        <h1 class="title">Player Conversations</h1>
-        {% for player, chats in messages.items() %}
-        <div class="player-chats">
-            <h2>{{ player }}</h2>
-            {% for chat_name, chat in chats.items() %}
-            <h3>Chat: {{ chat_name }}{% if chat.unread %} <span class="unread">(NEW)</span>{% endif %}</h3>
-            <div class="chat-thread">
-                {% for msg in chat.messages %}
-                <p><span class="timestamp">[{{ msg.timestamp }}]</span> <b>{{ msg.from }}:</b> {{ msg.content }}</p>
+        {% for chat_name, chat in chats.items() %}
+        <div class="chat-box">
+            <h2>{{ chat_name }}</h2>
+            <div class="messages">
+                {% for m in chat["messages"] %}
+                <p><strong>{{ m["from"] }}:</strong> {{ m["content"] }}</p>
                 {% endfor %}
             </div>
-            {% endfor %}
+
+            <!-- Reply as GM (with alias) -->
+            <form method="POST" action="{{ url_for('gm_dashboard') }}">
+                <input type="hidden" name="chat_name" value="{{ chat_name }}">
+
+                <label for="from_name">Send as:</label>
+                <input type="text" name="from_name" placeholder="e.g. NPC: Logistics" required>
+
+                <label for="message">Message:</label>
+                <input type="text" name="message" placeholder="Type your reply..." required>
+
+                <button type="submit">Send</button>
+            </form>
         </div>
         {% endfor %}
 
+        <h2>Start a New Chat</h2>
+        <form method="POST" action="{{ url_for('gm_dashboard') }}">
+            <label for="recipient">Recipient:</label>
+            <input type="text" name="recipient" id="recipient" required>
+
+            <label for="new_chat_name">Chat Name:</label>
+            <input type="text" name="new_chat_name" id="new_chat_name" required>
+
+            <label for="from_name">Send as:</label>
+            <input type="text" name="from_name" placeholder="e.g. Central Command" required>
+
+            <label for="message">Message:</label>
+            <input type="text" name="message" id="message" required>
+
+            <button type="submit">Start Chat</button>
+        </form>
     </div>
-</body>
+
+    <style>
+        .chat-box {
+          margin-bottom: 20px;
+          padding: 15px;
+          border: 1px solid #33ccff;
+          border-radius: 6px;
+          background: rgba(10, 20, 40, 0.85);
+          box-shadow: 0 0 12px #33ccff;
+        }
+
+        .chat-box h2 {
+          margin-bottom: 10px;
+          color: #66e0ff;
+          text-shadow: 0 0 6px #33ccff;
+        }
+
+        .messages {
+          margin-bottom: 10px;
+          padding: 10px;
+          background: #0b1e33;
+          border-radius: 4px;
+          max-height: 200px;
+          overflow-y: auto;
+          font-family: monospace;
+        }
+
+        form {
+          margin-top: 5px;
+        }
+
+        input[type="text"] {
+          width: 70%;
+          padding: 6px;
+          background: #0b1e33;
+          color: #e0f7ff;
+          border: 1px solid #33ccff;
+          border-radius: 4px;
+        }
+
+        button {
+          background-color: #112244;
+          color: #e0f7ff;
+          border: 1px solid #33ccff;
+          padding: 6px 12px;
+          cursor: pointer;
+          border-radius: 4px;
+        }
+
+        button:hover {
+          background-color: #224466;
+        }
+        </style>
+
+    </body>
 </html>

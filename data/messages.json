@@ -1,716 +1,91 @@
 {
-  "A. Ceeda": {
-    "Docking Orders": {
-      "messages": [
-        {
-          "from": "Qail Security",
-          "content": "Proceed to Docking Bay 12 immediately for inspection.",
-          "timestamp": "2025-09-17 09:12"
-        }
-      ],
-      "unread": false
-    },
-    "Brudi": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "Voll die Testnachricht.",
-          "timestamp": "2025-09-17 20:26"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:55"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awgg",
-          "timestamp": "2025-09-18 00:03"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "fghj",
-          "timestamp": "2025-09-18 00:17"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "ddggh",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        }
-      ],
-      "unread": true
-    },
-    "Unknown Contact": {
-      "messages": [
-        {
-          "from": "S. Nito",
-          "content": "Jaja, ich antworte ja schon",
-          "timestamp": "2025-09-17 20:28"
-        }
-      ],
-      "unread": true
-    },
-    "Bierchen?": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-17 23:57"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-17 23:57"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:24"
-        }
-      ],
-      "unread": true
-    },
-    "awde": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-17 23:54"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:54"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:11"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaaa",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "5",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaa",
-          "timestamp": "2025-09-18 00:24"
-        }
-      ],
-      "unread": true
-    }
+  "Chat: Engine Repairs": {
+    "participants": [
+      "A. Ceeda",
+      "F.M. Latatga"
+    ],
+    "messages": [
+      {
+        "from": "A. Ceeda",
+        "content": "We need to check engine 2.",
+        "read": false
+      },
+      {
+        "from": "F.M. Latatga",
+        "content": "Copy that, I\u2019ll handle it.",
+        "read": false
+      }
+    ]
   },
-  "F.M. Latatga": {
-    "Family Matters": {
-      "messages": [
-        {
-          "from": "F.M. Latatga",
-          "content": "Sister, we must keep this secret from the Collective.",
-          "timestamp": "2025-09-17 09:25"
-        },
-        {
-          "from": "J. Latatga",
-          "content": "I agree. No one must know about the artifact.",
-          "timestamp": "2025-09-17 09:27"
-        }
-      ],
-      "unread": false
-    }
+  "Chat: Outer Ring Patrol": {
+    "participants": [
+      "S. Nito",
+      "R. Latatga",
+      "GM"
+    ],
+    "messages": [
+      {
+        "from": "S. Nito",
+        "content": "Patrols in section C are thin.",
+        "read": false
+      },
+      {
+        "from": "GM",
+        "content": "Reinforcements en route.",
+        "read": false
+      }
+    ]
   },
-  "J. Latatga": {
-    "Family Matters": {
-      "messages": [
-        {
-          "from": "F.M. Latatga",
-          "content": "Sister, we must keep this secret from the Collective.",
-          "timestamp": "2025-09-17 09:25"
-        },
-        {
-          "from": "J. Latatga",
-          "content": "I agree. No one must know about the artifact.",
-          "timestamp": "2025-09-17 09:27"
-        }
-      ],
-      "unread": true
-    }
+  "Chat: Supplies Request": {
+    "participants": [
+      "G. Kitaff",
+      "NPC: Logistics",
+      "GM"
+    ],
+    "messages": [
+      {
+        "from": "G. Kitaff",
+        "content": "Requesting more supplies.",
+        "read": false
+      },
+      {
+        "from": "GM",
+        "content": "Supplies will arrive tomorrow.",
+        "read": false
+      }
+    ]
   },
-  "S. Nito": {
-    "Unknown Contact": {
-      "messages": [
-        {
-          "from": "S. Nito",
-          "content": "I received your signal. Who are you?",
-          "timestamp": "2025-09-17 09:45"
-        }
-      ],
-      "unread": false
-    }
-  },
-  "GM": {
-    "Docking Orders": {
-      "messages": [
-        {
-          "from": "Qail Security",
-          "content": "Proceed to Docking Bay 12 immediately for inspection.",
-          "timestamp": "2025-09-17 09:12"
-        }
-      ],
-      "unread": false
-    },
-    "Family Matters": {
-      "messages": [
-        {
-          "from": "F.M. Latatga",
-          "content": "Sister, we must keep this secret from the Collective.",
-          "timestamp": "2025-09-17 09:25"
-        },
-        {
-          "from": "J. Latatga",
-          "content": "I agree. No one must know about the artifact.",
-          "timestamp": "2025-09-17 09:27"
-        }
-      ],
-      "unread": true
-    },
-    "Unknown Contact": {
-      "messages": [
-        {
-          "from": "S. Nito",
-          "content": "I received your signal. Who are you?",
-          "timestamp": "2025-09-17 09:45"
-        },
-        {
-          "from": "S. Nito",
-          "content": "Jaja, ich antworte ja schon",
-          "timestamp": "2025-09-17 20:28"
-        }
-      ],
-      "unread": false
-    },
-    "Brudi": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "Voll die Testnachricht.",
-          "timestamp": "2025-09-17 20:26"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:55"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:55"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awgg",
-          "timestamp": "2025-09-18 00:03"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awgg",
-          "timestamp": "2025-09-18 00:03"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "fghj",
-          "timestamp": "2025-09-18 00:17"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "fghj",
-          "timestamp": "2025-09-18 00:17"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "ddggh",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "ddggh",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        }
-      ],
-      "unread": true
-    },
-    "Deine Mudda": {
-      "messages": [
-        {
-          "from": "Deine Mudda",
-          "content": "Krasse Testnachricht!",
-          "timestamp": "2025-09-17 22:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "Antwort",
-          "timestamp": "2025-09-17 22:23"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awfhgh",
-          "timestamp": "2025-09-18 00:13"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awfhgh",
-          "timestamp": "2025-09-18 00:13"
-        }
-      ],
-      "unread": true
-    },
-    "Bierchen?": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-17 23:57"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-17 23:57"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-17 23:57"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:24"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:24"
-        }
-      ],
-      "unread": true
-    },
-    "soundtest": {
-      "messages": [
-        {
-          "from": "S. Nito",
-          "content": "funzt das?",
-          "timestamp": "2025-09-17 23:42"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdawfg",
-          "timestamp": "2025-09-17 23:46"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:46"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:46"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "s",
-          "timestamp": "2025-09-18 00:26"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "s",
-          "timestamp": "2025-09-18 00:26"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "s",
-          "timestamp": "2025-09-18 00:32"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "s",
-          "timestamp": "2025-09-18 00:32"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:32"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:32"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        }
-      ],
-      "unread": true
-    },
-    "awde": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-17 23:54"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:54"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:54"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:11"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:11"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaaa",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaaa",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "5",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "5",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaa",
-          "timestamp": "2025-09-18 00:24"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaa",
-          "timestamp": "2025-09-18 00:24"
-        }
-      ],
-      "unread": true
-    },
-    "Deine Tante": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "...spioniert dich aus!!!!!!!",
-          "timestamp": "2025-09-18 20:01"
-        }
-      ],
-      "unread": true
-    }
-  },
-  "V. Kulata": {
-    "Brudi": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "Voll die Testnachricht.",
-          "timestamp": "2025-09-17 20:26"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:55"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awgg",
-          "timestamp": "2025-09-18 00:03"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "fghj",
-          "timestamp": "2025-09-18 00:17"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "ddggh",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:18"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:19"
-        }
-      ],
-      "unread": false
-    },
-    "Deine Mudda": {
-      "messages": [
-        {
-          "from": "Deine Mudda",
-          "content": "Krasse Testnachricht!",
-          "timestamp": "2025-09-17 22:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "Antwort",
-          "timestamp": "2025-09-17 22:23"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awfhgh",
-          "timestamp": "2025-09-18 00:13"
-        }
-      ],
-      "unread": false
-    },
-    "Bierchen?": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "awdf",
-          "timestamp": "2025-09-17 23:57"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-17 23:57"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:24"
-        }
-      ],
-      "unread": false
-    },
-    "soundtest": {
-      "messages": [
-        {
-          "from": "S. Nito",
-          "content": "funzt das?",
-          "timestamp": "2025-09-17 23:42"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdawfg",
-          "timestamp": "2025-09-17 23:46"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:46"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "s",
-          "timestamp": "2025-09-18 00:26"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "s",
-          "timestamp": "2025-09-18 00:32"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:32"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "a",
-          "timestamp": "2025-09-18 00:37"
-        }
-      ],
-      "unread": false
-    },
-    "awde": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-17 23:54"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awdaf",
-          "timestamp": "2025-09-17 23:54"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "awd",
-          "timestamp": "2025-09-18 00:11"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaaa",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "5",
-          "timestamp": "2025-09-18 00:22"
-        },
-        {
-          "from": "V. Kulata",
-          "content": "aaa",
-          "timestamp": "2025-09-18 00:24"
-        }
-      ],
-      "unread": false
-    },
-    "Deine Tante": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "...spioniert dich aus!!!!!!!",
-          "timestamp": "2025-09-18 20:01"
-        }
-      ],
-      "unread": false
-    }
-  },
-  "T. Qail": {
-    "Deine Tante": {
-      "messages": [
-        {
-          "from": "V. Kulata",
-          "content": "...spioniert dich aus!!!!!!!",
-          "timestamp": "2025-09-18 20:01"
-        }
-      ],
-      "unread": false
-    }
+  "Chat: awd": {
+    "participants": [
+      "V. Kulata",
+      "R. Kesyk"
+    ],
+    "messages": [
+      {
+        "from": "V. Kulata",
+        "content": "awdawf",
+        "read": true
+      },
+      {
+        "from": "test",
+        "content": "awdafaw",
+        "read": true
+      },
+      {
+        "from": "V. Kulata",
+        "content": "awdfawdawf",
+        "read": true
+      },
+      {
+        "from": "R. Kesyk",
+        "content": "glawidgananananananananananaaaa",
+        "read": true
+      },
+      {
+        "from": "Qail",
+        "content": "Ruhe hier",
+        "read": true
+      }
+    ]
   }
 }

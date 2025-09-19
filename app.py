@@ -124,138 +124,129 @@ def dashboard():
         unread_count=sum(1 for c in user_chats.values() if c.get("unread"))  # <-- FIX: now always available
     )
 
-
-
 @app.route("/messages", methods=["GET", "POST"])
 def messages():
     if "user" not in session or session["user"] == GM_USER:
         return redirect(url_for("login"))
 
     user = session["user"]
-    all_messages = load_json(MESSAGES_FILE)
-    user_chats = all_messages.get(user, {})
+    all_chats = load_json(MESSAGES_FILE)
 
-    chat_name = request.args.get("chat")
+    # --- Handle sending new messages ---
+    if request.method == "POST":
+        chat_name = request.form.get("chat_name")
+        recipient = request.form.get("recipient")
+        message_text = request.form.get("message")
 
-    # Player replies
-    if request.method == "POST" and chat_name and "reply" in request.form:
-        reply_text = request.form["reply"]
-        new_msg = {
-            "from": user,
-            "content": reply_text,
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M")
-        }
+        if not message_text:
+            return redirect(url_for("messages"))
 
-        if chat_name not in all_messages[user]:
-            all_messages[user][chat_name] = {"messages": [], "unread": False}
-        all_messages[user][chat_name]["messages"].append(new_msg)
-        all_messages[user][chat_name]["unread"] = False
-
-        # Deliver to other players in chat (if any)
-        for other, chats in all_messages.items():
-            if other != user and chat_name in chats and any(m["from"] == user for m in chats[chat_name]["messages"]):
-                chats[chat_name]["messages"].append(new_msg)
-                chats[chat_name]["unread"] = True
-
-        # Always deliver to GM
-        if "GM" not in all_messages:
-            all_messages["GM"] = {}
-        if chat_name not in all_messages["GM"]:
-            all_messages["GM"][chat_name] = {"messages": [], "unread": False}
-        all_messages["GM"][chat_name]["messages"].append(new_msg)
-        all_messages["GM"][chat_name]["unread"] = True
-
-        save_json(MESSAGES_FILE, all_messages)
-
-    # Player starts a new chat
-    elif request.method == "POST" and "start_chat" in request.form:
-        recipient = request.form["recipient"].strip()
-        chat_name = request.form["chat_name"].strip()
-        message_text = request.form["message"].strip()
-
-        new_msg = {
+        new_message = {
             "from": user,
             "content": message_text,
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M")
+            "read": False
         }
 
-        # Sender
-        if user not in all_messages:
-            all_messages[user] = {}
-        all_messages[user][chat_name] = {"messages": [new_msg], "unread": False}
+        # Case 1: new chat
+        if recipient and not chat_name:
+            chat_name = f"Chat: {request.form.get('new_chat_name') or recipient}"
+            participants = [user, recipient]
+            if "NPC" in recipient or recipient == GM_USER:
+                if GM_USER not in participants:
+                    participants.append(GM_USER)
+            all_chats[chat_name] = {
+                "participants": participants,
+                "messages": [new_message]
+            }
 
-        if recipient in characters:
-            if recipient not in all_messages:
-                all_messages[recipient] = {}
-            all_messages[recipient][chat_name] = {"messages": [new_msg], "unread": True}
+        # Case 2: reply to existing
+        elif chat_name in all_chats:
+            chat = all_chats[chat_name]
+            if user in chat["participants"]:
+                chat["messages"].append(new_message)
 
-        # Always log to GM
-        if "GM" not in all_messages:
-            all_messages["GM"] = {}
-        all_messages["GM"][chat_name] = {"messages": [new_msg], "unread": True}
+        save_json(MESSAGES_FILE, all_chats)
+        return redirect(url_for("messages", chat=chat_name))
 
-        save_json(MESSAGES_FILE, all_messages)
+    # --- Handle viewing chats ---
+    selected_chat = request.args.get("chat")
 
-    if chat_name:
-        chat_thread = user_chats.get(chat_name, {"messages": [], "unread": False})
-        chat_thread["unread"] = False
-        save_json(MESSAGES_FILE, all_messages)
-        t = load_translation(session["lang"])
-        return render_template("messages.html", user=user, chat_name=chat_name,
-                               messages=chat_thread["messages"], chats=user_chats,
-                               unread_count=sum(1 for c in user_chats.values() if c.get("unread")), t=t)
-    else:
-        unread_count = sum(1 for c in user_chats.values() if c.get("unread"))
-        t = load_translation(session["lang"])
-        return render_template("messages.html", user=user, chats=user_chats, chat_name=None, unread_count=unread_count, t=t)
+    # Player only sees their chats
+    visible_chats = {
+        name: chat for name, chat in all_chats.items()
+        if user in chat.get("participants", [])
+    }
+
+    # Mark messages as read
+    if selected_chat and selected_chat in visible_chats:
+        for m in visible_chats[selected_chat]["messages"]:
+            if isinstance(m, dict) and m.get("from") != user:
+                m["read"] = True
+        save_json(MESSAGES_FILE, all_chats)
+
+    # Count unread
+    unread_count = sum(
+        1 for chat in visible_chats.values()
+        for m in chat["messages"]
+        if isinstance(m, dict) and not m.get("read") and m.get("from") != user
+    )
+
+    return render_template(
+        "messages.html",
+        user=user,
+        chats=visible_chats,
+        chat_name=selected_chat,
+        unread_count=unread_count,
+        t=load_translation(session["lang"])
+    )
 
 
-@app.route("/gm", methods=["GET", "POST"])
+@app.route("/gm_dashboard", methods=["GET", "POST"])
 def gm_dashboard():
     if "user" not in session or session["user"] != GM_USER:
         return redirect(url_for("login"))
 
-    news = load_json(NEWS_FILE)
-    messages = load_json(MESSAGES_FILE)
+    all_chats = load_json(MESSAGES_FILE)
 
     if request.method == "POST":
-        if "post_news" in request.form:
-            new_entry = {
-                "title": request.form["title"],
-                "content": request.form["content"],
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M")
+        chat_name = request.form.get("chat_name")
+        recipient = request.form.get("recipient")
+        message_text = request.form.get("message")
+        from_name = request.form.get("from_name", GM_USER)
+
+        if not message_text:
+            return redirect(url_for("gm_dashboard"))
+
+        new_message = {
+            "from": from_name,
+            "content": message_text,
+            "read": False
+        }
+
+        # --- New Chat ---
+        if recipient and not chat_name:
+            chat_name = f"Chat: {request.form.get('new_chat_name') or recipient}"
+            participants = [recipient, GM_USER]
+            all_chats[chat_name] = {
+                "participants": participants,
+                "messages": [new_message]
             }
-            news.append(new_entry)
-            save_json(NEWS_FILE, news)
 
-        elif "send_message" in request.form:
-            recipient = request.form["recipient"]
-            chat_name = request.form["chat_name"]
-            sender_name = request.form["sender_name"].strip()
-            new_msg = {
-                "from": sender_name if sender_name else "GM",
-                "content": request.form["message"],
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M")
-            }
+        # --- Reply to Existing Chat ---
+        elif chat_name in all_chats:
+            chat = all_chats[chat_name]
+            chat["messages"].append(new_message)
 
-            if recipient not in messages:
-                messages[recipient] = {}
-            if chat_name not in messages[recipient]:
-                messages[recipient][chat_name] = {"messages": [], "unread": False}
-            messages[recipient][chat_name]["messages"].append(new_msg)
-            messages[recipient][chat_name]["unread"] = True
+        save_json(MESSAGES_FILE, all_chats)
+        return redirect(url_for("gm_dashboard"))
 
-            if "GM" not in messages:
-                messages["GM"] = {}
-            if chat_name not in messages["GM"]:
-                messages["GM"][chat_name] = {"messages": [], "unread": False}
-            messages["GM"][chat_name]["messages"].append(new_msg)
-            messages["GM"][chat_name]["unread"] = False
+    return render_template(
+        "gm_dashboard.html",
+        user=GM_USER,
+        chats=all_chats,
+        t=load_translation(session["lang"])
+    )
 
-            save_json(MESSAGES_FILE, messages)
-
-    t = load_translation(session["lang"])
-    return render_template("gm_dashboard.html", news=news, messages=messages, players=list(characters.keys()), t=t)
 
 @app.route("/files/<filetype>", methods=["GET", "POST"])
 def files(filetype):

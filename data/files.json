@@ -92,15 +92,15 @@
   "K. Cagla": {
     "personnel": {
       "name": "K. Cagla",
-      "data first registered": 153,
-      "birth year": 129,
+      "data first registered": "153",
+      "birth year": "129",
       "birth planet": "Earth",
       "citizen id": "00/3/01/129/54768",
       "company role": "Engineer",
       "company education": "Engineering School",
       "pay grade": "medium",
       "political stance": "Neutral",
-      "status": "active",
+      "status": "freigestellt",
       "station": "Station Delta",
       "shift": "1",
       "company cv": "Assigned to reactor maintenance"
