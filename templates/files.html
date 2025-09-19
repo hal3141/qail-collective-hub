@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ filetype|capitalize }} Files - Qail Collective</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="starwars-bg">
+
+<div class="topbar">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
+    <span class="welcome">{{ t["welcome"] }}, {{ user }}</span>
+    <a href="{{ url_for('dashboard') }}">{{ t["news"] }}</a>
+    <a href="{{ url_for('messages') }}">{{ t["messages"] }}</a>
+    <a href="{{ url_for('files', filetype='personnel') }}">{{ t["filetypes"].get("personnel") }}</a>
+    <a href="{{ url_for('files', filetype='security') }}">{{ t["filetypes"].get("security") }}</a>
+    <a href="{{ url_for('files', filetype='medical') }}">{{ t["filetypes"].get("medical") }}</a>
+    <a href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
+</div>
+
+<div class="content">
+    <h1 class="title">{{ t["filetypes"].get(filetype, filetype|capitalize ~ " Files") }}</h1>
+
+    {% if files %}
+    <!-- Dropdown to select which file to view -->
+    <form method="GET" action="{{ url_for('files', filetype=filetype) }}">
+        <label for="char-select">{{ t["select_file"] }}:</label>
+        <select name="char" id="char-select" onchange="this.form.submit()">
+            <option value="">-- {{ t["select_employee"] }} --</option>
+            {% for name in files.keys()|sort %}
+            <option value="{{ name }}" {% if selected_file and name in selected_file %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+            {% if selected_file and "T. Qail" in selected_file and selected_file["T. Qail"].get("Access Denied") %}
+            <option value="T. Qail" selected>T. Qail</option>
+            {% endif %}
+        </select>
+    </form>
+
+    {% if selected_file %}
+    {% for name, section in selected_file.items() %}
+    <div class="file-entry">
+        <h2>{{ name }}</h2>
+
+        {% if section.get("Access Denied") %}
+        <p class="error">{{ section["Access Denied"] }}</p>
+        {% else %}
+        <table class="file-table">
+            {% for key, value in section.items() %}
+            <tr>
+                <td class="file-key">{{ t["keys"].get(key, key|capitalize) }}</td>
+                <td class="file-value">{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Editable form for Personnel -->
+        {% if filetype == "personnel" and (user in ["T. Qail", "H. Lastal"]) %}
+        <h3>{{ t["edit_personnel"] }}</h3>
+        <form method="POST" action="{{ url_for('files', filetype=filetype) }}">
+            <input type="hidden" name="char" value="{{ name }}">
+            {% for key, value in section.items() %}
+            <label for="{{ key }}">{{ t["keys"].get(key, key|capitalize) }}</label>
+            <input type="text" name="{{ key }}" id="{{ key }}" value="{{ value }}">
+            {% endfor %}
+            <button type="submit">{{ t["save_changes"] }}</button>
+        </form>
+        {% endif %}
+
+        <!-- Editable form for Security -->
+        {% if filetype == "security" and (user == "T. Qail" or user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]) %}
+        <h3>{{ t["edit_security"] }}</h3>
+        <form method="POST" action="{{ url_for('files', filetype=filetype) }}">
+            <input type="hidden" name="char" value="{{ name }}">
+            {% for key, value in section.items() %}
+            <label for="{{ key }}">{{ t["keys"].get(key, key|capitalize) }}</label>
+            <input type="text" name="{{ key }}" id="{{ key }}" value="{{ value }}">
+            {% endfor %}
+            <button type="submit">{{ t["save_changes"] }}</button>
+        </form>
+        {% endif %}
+
+        <!-- Editable form for Medical -->
+        {% if filetype == "medical" and (user == "T. Qail" or user in ["Q. Dran", "D. Scafcar"]) %}
+        <h3>{{ t["edit_medical"] }}</h3>
+        <form method="POST" action="{{ url_for('files', filetype=filetype) }}">
+            <input type="hidden" name="char" value="{{ name }}">
+            {% for key, value in section.items() %}
+            <label for="{{ key }}">{{ t["keys"].get(key, key|capitalize) }}</label>
+            <input type="text" name="{{ key }}" id="{{ key }}" value="{{ value }}">
+            {% endfor %}
+            <button type="submit">{{ t["save_changes"] }}</button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% else %}
+    <p>{{ t["no_files"] }}</p>
+    {% endif %}
+</div>
+
+<style>
+form {
+  margin-bottom: 20px;
+}
+
+#char-select {
+  padding: 6px;
+  background-color: #0b1e33;
+  color: #e0f7ff;
+  border: 1px solid #33ccff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#char-select option {
+  background: #0b1e33;
+  color: #e0f7ff;
+}
+
+.file-entry {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #33ccff;
+  border-radius: 6px;
+  background: rgba(10, 20, 40, 0.85);
+  box-shadow: 0 0 12px #33ccff;
+}
+
+.file-entry h2 {
+  margin-bottom: 10px;
+  color: #66e0ff;
+  text-shadow: 0 0 6px #33ccff;
+}
+
+.file-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.file-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #224466;
+}
+
+.file-key {
+  width: 35%;
+  font-weight: bold;
+  color: #33ccff;
+  text-shadow: 0 0 4px #33ccff;
+}
+
+.file-value {
+  color: #e0f7ff;
+}
+
+.error {
+  color: #ff5555;
+  font-weight: bold;
+  text-shadow: 0 0 6px #ff0000;
+}
+
+input[type="text"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 6px;
+  width: 100%;
+  background: #0b1e33;
+  color: #e0f7ff;
+  border: 1px solid #33ccff;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #112244;
+  color: #e0f7ff;
+  border: 1px solid #33ccff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #224466;
+}
+</style>
+
+</body>
+</html>
