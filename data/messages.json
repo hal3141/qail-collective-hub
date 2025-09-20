@@ -13,7 +13,17 @@
       {
         "from": "F.M. Latatga",
         "content": "Copy that, I\u2019ll handle it.",
-        "read": false
+        "read": true
+      },
+      {
+        "from": "Qail",
+        "content": "Testnachricht von GM",
+        "read": true
+      },
+      {
+        "from": "auch qail",
+        "content": "nochmal ein test",
+        "read": true
       }
     ]
   },
@@ -84,6 +94,19 @@
       {
         "from": "Qail",
         "content": "Ruhe hier",
+        "read": true
+      }
+    ]
+  },
+  "Chat: message test": {
+    "participants": [
+      "R. Kesyk",
+      "GM"
+    ],
+    "messages": [
+      {
+        "from": "central command",
+        "content": "awdiawflaijwda",
         "read": true
       }
     ]

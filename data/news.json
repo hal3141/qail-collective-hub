@@ -1,22 +1,36 @@
-[
-  {
-    "title": "Corporate Expansion Announced",
-    "content": "The Qail Collective proudly announces the acquisition of multiple mining operations in the Outer Rim. Glory to the Collective!",
-    "timestamp": "2025-09-15 10:30"
-  },
-  {
-    "title": "Security Alert",
-    "content": "Unauthorized transmissions were detected near Station V-47. Report any suspicious activity immediately.",
-    "timestamp": "2025-09-16 22:14"
-  },
-  {
-    "title": "BREAKING NEWS",
-    "content": "Der Oli ist voll toll",
-    "timestamp": "2025-09-17 22:52"
-  },
-  {
-    "title": "super neue news",
-    "content": "so neue news gab es noch nie",
-    "timestamp": "2025-09-19 20:08"
-  }
-]
+{
+  "news": [
+    {
+      "author": "qail central",
+      "content": "neue testnachricht aus der zentrale"
+    },
+    {
+      "author": "Testnachricht von GM",
+      "content": "Dies ist eine Testnachricht"
+    },
+    {
+      "author": "qail central",
+      "content": "awdawfawga"
+    },
+    {
+      "author": "R. Kesyk",
+      "content": "Wusstet ihr schon, dass SCafcar einen Blog hat?!"
+    },
+    {
+      "author": "V. Kulata",
+      "content": "dies ist eine neue Testnews"
+    },
+    {
+      "author": "GM",
+      "content": "System maintenance at 1800 hours."
+    },
+    {
+      "author": "A. Ceeda",
+      "content": "Engine 2 has been repaired."
+    },
+    {
+      "author": "NPC: Logistics",
+      "content": "Supplies will arrive tomorrow."
+    }
+  ]
+}

@@ -17,7 +17,6 @@
     <div class="content">
         <h1 class="title">{{ t["news"] }}</h1>
 
-        {% if news %}
         <div class="news-feed">
             {% for item in news|reverse %}
             <div class="news-item scifi-container">
@@ -28,15 +27,57 @@
               <div class="news-item-content scifi-container-content">
                 <p class="">{{ item.content }}</p>
               </div>
+
             </div>
             {% endfor %}
+            {% else %}
+            <p>{{ t["no_news"] }}</p>
+            {% endif %}
         </div>
-        {% else %}
-        <p>{{ t["no_news"] }}</p>
-        {% endif %}
-    </div>
 
-    <audio id="logout-sound" src="{{ url_for('static', filename='sounds/logout.wav') }}"></audio>
+        <h2 class="subtitle">{{ t["publish_news"] }}</h2>
+        <form method="POST" action="{{ url_for('post_news') }}">
+            {% if user == GM_USER %}
+            <label for="author">{{ t["author"] }}</label>
+            <input type="text" id="author" name="author" placeholder="e.g. Central Command">
+            {% endif %}
+
+            <label for="news_content">{{ t["message"] }}</label>
+            <textarea id="news_content" name="news_content" placeholder="{{ t['message_ph'] }}" required></textarea>
+
+            <button type="submit">{{ t["publish"] }}</button>
+        </form>
+
+        <style>
+            .news-feed {
+              margin-top: 20px;
+            }
+
+            .news-entry {
+              background: rgba(10, 20, 40, 0.85);
+              border: 1px solid #33ccff;
+              border-radius: 6px;
+              padding: 10px;
+              margin-bottom: 10px;
+              box-shadow: 0 0 10px #33ccff;
+            }
+
+            .news-author {
+              display: block;
+              font-weight: bold;
+              color: #66e0ff;
+              margin-bottom: 4px;
+              text-shadow: 0 0 6px #33ccff;
+            }
+
+            .news-text {
+              margin: 0;
+              color: #e0f7ff;
+            }
+        </style>
+
+
+        <audio id="logout-sound" src="{{ url_for('static', filename='sounds/logout.wav') }}"></audio>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const logoutSound = document.getElementById("logout-sound");

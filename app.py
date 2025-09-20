@@ -137,6 +137,43 @@ def dashboard():
         unread_count=unread_count  # <-- FIX: now always available
     )
 
+@app.route("/news", methods=["POST"])
+def post_news():
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    user = session["user"]
+    all_news = load_json(NEWS_FILE)
+
+    if "news" not in all_news:
+        all_news["news"] = []
+
+    content = request.form.get("news_content")
+    if not content:
+        return redirect(url_for("dashboard"))
+
+    # Author handling
+    if user == GM_USER:
+        author = request.form.get("author") or GM_USER
+    else:
+        author = user
+
+    new_entry = {
+        "author": author,
+        "content": content
+    }
+
+    all_news["news"].insert(0, new_entry)
+    save_json(NEWS_FILE, all_news)
+
+    # Redirect depending on source
+    source = request.form.get("source")
+    if user == GM_USER and source == "gm_dashboard":
+        return redirect(url_for("gm_dashboard", tab="news-tab"))
+    else:
+        return redirect(url_for("dashboard"))
+
+
 @app.route("/messages", methods=["GET", "POST"])
 def messages():
     if "user" not in session or session["user"] == GM_USER:
@@ -251,7 +288,7 @@ def gm_dashboard():
             chat["messages"].append(new_message)
 
         save_json(MESSAGES_FILE, all_chats)
-        return redirect(url_for("gm_dashboard"))
+        return redirect(url_for("gm_dashboard", tab="messages-tab"))
 
     return render_template(
         "gm_dashboard.html",
