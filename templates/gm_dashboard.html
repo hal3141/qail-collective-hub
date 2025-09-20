@@ -39,7 +39,7 @@
     <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
     <span class="welcome">{{ user }}</span>
     <a href="{{ url_for('gm_dashboard') }}">GM Dashboard</a>
-    <a id="logout" ref="{{ url_for('logout') }}">Logout</a>
+    <a id="logout" href="{{ url_for('logout') }}">Logout</a>
 </div>
 
 <div class="content">
@@ -95,7 +95,7 @@
             </div>
           </div>
 
-          
+
             {% for chat_name, chat in chats.items() %}
 
             <div class="scifi-container chat-box">

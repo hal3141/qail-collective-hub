@@ -1,25 +1,29 @@
-<div class="topbar">
-    <img src="{{ url_for('static', filename='qail_logo.svg') }}" alt="Qail Collective" class="logo-small">
-    <span class="welcome">{{ t["welcome"] }}, <br> {{ user }}</span>
+<header class="navigation">
+  <nav>
+    <div class="topbar">
+      <img src="{{ url_for('static', filename='qail_logo.svg') }}" alt="Qail Collective" class="logo-small">
+      <span class="welcome">{{ t["welcome"] }}, <br> {{ user }}</span>
 
-    {% if hacking_data %}
-  	  <img id="hack-btn" src="/static/cryptic.png">
-  	  <div id="hack-overlay" style="display:none;">
-  		<div id="hack-stream"></div>
-  		<div id="hack-progress"><div id="hack-progress-bar"></div></div>
-  		<div id="hack-result"></div>
-  	  </div>
-  	{% endif %}
+      {% if hacking_data %}
+    	  <img id="hack-btn" src="/static/cryptic.png">
+    	  <div id="hack-overlay" style="display:none;">
+    		<div id="hack-stream"></div>
+    		<div id="hack-progress"><div id="hack-progress-bar"></div></div>
+    		<div id="hack-result"></div>
+    	  </div>
+    	{% endif %}
 
-    <a id="logout" href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
-</div>
-<div class="subheader">
-  <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
-  <a href="{{ url_for('messages') }}">{{ t["messages"] }}<span class="unread">{% if unread_count and unread_count > 0  %} ({{ unread_count }}){% endif %}</span></a>
-  <a href="{{ url_for('files', filetype='personnel') }}">{{ t["filetypes"].get("personnel") }}</a>
-  <a href="{{ url_for('files', filetype='security') }}">{{ t["filetypes"].get("security") }}</a>
-  <a href="{{ url_for('files', filetype='medical') }}">{{ t["filetypes"].get("medical") }}</a>
-</div>
+      <a id="logout" href="{{ url_for('logout') }}">{{ t["logout"] }}</a>
+    </div>
+    <div class="subheader">
+      <a href="{{ url_for('dashboard') }}">{{ t["dashboard"] }}</a>
+      <a href="{{ url_for('messages') }}">{{ t["messages"] }}<span class="unread">{% if unread_count and unread_count > 0  %} ({{ unread_count }}){% endif %}</span></a>
+      <a href="{{ url_for('files', filetype='personnel') }}">{{ t["filetypes"].get("personnel") }}</a>
+      <a href="{{ url_for('files', filetype='security') }}">{{ t["filetypes"].get("security") }}</a>
+      <a href="{{ url_for('files', filetype='medical') }}">{{ t["filetypes"].get("medical") }}</a>
+    </div>
+  </nav>
+</header>
 
 <script>
   {% if hacking_data %}
