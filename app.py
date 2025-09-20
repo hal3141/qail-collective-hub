@@ -160,7 +160,7 @@ def post_news():
 
     title = request.form.get("title")
 
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+    timestamp = datetime.now().strftime("%H:%M - %d-%m") + "-130 NVS"
 
     new_entry = {
         "author": author,
@@ -169,7 +169,7 @@ def post_news():
         "timestamp": timestamp
     }
 
-    all_news["news"].insert(0, new_entry)
+    all_news["news"].append(new_entry)
     save_json(NEWS_FILE, all_news)
 
     # Redirect depending on source

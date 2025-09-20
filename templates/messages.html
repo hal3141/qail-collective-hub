@@ -48,7 +48,7 @@
                 <label for="message">{{ t["message"] }}:</label>
                 <textarea id="message" name="message" placeholder='{{ t["message_ph"] }}' required></textarea>
 
-                <button type="submit" name="start_chat">{{ t["start_chat"] }}</button>
+                <button type="submit" name="start_chat">{{ t["send"] }}</button>
             </form>
           </div>
         </div>
@@ -77,7 +77,7 @@
         <form method="POST" id="replyForm" action="{{ url_for('messages') }}">
             <input type="hidden" name="chat_name" value="{{ chat_name }}">
             <textarea class="chat-message" name="message" placeholder='{{ t["reply_ph"] }}' required></textarea>
-            <button type="submit" id="replyButton">{{ t["send_reply"] }}</button>
+            <button type="submit" id="replyButton">{{ t["send"] }}</button>
         </form>
         <hr>
         <a href="{{ url_for('messages') }}"><button>{{ t["back_to_conversations"] }}</button></a>
