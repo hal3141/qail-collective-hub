@@ -33,20 +33,25 @@
         {% else %}
         <p>{{ t["no_conversations"] }}</p>
         {% endif %}
+        <div class="scifi-container">
+          <div class="scifi-container-header">
+            <h2 class="subtitle">{{ t["start_new_conversation"] }}</h2>
+          </div>
+          <div class="scifi-container-content">
+            <form method="POST" id="startConvoForm" action="{{ url_for('messages') }}">
+                <label for="recipient">{{ t["recipient"] }}:</label>
+                <input type="text" id="recipient" name="recipient" placeholder='{{ t["recipient_ph"] }}' required>
 
-        <h2 class="subtitle">{{ t["start_new_conversation"] }}</h2>
-        <form method="POST" id="startConvoForm" action="{{ url_for('messages') }}">
-            <label for="recipient">{{ t["recipient"] }}:</label>
-            <input type="text" id="recipient" name="recipient" placeholder='{{ t["recipient_ph"] }}' required>
+                <label for="new_chat_name">{{ t["chat_name"] }}:</label>
+                <input type="text" id="new_chat_name" name="new_chat_name" placeholder='{{ t["chat_name_ph"] }}' required>
 
-            <label for="new_chat_name">{{ t["chat_name"] }}:</label>
-            <input type="text" id="new_chat_name" name="new_chat_name" placeholder='{{ t["chat_name_ph"] }}' required>
+                <label for="message">{{ t["message"] }}:</label>
+                <textarea id="message" name="message" placeholder='{{ t["message_ph"] }}' required></textarea>
 
-            <label for="message">{{ t["message"] }}:</label>
-            <textarea id="message" name="message" placeholder='{{ t["message_ph"] }}' required></textarea>
-
-            <button type="submit" name="start_chat">{{ t["start_chat"] }}</button>
-        </form>
+                <button type="submit" name="start_chat">{{ t["start_chat"] }}</button>
+            </form>
+          </div>
+        </div>
 
         {% else %}
         <h1 class="title">{{ chat_name }}</h1>
@@ -54,7 +59,14 @@
         {% if chats[chat_name]["messages"] %}
         <div class="chat-thread">
             {% for msg in chats[chat_name]["messages"] %}
-            <p><b>{{ msg.from }}:</b> {{ msg.content }}</p>
+            <div class="chat-bubble">
+              <div class="chat-bubble-header">
+                <p class="chat-bubble-sender">{{ msg.from }}</p>
+              </div>
+              <div class="chat-bubble-content">
+                <p>{{ msg.content }}</p></div>
+              <div class="chat-bubble-footer"></div>
+            </div>
             {% endfor %}
         </div>
         {% else %}
@@ -64,7 +76,7 @@
         <h2 class="subtitle">{{ t["send_reply_title"] }}</h2>
         <form method="POST" id="replyForm" action="{{ url_for('messages') }}">
             <input type="hidden" name="chat_name" value="{{ chat_name }}">
-            <textarea name="message" placeholder='{{ t["reply_ph"] }}' required></textarea>
+            <textarea class="chat-message" name="message" placeholder='{{ t["reply_ph"] }}' required></textarea>
             <button type="submit" id="replyButton">{{ t["send_reply"] }}</button>
         </form>
         <hr>

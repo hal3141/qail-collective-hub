@@ -18,11 +18,16 @@
         <h1 class="title">{{ t["news"] }}</h1>
 
         <div class="news-feed">
-            {% if news.news %}
-            {% for entry in news.news %}
-            <div class="news-entry">
-                <span class="news-author">{{ entry.author }}</span>
-                <p class="news-text">{{ entry.content }}</p>
+            {% for item in news|reverse %}
+            <div class="news-item scifi-container">
+              <div class="news-item-header scifi-container-header">
+                <h2>{{ item.title }}</h2>
+                <p class="timestamp">{{ item.timestamp }}</p>
+              </div>
+              <div class="news-item-content scifi-container-content">
+                <p class="">{{ item.content }}</p>
+              </div>
+
             </div>
             {% endfor %}
             {% else %}
@@ -87,7 +92,7 @@
     </script>
 
 
-	
+
 
 </body>
 </html>
