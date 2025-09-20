@@ -101,9 +101,11 @@
             <div class="scifi-container chat-box">
               <div class="scifi-container-header">
                   <h2>{{ chat_name }}</h2>
+                  <span class="chat-participants">
                   {% for p in chat["participants"] %}
-                    {{p}} |
+                    <span class="chat-member">{{p}}</span>
                   {% endfor %}
+                </span>
                 </div>
                   <div class="messages scifi-container-content">
                       {% for m in chat["messages"] %}

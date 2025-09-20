@@ -25,12 +25,14 @@
             {% set unread = chat["messages"] | selectattr("read", "equalto", false) | selectattr("from", "ne", user) | list | length %}
             <li>
                 <a href="{{ url_for('messages', chat=name) }}">
-                    {{ name }}{% if unread > 0 %} <span class="unread">{{ t["new"] }}</span>{% endif %}
+                  <span>{{ name }}{% if unread > 0 %} <span class="unread">{{ t["new"] }}</span>{% endif %}</span>
+                  <span class="chat-participants">
                     {% for p in chat["participants"] %}
-                        {%if p != user %}
-                            {{p}} |
-                        {% endif %}
+                      {%if p != user %}
+                        <span class="chat-member">{{p}}</span>
+                      {% endif %}
                     {% endfor %}
+                  </span>
                 </a>
             </li>
             {% endfor %}
@@ -97,7 +99,7 @@
         <a href="{{ url_for('messages') }}"><button>{{ t["back_to_conversations"] }}</button></a>
         {% endif %}
     </div>
-    
+
     <audio id="send-sound" src="{{ url_for('static', filename='sounds/beep.mp3') }}"></audio>
     <script>
       document.addEventListener("DOMContentLoaded", function() {

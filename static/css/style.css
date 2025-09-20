@@ -334,6 +334,7 @@ button:hover {
   padding: 0;
   margin: 0 0 3em 0;
 }
+
 .chat-list li {
   margin: 8px 0;
   position: relative;
@@ -351,6 +352,7 @@ button:hover {
   );
 }
 
+
 .chat-list li::before {
   content: "";                    /* Pseudo-Element sichtbar machen */
   position: absolute;
@@ -363,15 +365,28 @@ button:hover {
 }
 
 .chat-list a {
+  display: flex;
+  align-items: center;
   color: #66e0ff;
   text-decoration: none;
   font-weight: bold;
-  text-shadow: 0 0 5px #66e0ff;
 }
 
 .chat-list a:hover {
   color: #99f2ff;
 }
+
+.chat-participants {
+  margin-left: auto;
+  color: #a3e7ff;
+  font-size: 0.8em;
+}
+
+.chat-participants span:not(:first-child) {
+  border-left: 2px solid rgba(60,133,166,0.5);
+  padding-left: 10px;
+}
+
 
 .chat-bubble {
   position: relative;
