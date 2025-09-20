@@ -28,9 +28,11 @@
 
     {% if selected_file %}
     {% for name, section in selected_file.items() %}
-    <div class="file-entry">
+    <div class="file-entry scifi-container">
+      <div class="scifi-container-header">
         <h2>{{ name }}</h2>
-
+      </div>
+      <div class="scifi-container-content">
         {% if section.get("Access Denied") %}
         <p class="error">{{ section["Access Denied"] }}</p>
         {% else %}
@@ -42,7 +44,7 @@
             </tr>
             {% endfor %}
         </table>
-
+      </div>
         <!-- Editable form for Personnel -->
         {% if filetype == "personnel" and (user in ["T. Qail", "H. Lastal"]) %}
         <h3>{{ t["edit_personnel"] }}</h3>
@@ -89,92 +91,6 @@
     <p class="error">{{ t["no_files"] }}</p>
     {% endif %}
 </div>
-
-<style>
-form {
-  margin-bottom: 20px;
-}
-
-#char-select {
-  padding: 6px;
-  background-color: #0b1e33;
-  color: #e0f7ff;
-  border: 1px solid #33ccff;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-#char-select option {
-  background: #0b1e33;
-  color: #e0f7ff;
-}
-
-.file-entry {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #33ccff;
-  border-radius: 6px;
-  background: rgba(10, 20, 40, 0.85);
-  box-shadow: 0 0 12px #33ccff;
-}
-
-.file-entry h2 {
-  margin-bottom: 10px;
-  color: #66e0ff;
-  text-shadow: 0 0 6px #33ccff;
-}
-
-.file-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.file-table td {
-  padding: 6px 10px;
-  border-bottom: 1px solid #224466;
-}
-
-.file-key {
-  width: 35%;
-  font-weight: bold;
-  color: #33ccff;
-  text-shadow: 0 0 4px #33ccff;
-}
-
-.file-value {
-  color: #e0f7ff;
-}
-
-.error {
-  color: #ff5555;
-  font-weight: bold;
-  text-shadow: 0 0 6px #ff0000;
-}
-
-input[type="text"] {
-  display: block;
-  margin-bottom: 10px;
-  padding: 6px;
-  width: 100%;
-  background: #0b1e33;
-  color: #e0f7ff;
-  border: 1px solid #33ccff;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #112244;
-  color: #e0f7ff;
-  border: 1px solid #33ccff;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #224466;
-}
-</style>
 
 </body>
 </html>

@@ -20,12 +20,12 @@
         {% if news %}
         <div class="news-feed">
             {% for item in news|reverse %}
-            <div class="news-item">
-              <div class="news-item-header">
+            <div class="news-item scifi-container">
+              <div class="news-item-header scifi-container-header">
                 <h2>{{ item.title }}</h2>
                 <p class="timestamp">{{ item.timestamp }}</p>
               </div>
-              <div class="news-item-content">
+              <div class="news-item-content scifi-container-content">
                 <p class="">{{ item.content }}</p>
               </div>
             </div>
@@ -51,7 +51,7 @@
     </script>
 
 
-	
+
 
 </body>
 </html>
