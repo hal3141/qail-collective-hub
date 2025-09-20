@@ -45,6 +45,7 @@
             {% endfor %}
         </table>
       </div>
+      </div>
         <!-- Editable form for Personnel -->
         {% if filetype == "personnel" and (user in ["T. Qail", "H. Lastal"]) %}
         <h3>{{ t["edit_personnel"] }}</h3>
@@ -84,13 +85,13 @@
         </form>
         {% endif %}
         {% endif %}
-    </div>
     {% endfor %}
     {% endif %}
     {% else %}
     <p class="error">{{ t["no_files"] }}</p>
     {% endif %}
 </div>
+
 
 </body>
 </html>

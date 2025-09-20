@@ -33,20 +33,25 @@
         {% else %}
         <p>{{ t["no_conversations"] }}</p>
         {% endif %}
+        <div class="scifi-container">
+          <div class="scifi-container-header">
+            <h2 class="subtitle">{{ t["start_new_conversation"] }}</h2>
+          </div>
+          <div class="scifi-container-content">
+            <form method="POST" id="startConvoForm" action="{{ url_for('messages') }}">
+                <label for="recipient">{{ t["recipient"] }}:</label>
+                <input type="text" id="recipient" name="recipient" placeholder='{{ t["recipient_ph"] }}' required>
 
-        <h2 class="subtitle">{{ t["start_new_conversation"] }}</h2>
-        <form method="POST" id="startConvoForm" action="{{ url_for('messages') }}">
-            <label for="recipient">{{ t["recipient"] }}:</label>
-            <input type="text" id="recipient" name="recipient" placeholder='{{ t["recipient_ph"] }}' required>
+                <label for="new_chat_name">{{ t["chat_name"] }}:</label>
+                <input type="text" id="new_chat_name" name="new_chat_name" placeholder='{{ t["chat_name_ph"] }}' required>
 
-            <label for="new_chat_name">{{ t["chat_name"] }}:</label>
-            <input type="text" id="new_chat_name" name="new_chat_name" placeholder='{{ t["chat_name_ph"] }}' required>
+                <label for="message">{{ t["message"] }}:</label>
+                <textarea id="message" name="message" placeholder='{{ t["message_ph"] }}' required></textarea>
 
-            <label for="message">{{ t["message"] }}:</label>
-            <textarea id="message" name="message" placeholder='{{ t["message_ph"] }}' required></textarea>
-
-            <button type="submit" name="start_chat">{{ t["start_chat"] }}</button>
-        </form>
+                <button type="submit" name="start_chat">{{ t["start_chat"] }}</button>
+            </form>
+          </div>
+        </div>
 
         {% else %}
         <h1 class="title">{{ chat_name }}</h1>
