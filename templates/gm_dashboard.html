@@ -5,117 +5,146 @@
     <title>GM Dashboard - Qail Collective</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
-    @font-face {
-      font-family: 'Englibesh';
-      src: url("{{ url_for('static', filename='fonts/Englibesh.ttf') }}") format("truetype");
+    .tab-container {
+      margin-top: 20px;
+    }
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .tab-buttons button {
+      background: #112244;
+      color: #e0f7ff;
+      border: 1px solid #33ccff;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .tab-buttons button.active {
+      background: #224466;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      margin-top: 15px;
+    }
+    .tab-content.active {
+      display: block;
     }
   </style>
 </head>
 <body class="starwars-bg">
 
-    <div class="topbar">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
-        <span class="welcome">Game Master Dashboard</span>
-        <a id="logout" href="{{ url_for('logout') }}">Logout</a>
-    </div>
+<div class="topbar">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
+    <span class="welcome">{{ user }}</span>
+    <a href="{{ url_for('gm_dashboard') }}">GM Dashboard</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
 
-    <div class="content">
-        <h1>GM Dashboard</h1>
+<div class="content">
+    <h1>GM Dashboard</h1>
 
-        {% for chat_name, chat in chats.items() %}
-        <div class="chat-box">
-            <h2>{{ chat_name }}</h2>
-            <div class="messages">
-                {% for m in chat["messages"] %}
-                <p><strong>{{ m["from"] }}:</strong> {{ m["content"] }}</p>
-                {% endfor %}
-            </div>
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="news-tab">News</button>
+            <button class="tab-btn" data-tab="messages-tab">Messages</button>
+        </div>
 
-            <!-- Reply as GM (with alias) -->
-            <form method="POST" action="{{ url_for('gm_dashboard') }}">
-                <input type="hidden" name="chat_name" value="{{ chat_name }}">
+        <!-- News Tab -->
+        <div id="news-tab" class="tab-content active">
+            <h2>Publish News</h2>
+            <form method="POST" action="{{ url_for('post_news') }}">
+                <input type="hidden" name="source" value="gm_dashboard">
+                <label for="author">Send as:</label>
+                <input type="text" id="author" name="author" placeholder="e.g. Central Command" required>
 
-                <label for="from_name">Send as:</label>
-                <input type="text" name="from_name" placeholder="e.g. NPC: Logistics" required>
+                <label for="news_content">News Content:</label>
+                <textarea id="news_content" name="news_content" placeholder="Enter news update..." required></textarea>
 
-                <label for="message">Message:</label>
-                <input type="text" name="message" placeholder="Type your reply..." required>
-
-                <button type="submit">Send</button>
+                <button type="submit">Publish</button>
             </form>
         </div>
-        {% endfor %}
 
-        <h2>Start a New Chat</h2>
-        <form method="POST" action="{{ url_for('gm_dashboard') }}">
-            <label for="recipient">Recipient:</label>
-            <input type="text" name="recipient" id="recipient" required>
+        <!-- Messages Tab -->
+        <div id="messages-tab" class="tab-content">
+            {% for chat_name, chat in chats.items() %}
+            <div class="chat-box">
+                <h2>{{ chat_name }}</h2>
+                <div class="messages">
+                    {% for m in chat["messages"] %}
+                    <p><strong>{{ m["from"] }}:</strong> {{ m["content"] }}</p>
+                    {% endfor %}
+                </div>
 
-            <label for="new_chat_name">Chat Name:</label>
-            <input type="text" name="new_chat_name" id="new_chat_name" required>
+                <form method="POST" action="{{ url_for('gm_dashboard') }}">
+                    <input type="hidden" name="chat_name" value="{{ chat_name }}">
 
-            <label for="from_name">Send as:</label>
-            <input type="text" name="from_name" placeholder="e.g. Central Command" required>
+                    <label for="from_name">Send as:</label>
+                    <input type="text" name="from_name" placeholder="e.g. NPC: Logistics" required>
 
-            <label for="message">Message:</label>
-            <input type="text" name="message" id="message" required>
+                    <label for="message">Message:</label>
+                    <input type="text" name="message" placeholder="Type your reply..." required>
 
-            <button type="submit">Start Chat</button>
-        </form>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            {% endfor %}
+
+            <h2>Start a New Chat</h2>
+            <form method="POST" action="{{ url_for('gm_dashboard') }}">
+                <label for="recipient">Recipient:</label>
+                <input type="text" name="recipient" id="recipient" required>
+
+                <label for="new_chat_name">Chat Name:</label>
+                <input type="text" name="new_chat_name" id="new_chat_name" required>
+
+                <label for="from_name">Send as:</label>
+                <input type="text" name="from_name" placeholder="e.g. Central Command" required>
+
+                <label for="message">Message:</label>
+                <input type="text" name="message" id="message" required>
+
+                <button type="submit">Start Chat</button>
+            </form>
+        </div>
     </div>
+</div>
 
-    <style>
-        .chat-box {
-          margin-bottom: 20px;
-          padding: 15px;
-          border: 1px solid #33ccff;
-          border-radius: 6px;
-          background: rgba(10, 20, 40, 0.85);
-          box-shadow: 0 0 12px #33ccff;
-        }
+<script>
+  // Simple tab switcher
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach(tc => tc.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+  });
 
-        .chat-box h2 {
-          margin-bottom: 10px;
-          color: #66e0ff;
-          text-shadow: 0 0 6px #33ccff;
-        }
+    function activateTab(tabId) {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(tc => tc.classList.remove("active"));
+    document.querySelector(`[data-tab="${tabId}"]`).classList.add("active");
+    document.getElementById(tabId).classList.add("active");
+  }
 
-        .messages {
-          margin-bottom: 10px;
-          padding: 10px;
-          background: #0b1e33;
-          border-radius: 4px;
-          max-height: 200px;
-          overflow-y: auto;
-          font-family: monospace;
-        }
+  // Default = news-tab unless overridden
+  const params = new URLSearchParams(window.location.search);
+  const tabParam = params.get("tab");
+  if (tabParam) {
+    activateTab(tabParam);
+  } else {
+    activateTab("news-tab");
+  }
 
-        form {
-          margin-top: 5px;
-        }
+  // Attach handlers for manual switching
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activateTab(btn.dataset.tab);
+    });
+  });
+</script>
 
-        input[type="text"] {
-          width: 70%;
-          padding: 6px;
-          background: #0b1e33;
-          color: #e0f7ff;
-          border: 1px solid #33ccff;
-          border-radius: 4px;
-        }
-
-        button {
-          background-color: #112244;
-          color: #e0f7ff;
-          border: 1px solid #33ccff;
-          padding: 6px 12px;
-          cursor: pointer;
-          border-radius: 4px;
-        }
-
-        button:hover {
-          background-color: #224466;
-        }
-        </style>
-
-    </body>
+</body>
 </html>
