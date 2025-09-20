@@ -158,9 +158,15 @@ def post_news():
     else:
         author = user
 
+    title = request.form.get("title")
+
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+
     new_entry = {
         "author": author,
-        "content": content
+        "title": title,
+        "content": content,
+        "timestamp": timestamp
     }
 
     all_news["news"].insert(0, new_entry)

@@ -2,35 +2,57 @@
   "news": [
     {
       "author": "qail central",
-      "content": "neue testnachricht aus der zentrale"
-    },
-    {
-      "author": "Testnachricht von GM",
-      "content": "Dies ist eine Testnachricht"
+      "title": null,
+      "content": "alwidja\u00f6olwifzo\u00f6q28/\u00a7$)Q(\"HWDKLAJSBDKAW",
+      "timestamp": "2025-09-20 15:35"
     },
     {
       "author": "qail central",
-      "content": "awdawfawga"
+      "title": "Testtitle",
+      "content": "neue testnachricht aus der zentrale",
+      "timestamp": "2025-09-17 22:52"
+    },
+    {
+      "author": "Testnachricht von GM",
+      "title": "",
+      "content": "Dies ist eine Testnachricht",
+      "timestamp": "2025-09-17 22:52"
+    },
+    {
+      "author": "qail central",
+      "title": "",
+      "content": "awdawfawga",
+      "timestamp": "2025-09-17 22:52"
     },
     {
       "author": "R. Kesyk",
-      "content": "Wusstet ihr schon, dass SCafcar einen Blog hat?!"
+      "title": "",
+      "content": "Wusstet ihr schon, dass SCafcar einen Blog hat?!",
+      "timestamp": "2025-09-17 22:52"
     },
     {
       "author": "V. Kulata",
-      "content": "dies ist eine neue Testnews"
+      "title": "",
+      "content": "dies ist eine neue Testnews",
+      "timestamp": "2025-09-17 22:52"
     },
     {
       "author": "GM",
-      "content": "System maintenance at 1800 hours."
+      "title": "",
+      "content": "System maintenance at 1800 hours.",
+      "timestamp": "2025-09-17 22:52"
     },
     {
       "author": "A. Ceeda",
-      "content": "Engine 2 has been repaired."
+      "title": "",
+      "content": "Engine 2 has been repaired.",
+      "timestamp": "2025-09-17 22:52"
     },
     {
       "author": "NPC: Logistics",
-      "content": "Supplies will arrive tomorrow."
+      "title": "",
+      "content": "Supplies will arrive tomorrow.",
+      "timestamp": "2025-09-17 22:52"
     }
   ]
 }

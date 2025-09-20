@@ -56,8 +56,12 @@
             <h2>Publish News</h2>
             <form method="POST" action="{{ url_for('post_news') }}">
                 <input type="hidden" name="source" value="gm_dashboard">
+
                 <label for="author">Send as:</label>
                 <input type="text" id="author" name="author" placeholder="e.g. Central Command" required>
+
+                <label for="news_title">Send as:</label>
+                <input type="text" name="title" placeholder="News title" required>
 
                 <label for="news_content">News Content:</label>
                 <textarea id="news_content" name="news_content" placeholder="Enter news update..." required></textarea>

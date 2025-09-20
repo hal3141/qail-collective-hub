@@ -24,6 +24,7 @@
   "select_employee": "Select an employee",
   "news": "Qail Collective News",
   "no_news": "No news at the moment.",
+  "news_title": "Title",
   "your_conversations": "Your Conversations",
   "no_conversations": "No conversations yet.",
   "no_messages": "No messages yet in this conversation.",

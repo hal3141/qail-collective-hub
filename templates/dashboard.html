@@ -18,10 +18,11 @@
         <h1 class="title">{{ t["news"] }}</h1>
 
         <div class="news-feed">
-            {% for item in news|reverse %}
+            {% for item in news.news|reverse %}
             <div class="news-item scifi-container">
               <div class="news-item-header scifi-container-header">
                 <h2>{{ item.title }}</h2>
+                  <h3>{{ item.author }}</h3>
                 <p class="timestamp">{{ item.timestamp }}</p>
               </div>
               <div class="news-item-content scifi-container-content">
@@ -30,9 +31,6 @@
 
             </div>
             {% endfor %}
-            {% else %}
-            <p>{{ t["no_news"] }}</p>
-            {% endif %}
         </div>
 
         <h2 class="subtitle">{{ t["publish_news"] }}</h2>
@@ -41,6 +39,9 @@
             <label for="author">{{ t["author"] }}</label>
             <input type="text" id="author" name="author" placeholder="e.g. Central Command">
             {% endif %}
+
+            <label for="title">{{ t["news_title"] }}:</label>
+            <input type="text" name="title" placeholder="News title" required>
 
             <label for="news_content">{{ t["message"] }}</label>
             <textarea id="news_content" name="news_content" placeholder="{{ t['message_ph'] }}" required></textarea>
