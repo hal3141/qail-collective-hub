@@ -205,12 +205,19 @@ def messages():
 
         # Case 1: new chat
         if recipient and not chat_name:
-            chat_name = f"Chat: {request.form.get('new_chat_name') or recipient}"
+            new_id = 0
+            for chat in all_chats:
+                if chat.id >= new_id:
+                    new_id = chat.id + 1
+
+            chat_name = f"Chat: {request.form.get('new_chat_name') or recipient} "
+            chat_title = f"Chat: {request.form.get('new_chat_name') or recipient} "
             participants = [user, recipient]
             if "NPC" in recipient or recipient == GM_USER:
                 if GM_USER not in participants:
                     participants.append(GM_USER)
             all_chats[chat_name] = {
+                "id": new_id,
                 "participants": participants,
                 "messages": [new_message]
             }
@@ -282,9 +289,14 @@ def gm_dashboard():
 
         # --- New Chat ---
         if recipient and not chat_name:
+            new_id = 0
+            for chat in all_chats:
+                if chat.id >= new_id:
+                    new_id = chat.id + 1
             chat_name = f"Chat: {request.form.get('new_chat_name') or recipient}"
             participants = [recipient, GM_USER]
             all_chats[chat_name] = {
+                "id": new_id,
                 "participants": participants,
                 "messages": [new_message]
             }

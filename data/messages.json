@@ -1,8 +1,10 @@
 {
   "Chat: Engine Repairs": {
+    "id": 0,
     "participants": [
       "A. Ceeda",
-      "F.M. Latatga"
+      "F.M. Latatga",
+      "Fleet Command"
     ],
     "messages": [
       {
@@ -14,100 +16,21 @@
         "from": "F.M. Latatga",
         "content": "Copy that, I\u2019ll handle it.",
         "read": true
-      },
-      {
-        "from": "Qail",
-        "content": "Testnachricht von GM",
-        "read": true
-      },
-      {
-        "from": "auch qail",
-        "content": "nochmal ein test",
-        "read": true
       }
     ]
   },
-  "Chat: Outer Ring Patrol": {
-    "participants": [
-      "S. Nito",
-      "R. Latatga",
-      "GM"
-    ],
-    "messages": [
-      {
-        "from": "S. Nito",
-        "content": "Patrols in section C are thin.",
-        "read": false
-      },
-      {
-        "from": "GM",
-        "content": "Reinforcements en route.",
-        "read": false
-      }
-    ]
-  },
-  "Chat: Supplies Request": {
-    "participants": [
-      "G. Kitaff",
-      "NPC: Logistics",
-      "GM"
-    ],
-    "messages": [
-      {
-        "from": "G. Kitaff",
-        "content": "Requesting more supplies.",
-        "read": false
-      },
-      {
-        "from": "GM",
-        "content": "Supplies will arrive tomorrow.",
-        "read": false
-      }
-    ]
-  },
-  "Chat: awd": {
-    "participants": [
-      "V. Kulata",
-      "R. Kesyk"
-    ],
-    "messages": [
-      {
-        "from": "V. Kulata",
-        "content": "awdawf",
-        "read": true
-      },
-      {
-        "from": "test",
-        "content": "awdafaw",
-        "read": true
-      },
-      {
-        "from": "V. Kulata",
-        "content": "awdfawdawf",
-        "read": true
-      },
-      {
-        "from": "R. Kesyk",
-        "content": "glawidgananananananananananaaaa",
-        "read": true
-      },
-      {
-        "from": "Qail",
-        "content": "Ruhe hier",
-        "read": true
-      }
-    ]
-  },
-  "Chat: message test": {
+  "Chat: aaa": {
+    "id": 1,
     "participants": [
       "R. Kesyk",
-      "GM"
+      "A. Ceeda",
+      "Fleet Command"
     ],
     "messages": [
       {
-        "from": "central command",
-        "content": "awdiawflaijwda",
-        "read": true
+        "from": "R. Kesyk",
+        "content": "aaaaa",
+        "read": false
       }
     ]
   }

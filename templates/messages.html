@@ -26,6 +26,11 @@
             <li>
                 <a href="{{ url_for('messages', chat=name) }}">
                     {{ name }}{% if unread > 0 %} <span class="unread">{{ t["new"] }}</span>{% endif %}
+                    {% for p in chat["participants"] %}
+                        {%if p != user %}
+                            {{p}} |
+                        {% endif %}
+                    {% endfor %}
                 </a>
             </li>
             {% endfor %}
