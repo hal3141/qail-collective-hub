@@ -85,6 +85,47 @@
         "from": "Qail",
         "content": "Ruhe hier",
         "read": true
+      },
+      {
+        "from": "V. Kulata",
+        "content": "aaaaaaaa ja mami",
+        "read": true
+      },
+      {
+        "from": "V. Kulata",
+        "content": "22222",
+        "read": true
+      }
+    ]
+  },
+  "Chat: ruu": {
+    "participants": [
+      "R. Kesyk",
+      "Ruu Qail"
+    ],
+    "messages": [
+      {
+        "from": "R. Kesyk",
+        "content": "456123",
+        "read": false
+      },
+      {
+        "from": "Ruu Qail",
+        "content": "alalalala",
+        "read": true
+      }
+    ]
+  },
+  "Chat: new chat": {
+    "participants": [
+      "V. Kulata",
+      "Ruu Qail"
+    ],
+    "messages": [
+      {
+        "from": "V. Kulata",
+        "content": "test",
+        "read": false
       }
     ]
   }

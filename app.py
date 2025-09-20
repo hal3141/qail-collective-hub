@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from filelock import FileLock
 import json
 import os
 from datetime import datetime
@@ -40,17 +41,27 @@ NEWS_FILE = "data/news.json"
 MESSAGES_FILE = "data/messages.json"
 FILES_FILE = "data/files.json"
 
+# Timeout can be adjusted if you expect very heavy load
+LOCK_TIMEOUT = 5
 
 def load_json(filename):
-    if not os.path.exists(filename):
-        return {} if filename.endswith(".json") else []
-    with open(filename, "r", encoding="utf-8") as f:
-        return json.load(f)
-
+    """Safely load JSON with a file lock."""
+    lock = FileLock(f"{filename}.lock", timeout=LOCK_TIMEOUT)
+    with lock:
+        try:
+            with open(filename, "r") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return {}
+        except json.JSONDecodeError:
+            return {}
 
 def save_json(filename, data):
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+    """Safely save JSON with a file lock."""
+    lock = FileLock(f"{filename}.lock", timeout=LOCK_TIMEOUT)
+    with lock:
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=2)
 
 
 # --- Translation ---
