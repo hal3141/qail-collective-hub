@@ -295,19 +295,27 @@ button:hover {
 
 .news-item-header .timestamp {
   margin-left: auto;
-  display: flex;
-  align-items: center;
   margin-bottom: 1em;
+  text-align: right;
 }
 
 
 .news-item-content p {
   margin: 0;
+  white-space: pre-wrap;
+}
+
+.news-item-author {
+  color: #33ccff;
 }
 
 .timestamp {
+  color: #a3e7ff;
   font-size: 0.8em;
-  color: #66e0ff;
+}
+
+.timestamp span {
+  display: block;
 }
 
 /* Chat list */
@@ -375,6 +383,7 @@ button:hover {
 .chat-bubble-content p {
   margin: 0;
   padding: 1em;
+  white-space: pre-wrap;
 }
 
 .chat-bubble-header {
@@ -437,6 +446,7 @@ form {
 .file-table {
   width: 100%;
   border-collapse: collapse;
+  white-space: pre-wrap;
 }
 
 .file-table td {
