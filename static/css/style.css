@@ -53,7 +53,7 @@ h1.title, h2.subtitle {
 
 hr {
   border: 0;
-  border-bottom: 2px dashed #001d36;
+  border-bottom: 2px dashed #224466;
   margin: 1em 0;
 }
 
@@ -248,7 +248,7 @@ button:hover {
 
 
 .scifi-container {
-
+  margin-bottom: 1em;
 }
 
 .scifi-container-header {
@@ -284,7 +284,8 @@ button:hover {
 .news-feed {
   padding: 0;
 }
-.news-item, .message-item {
+
+.message-item {
   margin-bottom: 15px;
   padding-bottom: 10px;
 }
@@ -358,6 +359,7 @@ button:hover {
   font-weight: bold;
   text-shadow: 0 0 5px #66e0ff;
 }
+
 .chat-list a:hover {
   color: #99f2ff;
 }
@@ -401,6 +403,10 @@ button:hover {
   height: 26px;
   background: no-repeat center / contain;
   background-image: url("/static/chatbubble_bottom.png");
+}
+
+.chat-sender {
+  color: #fff;
 }
 
 /* Unread indicator */
@@ -470,3 +476,22 @@ form {
 .file-value {
   color: #e0f7ff;
 }
+
+
+.listbox {
+  position: absolute;
+  z-index: 10;
+  width: 50%;
+  margin-top: .25rem;
+  padding: .25rem 0;
+  border: 1px solid #bbb;
+  background: rgba(0,0,0,.95);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+
+  /* NEU: scrollen erlauben */
+  max-height: 200px;   /* oder was dir gefällt */
+  overflow-y: auto;
+}
+.option { padding: .5rem .75rem; cursor: pointer; }
+.option[aria-selected="true"], .option:hover { background: #0b1e33; }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }

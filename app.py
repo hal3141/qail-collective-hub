@@ -251,6 +251,7 @@ def messages():
         "messages.html",
         user=user,
         chats=visible_chats,
+        characters = characters,
         chat_name=selected_chat,
         unread_count=unread_count,
         t=load_translation(session["lang"])
@@ -313,7 +314,7 @@ def files(filetype):
 
     messages = load_json(MESSAGES_FILE)
     user_chats = messages.get(user, {})
-    
+
     # Player only sees their chats
     # Count unread chats
     all_chats = load_json(MESSAGES_FILE)

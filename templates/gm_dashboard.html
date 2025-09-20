@@ -39,7 +39,7 @@
     <img src="{{ url_for('static', filename='logo.png') }}" alt="Qail Collective" class="logo-small">
     <span class="welcome">{{ user }}</span>
     <a href="{{ url_for('gm_dashboard') }}">GM Dashboard</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
+    <a id="logout" ref="{{ url_for('logout') }}">Logout</a>
 </div>
 
 <div class="content">
@@ -72,31 +72,12 @@
 
         <!-- Messages Tab -->
         <div id="messages-tab" class="tab-content">
-            {% for chat_name, chat in chats.items() %}
-            <div class="chat-box">
-                <h2>{{ chat_name }}</h2>
-                <div class="messages">
-                    {% for m in chat["messages"] %}
-                    <p><strong>{{ m["from"] }}:</strong> {{ m["content"] }}</p>
-                    {% endfor %}
-                </div>
-
-                <form method="POST" action="{{ url_for('gm_dashboard') }}">
-                    <input type="hidden" name="chat_name" value="{{ chat_name }}">
-
-                    <label for="from_name">Send as:</label>
-                    <input type="text" name="from_name" placeholder="e.g. NPC: Logistics" required>
-
-                    <label for="message">Message:</label>
-                    <input type="text" name="message" placeholder="Type your reply..." required>
-
-                    <button type="submit">Send</button>
-                </form>
+          <div class="scifi-container chat-box">
+            <div class="scifi-container-header">
+              <h2>Start a New Chat</h2>
             </div>
-            {% endfor %}
-
-            <h2>Start a New Chat</h2>
-            <form method="POST" action="{{ url_for('gm_dashboard') }}">
+            <div class="scifi-container-content">
+              <form method="POST" action="{{ url_for('gm_dashboard') }}">
                 <label for="recipient">Recipient:</label>
                 <input type="text" name="recipient" id="recipient" required>
 
@@ -110,7 +91,37 @@
                 <input type="text" name="message" id="message" required>
 
                 <button type="submit">Start Chat</button>
-            </form>
+              </form>
+            </div>
+          </div>
+
+          
+            {% for chat_name, chat in chats.items() %}
+
+            <div class="scifi-container chat-box">
+              <div class="scifi-container-header">
+                  <h2>{{ chat_name }}</h2>
+                </div>
+                  <div class="messages scifi-container-content">
+                      {% for m in chat["messages"] %}
+                      <p><strong class="chat-sender">{{ m["from"] }}:</strong> {{ m["content"] }}</p>
+                      {% endfor %}
+                <hr>
+                <form method="POST" action="{{ url_for('gm_dashboard') }}">
+                    <input type="hidden" name="chat_name" value="{{ chat_name }}">
+
+                    <label for="from_name">Send as:</label>
+                    <input type="text" name="from_name" placeholder="e.g. NPC: Logistics" required>
+
+                    <label for="message">Message:</label>
+                    <input type="text" name="message" placeholder="Type your reply..." required>
+
+                    <button type="submit">Send</button>
+                </form>
+              </div>
+            </div>
+            {% endfor %}
+
         </div>
     </div>
 </div>

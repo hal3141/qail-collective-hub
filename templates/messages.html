@@ -40,7 +40,13 @@
           <div class="scifi-container-content">
             <form method="POST" id="startConvoForm" action="{{ url_for('messages') }}">
                 <label for="recipient">{{ t["recipient"] }}:</label>
-                <input type="text" id="recipient" name="recipient" placeholder='{{ t["recipient_ph"] }}' required>
+
+                <div class="field" style="position:relative">
+                  <input id="recipient" type="text" autocomplete="off" role="combobox" name="recipient" placeholder='{{ t["recipient_ph"] }}' required
+                         aria-autocomplete="list" aria-expanded="false" aria-controls="character-list" aria-activedescendant="">
+                  <div id="character-list" role="listbox" class="listbox" hidden></div>
+                  <div id="status" class="sr-only" role="status" aria-live="polite"></div>
+                </div>
 
                 <label for="new_chat_name">{{ t["chat_name"] }}:</label>
                 <input type="text" id="new_chat_name" name="new_chat_name" placeholder='{{ t["chat_name_ph"] }}' required>
@@ -51,6 +57,9 @@
                 <button type="submit" name="start_chat">{{ t["send"] }}</button>
             </form>
           </div>
+
+
+
         </div>
 
         {% else %}
@@ -95,6 +104,98 @@
           });
         });
       });
+    </script>
+    <script>
+      /** autocomplete for recipient input **/
+      (() => {
+        const CHARACTERS = Object.keys({{ characters|tojson }});
+        console.dir(CHARACTERS);
+
+        const input  = document.getElementById('recipient');
+        const list   = document.getElementById('character-list');
+        const status = document.getElementById('status');
+
+        let items = [];         // aktuelle Treffer
+        let activeIndex = -1;   // für Tastatur-Navigation
+
+        const debounce = (fn, ms=120) => { let t; return (...a)=>{clearTimeout(t); t=setTimeout(()=>fn(...a), ms);} };
+
+        function render(options){
+          list.innerHTML = "";
+          options.forEach((opt, i) => {
+            const div = document.createElement('div');
+            div.id = `opt-${i}`;
+            div.role = "option";
+            div.className = "option";
+            div.textContent = opt;
+            div.setAttribute("aria-selected", String(i===activeIndex));
+            div.addEventListener('mousedown', (e) => { // mousedown, damit blur nicht vorher feuert
+              e.preventDefault();
+              choose(i);
+            });
+            list.appendChild(div);
+          });
+          const open = options.length > 0;
+          list.hidden = !open;
+          input.setAttribute("aria-expanded", String(open));
+          status.textContent = open ? `${options.length} Vorschläge` : "Keine Vorschläge";
+          input.setAttribute("aria-activedescendant", activeIndex>=0 ? `opt-${activeIndex}` : "");
+        }
+
+        function choose(i){
+          if (i < 0 || i >= items.length) return;
+          input.value = items[i];
+          closeList();
+        }
+
+        function closeList(){
+          items = [];
+          activeIndex = -1;
+          render(items);
+        }
+
+        const update = debounce(() => {
+          const q = input.value.trim().toLowerCase();
+          if (!q) { closeList(); return; }
+          items = CHARACTERS.filter(x => x.toLowerCase().includes(q)).slice(0, 8);
+          activeIndex = items.length ? 0 : -1;
+          render(items);
+        }, 120);
+
+        input.addEventListener('input', update);
+
+        input.addEventListener('keydown', (e) => {
+          if (e.key === "ArrowDown" && list.hidden) {
+            items = CHARACTERS.slice(0, 20);
+            activeIndex = 0;
+            render(items);
+            e.preventDefault();
+          }
+          if (list.hidden && (e.key === "ArrowDown" || e.key === "Enter")) { update(); return; }
+          if (e.key === "ArrowDown") {
+            if (items.length) { activeIndex = (activeIndex + 1) % items.length; render(items); }
+            e.preventDefault();
+          } else if (e.key === "ArrowUp") {
+            if (items.length) { activeIndex = (activeIndex - 1 + items.length) % items.length; render(items); }
+            e.preventDefault();
+          } else if (e.key === "Enter") {
+            if (!list.hidden && activeIndex >= 0) { choose(activeIndex); e.preventDefault(); }
+          } else if (e.key === "Escape") {
+            closeList();
+            input.select();
+          }
+        });
+
+        input.addEventListener('mousedown', (e) => {
+            items = CHARACTERS.slice();
+            if (list.hidden) render(items);
+        });
+
+
+        input.addEventListener('blur', () => setTimeout(closeList, 100)); // kurz warten für Maus-Klick
+      })();
+
+
     </script>
 
 
