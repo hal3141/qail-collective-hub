@@ -104,8 +104,8 @@ def dashboard():
     user = session["user"]
     t = load_translation(session.get("lang", "en"))
 
-    messages = load_json(MESSAGES_FILE)
-    user_chats = messages.get(user, {})
+    #messages = load_json(MESSAGES_FILE)
+    #user_chats = messages["messages"].get(user, {})
 
     # Load news
     news = load_json(NEWS_FILE)
@@ -117,13 +117,16 @@ def dashboard():
 
     # Player only sees their chats
     # Count unread chats
-    all_chats = load_json(MESSAGES_FILE)
-    visible_chats = {
-    name: chat for name, chat in all_chats.items()
-    if user in chat.get("participants", [])
-    }
+    all_chats = load_json(MESSAGES_FILE)["messages"]
+
+    # Player only sees their chats
+    visible_chats = []
+    for chat in all_chats:
+        if user in chat["participants"]:
+            visible_chats.append(chat)
+
     unread_count = sum(
-        1 for chat in visible_chats.values()
+        1 for chat in visible_chats
         for m in chat["messages"]
         if isinstance(m, dict) and not m.get("read") and m.get("from") != user
     )
@@ -188,9 +191,13 @@ def messages():
     user = session["user"]
     all_chats = load_json(MESSAGES_FILE)
 
+    if "messages" not in all_chats:
+        all_chats["messages"] = []
+
     # --- Handle sending new messages ---
     if request.method == "POST":
         chat_name = request.form.get("chat_name")
+        chat_id = request.form.get("chat_id")
         recipient = request.form.get("recipient")
         message_text = request.form.get("message")
 
@@ -204,52 +211,57 @@ def messages():
         }
 
         # Case 1: new chat
-        if recipient and not chat_name:
-            new_id = 0
-            for chat in all_chats:
-                if chat.id >= new_id:
-                    new_id = chat.id + 1
+        if not chat_id:
+            chat_id = 1
+            for chat in all_chats["messages"]:
+                print(chat)
+                if int(chat["id"]) >= chat_id:
+                    chat_id = int(chat["id"]) + 1
 
-            chat_name = f"Chat: {request.form.get('new_chat_name') or recipient} "
-            chat_title = f"Chat: {request.form.get('new_chat_name') or recipient} "
+            chat_name = f"{request.form.get('new_chat_name') or recipient} "
             participants = [user, recipient]
             if "NPC" in recipient or recipient == GM_USER:
                 if GM_USER not in participants:
                     participants.append(GM_USER)
-            all_chats[chat_name] = {
-                "id": new_id,
+            all_chats["messages"].append({
+                "id": chat_id,
+                "chat_name": chat_name,
                 "participants": participants,
                 "messages": [new_message]
-            }
+            })
 
         # Case 2: reply to existing
-        elif chat_name in all_chats:
-            chat = all_chats[chat_name]
-            if user in chat["participants"]:
-                chat["messages"].append(new_message)
+        else:
+            for chat in all_chats["messages"]:
+                if int(chat_id) == int(chat["id"]):
+                    chat["messages"].append(new_message)
 
         save_json(MESSAGES_FILE, all_chats)
-        return redirect(url_for("messages", chat=chat_name))
+        return redirect(url_for("messages", chat=chat_id))
 
     # --- Handle viewing chats ---
-    selected_chat = request.args.get("chat")
+    selected_chat = ""
+    if request.args.get("chat"):
+        selected_chat = request.args.get("chat")
+        selected_chat = int(selected_chat)
 
     # Player only sees their chats
-    visible_chats = {
-        name: chat for name, chat in all_chats.items()
-        if user in chat.get("participants", [])
-    }
+    visible_chats = []
+    for chat in all_chats["messages"]:
+        if user in chat["participants"]:
+            visible_chats.append(chat)
 
     # Mark messages as read
-    if selected_chat and selected_chat in visible_chats:
-        for m in visible_chats[selected_chat]["messages"]:
-            if isinstance(m, dict) and m.get("from") != user:
-                m["read"] = True
-        save_json(MESSAGES_FILE, all_chats)
+    for chat in visible_chats:
+        if selected_chat == chat["id"]:
+            for m in chat["messages"]:
+                if isinstance(m, dict) and m.get("from") != user:
+                    m["read"] = True
+            save_json(MESSAGES_FILE, all_chats)
 
     # Count unread
     unread_count = sum(
-        1 for chat in visible_chats.values()
+        1 for chat in visible_chats
         for m in chat["messages"]
         if isinstance(m, dict) and not m.get("read") and m.get("from") != user
     )
@@ -259,7 +271,8 @@ def messages():
         user=user,
         chats=visible_chats,
         characters = characters,
-        chat_name=selected_chat,
+        #chat_name=selected_chat,
+        chat_id=selected_chat,
         unread_count=unread_count,
         t=load_translation(session["lang"])
     )
@@ -274,6 +287,7 @@ def gm_dashboard():
 
     if request.method == "POST":
         chat_name = request.form.get("chat_name")
+        chat_id = request.form.get("chat_id")
         recipient = request.form.get("recipient")
         message_text = request.form.get("message")
         from_name = request.form.get("from_name", GM_USER)
@@ -288,23 +302,26 @@ def gm_dashboard():
         }
 
         # --- New Chat ---
-        if recipient and not chat_name:
-            new_id = 0
-            for chat in all_chats:
-                if chat.id >= new_id:
-                    new_id = chat.id + 1
+        if not chat_id:
+            chat_id = 1
+            for chat in all_chats["messages"]:
+                print(chat)
+                if int(chat["id"]) >= chat_id:
+                    chat_id = int(chat["id"]) + 1
             chat_name = f"Chat: {request.form.get('new_chat_name') or recipient}"
             participants = [recipient, GM_USER]
-            all_chats[chat_name] = {
-                "id": new_id,
+            all_chats["messages"].append({
+                "id": chat_id,
+                "chat_name": chat_name,
                 "participants": participants,
                 "messages": [new_message]
-            }
+            })
 
         # --- Reply to Existing Chat ---
-        elif chat_name in all_chats:
-            chat = all_chats[chat_name]
-            chat["messages"].append(new_message)
+        else:
+            for chat in all_chats["messages"]:
+                if int(chat_id) == int(chat["id"]):
+                    chat["messages"].append(new_message)
 
         save_json(MESSAGES_FILE, all_chats)
         return redirect(url_for("gm_dashboard", tab="messages-tab"))

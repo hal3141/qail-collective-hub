@@ -17,15 +17,15 @@
 
     <div class="content">
 
-        {% if not chat_name %}
+        {% if not chat_id %}
         <h1 class="title">{{ t["your_conversations"] }}</h1>
         {% if chats %}
         <ul class="chat-list">
-            {% for name, chat in chats.items() %}
+            {% for chat in chats %}
             {% set unread = chat["messages"] | selectattr("read", "equalto", false) | selectattr("from", "ne", user) | list | length %}
             <li>
-                <a href="{{ url_for('messages', chat=name) }}">
-                  <span>{{ name }}{% if unread > 0 %} <span class="unread">{{ t["new"] }}</span>{% endif %}</span>
+                <a href="{{ url_for('messages', chat=chat["id"]) }}">
+                  <span>{{ chat["chat_name"] }}{% if unread > 0 %} <span class="unread">{{ t["new"] }}</span>{% endif %}</span>
                   <span class="chat-participants">
                     {% for p in chat["participants"] %}
                       {%if p != user %}
@@ -58,6 +58,8 @@
                 <label for="new_chat_name">{{ t["chat_name"] }}:</label>
                 <input type="text" id="new_chat_name" name="new_chat_name" placeholder='{{ t["chat_name_ph"] }}' required>
 
+                <input type="hidden" id="new_chat_id" name="new_chat_id">
+
                 <label for="message">{{ t["message"] }}:</label>
                 <textarea id="message" name="message" placeholder='{{ t["message_ph"] }}' required></textarea>
 
@@ -70,28 +72,29 @@
         </div>
 
         {% else %}
-        <h1 class="title">{{ chat_name }}</h1>
 
-        {% if chats[chat_name]["messages"] %}
-        <div class="chat-thread">
-            {% for msg in chats[chat_name]["messages"] %}
-            <div class="chat-bubble">
-              <div class="chat-bubble-header">
-                <p class="chat-bubble-sender">{{ msg.from }}</p>
-              </div>
-              <div class="chat-bubble-content">
-                <p>{{ msg.content }}</p></div>
-              <div class="chat-bubble-footer"></div>
-            </div>
-            {% endfor %}
-        </div>
-        {% else %}
-        <p>{{ t["no_messages"] }}</p>
-        {% endif %}
+        {% for chat in chats %}
+            {% if chat["id"] == chat_id %}
+                <h1 class="title">{{ chat["chat_name"] }}</h1>
+                <div class="chat-thread">
+                    {% for msg in chat["messages"] %}
+                    <div class="chat-bubble">
+                      <div class="chat-bubble-header">
+                        <p class="chat-bubble-sender">{{ msg.from }}</p>
+                      </div>
+                      <div class="chat-bubble-content">
+                        <p>{{ msg.content }}</p></div>
+                      <div class="chat-bubble-footer"></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
 
         <h2 class="subtitle">{{ t["send_reply_title"] }}</h2>
         <form method="POST" id="replyForm" action="{{ url_for('messages') }}">
             <input type="hidden" name="chat_name" value="{{ chat_name }}">
+            <input type="hidden" name="chat_id" value="{{ chat_id }}">
             <textarea class="chat-message" name="message" placeholder='{{ t["reply_ph"] }}' required></textarea>
             <button type="submit" id="replyButton">{{ t["send"] }}</button>
         </form>

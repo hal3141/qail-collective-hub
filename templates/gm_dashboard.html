@@ -84,6 +84,8 @@
                 <label for="new_chat_name">Chat Name:</label>
                 <input type="text" name="new_chat_name" id="new_chat_name" required>
 
+                <input type="hidden" name="new_chat_id" id="new_chat_id" required>
+
                 <label for="from_name">Send as:</label>
                 <input type="text" name="from_name" placeholder="e.g. Central Command" required>
 
@@ -96,11 +98,11 @@
           </div>
 
 
-            {% for chat_name, chat in chats.items() %}
+            {% for chat in chats["messages"] %}
 
             <div class="scifi-container chat-box">
               <div class="scifi-container-header">
-                  <h2>{{ chat_name }}</h2>
+                  <h2>{{ chat["chat_name"] }}</h2>
                   <span class="chat-participants">
                   {% for p in chat["participants"] %}
                     <span class="chat-member">{{p}}</span>
@@ -113,7 +115,7 @@
                       {% endfor %}
                 <hr>
                 <form method="POST" action="{{ url_for('gm_dashboard') }}">
-                    <input type="hidden" name="chat_name" value="{{ chat_name }}">
+                    <input type="hidden" name="chat_id" value="{{ chat["id"] }}">
 
                     <label for="from_name">Send as:</label>
                     <input type="text" name="from_name" placeholder="e.g. NPC: Logistics" required>

@@ -1,35 +1,209 @@
 {
-  "Chat: Engine Repairs": {
-    "id": 0,
+  "messages": [
+    {
+      "id": 3,
+      "chat_name": "Chat: Engine Repairs",
+      "participants": [
+        "A. Ceeda",
+        "F.M. Latatga",
+        "Fleet Command"
+      ],
+      "messages": [
+        {
+          "from": "A. Ceeda",
+          "content": "We need to check engine 2.",
+          "read": false
+        },
+        {
+          "from": "F.M. Latatga",
+          "content": "Copy that, I\u2019ll handle it.",
+          "read": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "chat_name": "Chat: awd ",
+      "participants": [
+        "A. Ceeda",
+        "A. Ceeda"
+      ],
+      "messages": [
+        {
+          "from": "A. Ceeda",
+          "content": "awd",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "chat_name": "Chat: 123456 ",
+      "participants": [
+        "A. Ceeda",
+        "R. Kesyk",
+        "F.M. Latatga"
+      ],
+      "messages": [
+        {
+          "from": "A. Ceeda",
+          "content": "95667567",
+          "read": false
+        },
+        {
+          "from": "Krasser NPC",
+          "content": "Testnachricht von GM",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "chat_name": "message test ",
+      "participants": [
+        "A. Ceeda",
+        "D. Scafcar"
+      ],
+      "messages": [
+        {
+          "from": "A. Ceeda",
+          "content": "1234567879854",
+          "read": false
+        },
+        {
+          "from": "A. Ceeda",
+          "content": "122344555",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chat_name": "123 ",
+      "participants": [
+        "A. Ceeda",
+        "C. So'miss"
+      ],
+      "messages": [
+        {
+          "from": "A. Ceeda",
+          "content": "123",
+          "read": true
+        },
+        {
+          "from": "A. Ceeda",
+          "content": "telefonstreich!",
+          "read": true
+        },
+        {
+          "from": "C. So'miss",
+          "content": "HALLOOOOOO",
+          "read": true
+        },
+        {
+          "from": "Krasser NPC",
+          "content": "Testnachricht von GM",
+          "read": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "chat_name": "Chat: Streng geheim",
+      "participants": [
+        "T. Qail",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Krasser NPC",
+          "content": "awdafaw",
+          "read": false
+        },
+        {
+          "from": "Krasser NPC",
+          "content": "awdafaw",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "chat_name": "Chat: Streng geheim",
+      "participants": [
+        "A. Ceeda",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Qail",
+          "content": "Ruhe hier",
+          "read": false
+        },
+        {
+          "from": "Qail",
+          "content": "Ruhe hier",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "chat_name": "Chat: message test",
+      "participants": [
+        "R. Kesyk",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "test",
+          "content": "Testnachricht von GM",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "chat_name": "message test ",
+      "participants": [
+        "V. Kulata",
+        "random"
+      ],
+      "messages": [
+        {
+          "from": "V. Kulata",
+          "content": "kommt das bei GM an?",
+          "read": false
+        }
+      ]
+    }
+  ],
+  "Chat: None": {
+    "id": 6,
+    "chat_name": "Chat: None",
     "participants": [
-      "A. Ceeda",
-      "F.M. Latatga",
-      "Fleet Command"
+      null,
+      "GM"
     ],
     "messages": [
       {
-        "from": "A. Ceeda",
-        "content": "We need to check engine 2.",
+        "from": "Krasser NPC",
+        "content": "Testnachricht von GM",
         "read": false
-      },
-      {
-        "from": "F.M. Latatga",
-        "content": "Copy that, I\u2019ll handle it.",
-        "read": true
       }
     ]
   },
-  "Chat: aaa": {
-    "id": 1,
+  "Chat: Streng geheim": {
+    "id": 6,
+    "chat_name": "Chat: Streng geheim",
     "participants": [
       "R. Kesyk",
-      "A. Ceeda",
-      "Fleet Command"
+      "GM"
     ],
     "messages": [
       {
-        "from": "R. Kesyk",
-        "content": "aaaaa",
+        "from": "Krasser NPC",
+        "content": "awdiawflaijwda",
         "read": false
       }
     ]
