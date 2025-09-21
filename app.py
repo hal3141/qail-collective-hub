@@ -308,7 +308,7 @@ def gm_dashboard():
                 print(chat)
                 if int(chat["id"]) >= chat_id:
                     chat_id = int(chat["id"]) + 1
-            chat_name = f"Chat: {request.form.get('new_chat_name') or recipient}"
+            chat_name = f"{request.form.get('new_chat_name') or recipient}"
             participants = [recipient, GM_USER]
             all_chats["messages"].append({
                 "id": chat_id,
