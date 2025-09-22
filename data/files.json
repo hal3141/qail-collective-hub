@@ -13,6 +13,7 @@
       "status": "entlassen",
       "station": "Outpost 7",
       "shift": "1",
+	  "room": "Sacanium",
       "company cv": "Role Mechanic assigned 2 months ago"
     },
     "security": {
@@ -43,6 +44,7 @@
       "status": "active",
       "station": "Station Z-4",
       "shift": "2",
+	  "room": "Sacanium",
       "company cv": "Transferred to maintenance 5 months ago"
     },
     "security": {
@@ -73,6 +75,7 @@
       "status": "active",
       "station": "Checkpoint Alpha",
       "shift": "3",
+	  "room": "Vintrium",
       "company cv": "Promoted to security role 1 year ago"
     },
     "security": {
@@ -89,6 +92,37 @@
       "comments": "Fit for duty"
     }
   },
+  "R. Latatga": {
+    "personnel": {
+      "name": "R. Latatga",
+      "data first registered": 151,
+      "birth year": 126,
+      "birth planet": "Venus",
+      "citizen id": "00/3/01/126/54766",
+      "company role": "Technician",
+      "company education": "Advanced Mechanics",
+      "pay grade": "lower",
+      "political stance": "Neutral",
+      "status": "active",
+      "station": "Station Z-4",
+      "shift": "2",
+	  "room": "Rondium",
+      "company cv": "Transferred to maintenance 5 months ago"
+    },
+    "security": {
+      "security note": "Frequent late arrivals",
+      "incidents on record": "2 warnings"
+    },
+    "medical": {
+      "blood type": "A-",
+      "fitness level": "A",
+      "last fitness check": "1 month ago",
+      "allergies": "Dust",
+      "active medical diagnosis": "None",
+      "medication regime": "Vitamin supplements",
+      "comments": "/"
+    }
+  },
   "K. Cagla": {
     "personnel": {
       "name": "K. Cagla",
@@ -103,6 +137,7 @@
       "status": "freigestellt",
       "station": "Station Delta",
       "shift": "1",
+	  "room": "Sacanium",
       "company cv": "Assigned to reactor maintenance"
     },
     "security": {
@@ -133,6 +168,7 @@
       "status": "active",
       "station": "Cargo Bay 2",
       "shift": "2",
+	  "room": "Sacanium",
       "company cv": "Assigned to cargo inspections"
     },
     "security": {
@@ -163,6 +199,7 @@
       "status": "active",
       "station": "Maintenance Bay",
       "shift": "3",
+	  "room": "Keshel",
       "company cv": "Shift rotations in diagnostics"
     },
     "security": {
@@ -193,6 +230,7 @@
       "status": "active",
       "station": "Research Lab 4",
       "shift": "1",
+	  "room": "Essurtanium",
       "company cv": "Assigned to xenobiology"
     },
     "security": {
@@ -223,6 +261,7 @@
       "status": "active",
       "station": "Docking Bay 1",
       "shift": "2",
+	  "room": "Essurtanium",
       "company cv": "Currently in docking operations"
     },
     "security": {
@@ -253,6 +292,7 @@
       "status": "active",
       "station": "Power Core",
       "shift": "3",
+	  "room": "Essurtanium",
       "company cv": "Maintains station reactors"
     },
     "security": {
@@ -283,6 +323,7 @@
       "status": "active",
       "station": "Command Module",
       "shift": "1",
+	  "room": "Essurtanium",
       "company cv": "Promoted to team leadership"
     },
     "security": {
@@ -313,6 +354,7 @@
       "status": "active",
       "station": "Med Bay",
       "shift": "2",
+	  "room": "Lucryt",
       "company cv": "Station medic, 3 years service"
     },
     "security": {
@@ -343,6 +385,7 @@
       "status": "active",
       "station": "Medical Bay 2",
       "shift": "3",
+	  "room": "Lucryt",
       "company cv": "Medic assigned 1 year ago"
     },
     "security": {
@@ -373,6 +416,7 @@
       "status": "active",
       "station": "Command Center",
       "shift": "1",
+	  "room": "Keshel",
       "company cv": "Leadership role, 5 years service"
     },
     "security": {
@@ -403,6 +447,7 @@
       "status": "active",
       "station": "Central Hub",
       "shift": "2",
+	  "room": "Wroshit",
       "company cv": "Promoted to leadership"
     },
     "security": {
@@ -433,6 +478,7 @@
       "status": "active",
       "station": "Security HQ",
       "shift": "3",
+	  "room": "Rondium",
       "company cv": "Senior security, promoted to team lead"
     },
     "security": {
@@ -463,6 +509,7 @@
       "status": "active",
       "station": "Security Post Gamma",
       "shift": "1",
+	  "room": "Rondium",
       "company cv": "Security detail, 2 years"
     },
     "security": {
@@ -493,6 +540,7 @@
       "status": "active",
       "station": "Security Post Delta",
       "shift": "2",
+	  "room": "Rondium",
       "company cv": "Assigned to guard detail"
     },
     "security": {
@@ -523,6 +571,7 @@
       "status": "active",
       "station": "Docking Bay 3",
       "shift": "3",
+	  "room": "Teniline",
       "company cv": "Docking technician, 6 months"
     },
     "security": {
@@ -553,6 +602,7 @@
       "status": "active",
       "station": "Checkpoint Sigma",
       "shift": "1",
+	  "room": "Teniline",
       "company cv": "Assigned 1 year ago"
     },
     "security": {
@@ -583,6 +633,7 @@
       "status": "active",
       "station": "Reactor Wing",
       "shift": "2",
+	  "room": "Teniline",
       "company cv": "Engineer assigned to reactor team"
     },
     "security": {
@@ -613,6 +664,7 @@
       "status": "active",
       "station": "Repair Bay",
       "shift": "3",
+	  "room": "Sacanium",
       "company cv": "Entry-level technician"
     },
     "security": {
@@ -643,6 +695,7 @@
       "status": "active",
       "station": "Cargo Dock",
       "shift": "1",
+	  "room": "Durelium",
       "company cv": "Cargo management officer"
     },
     "security": {
@@ -673,6 +726,7 @@
       "status": "active",
       "station": "Dock 12",
       "shift": "2",
+	  "room": "Vintrium",
       "company cv": "Technician, joined 6 months ago"
     },
     "security": {

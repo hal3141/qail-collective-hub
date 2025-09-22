@@ -11,6 +11,7 @@ characters = {
     "A. Ceeda": "731",
     "F.M. Latatga": "248",
     "J. Latatga": "564",
+    "R. Latatga": "789",
     "K. Cagla": "119",
     "L. Cagla": "802",
     "G. Kitaff": "393",
@@ -346,13 +347,16 @@ def files(filetype):
 
     # Player only sees their chats
     # Count unread chats
-    all_chats = load_json(MESSAGES_FILE)
-    visible_chats = {
-    name: chat for name, chat in all_chats.items()
-    if user in chat.get("participants", [])
-    }
+    all_chats = load_json(MESSAGES_FILE)["messages"]
+
+    # Player only sees their chats
+    visible_chats = []
+    for chat in all_chats:
+        if user in chat["participants"]:
+            visible_chats.append(chat)
+
     unread_count = sum(
-        1 for chat in visible_chats.values()
+        1 for chat in visible_chats
         for m in chat["messages"]
         if isinstance(m, dict) and not m.get("read") and m.get("from") != user
     )
@@ -371,7 +375,7 @@ def files(filetype):
             allowed = {name: f["personnel"] for name, f in all_files.items() if name != "T. Qail"}
 
         # Security team: all security
-        elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
+        elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "R. Latatga", "S. Nito"]:
             allowed = {name: f["security"] for name, f in all_files.items() if name != "T. Qail"}
 
         # Medics: all medical
@@ -383,7 +387,7 @@ def files(filetype):
             allowed[user] = all_files[user]["personnel"]
 
         # Own security file
-        if filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"] and user != "T. Qail":
+        if filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "R. Latatga", "S. Nito"] and user != "T. Qail":
             allowed[user] = all_files[user]["security"]
 
         # Own medical file
@@ -407,7 +411,7 @@ def files(filetype):
                 save_json(FILES_FILE, all_files)
 
             # Security can edit security
-            elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]:
+            elif filetype == "security" and user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "R. Latatga", "S. Nito"]:
                 for key in all_files[selected_char]["security"]:
                     all_files[selected_char]["security"][key] = request.form.get(key, all_files[selected_char]["security"][key])
                 save_json(FILES_FILE, all_files)
@@ -435,6 +439,47 @@ def files(filetype):
         unread_count=unread_count,
         t=load_translation(session["lang"])
     )
+    
+@app.route("/roomplan")
+def roomplan():
+    if "user" not in session or session["user"] == GM_USER:
+        return redirect(url_for("login"))
+
+    user = session["user"]
+    all_files = load_json(FILES_FILE)
+    
+    # Player only sees their chats
+    # Count unread chats
+    all_chats = load_json(MESSAGES_FILE)["messages"]
+
+    # Player only sees their chats
+    visible_chats = []
+    for chat in all_chats:
+        if user in chat["participants"]:
+            visible_chats.append(chat)
+
+    unread_count = sum(
+        1 for chat in visible_chats
+        for m in chat["messages"]
+        if isinstance(m, dict) and not m.get("read") and m.get("from") != user
+    )
+
+    # Group characters by room
+    roomplan = {}
+    for name, data in all_files.items():
+        room = data["personnel"].get("room", "Unassigned")
+        if room not in roomplan:
+            roomplan[room] = []
+        roomplan[room].append(name)
+
+    return render_template(
+        "roomplan.html",
+        user=user,
+        t=load_translation(session["lang"]),
+        unread_count=unread_count,
+        roomplan=roomplan
+    )
+
 
 @app.route("/logout")
 def logout():
