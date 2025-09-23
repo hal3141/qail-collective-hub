@@ -1,22 +1,52 @@
-[
-  {
-    "title": "Corporate Expansion Announced",
-    "content": "The Qail Collective proudly announces the acquisition of multiple mining operations in the Outer Rim. Glory to the Collective!",
-    "timestamp": "2025-09-15 10:30"
-  },
-  {
-    "title": "Security Alert",
-    "content": "Unauthorized transmissions were detected near Station V-47. Report any suspicious activity immediately.",
-    "timestamp": "2025-09-16 22:14"
-  },
-  {
-    "title": "BREAKING NEWS",
-    "content": "Der Oli ist voll toll",
-    "timestamp": "2025-09-17 22:52"
-  },
-  {
-    "title": "super neue news",
-    "content": "so neue news gab es noch nie",
-    "timestamp": "2025-09-19 20:08"
-  }
-]
+{
+  "news": [
+    {
+      "author": "T. Qail",
+      "title": "MEMO DER LEITUNG: Grundsaetze der Raffinerie",
+      "content": "Wir arbeiten nach drei Leitlinien: Sicherheit zuerst. Leistung vor Herkunft. Respekt im Umgang.\r\nFragen, Sorgen, Hinweise: H. Lastal buendelt Termine und bringt Anliegen in die Leitungssitzung. Fuer Sicherheitsbedenken direkt an E.P. Rinsmitt wenden.\r\nDanke fuer euren Einsatz in einem herausfordernden Zyklus.",
+      "timestamp": "18:00 - 20-07-130 NVS"
+    },
+    {
+      "author": "C. So'miss",
+      "title": "Oeffnungszeiten, Wettkreis, Mediationskreise",
+      "content": "Cantina erweitert die Oeffnungszeiten an Feiertags-Zyklen.\r\nMediationskreise Apri \u2194 Sternsucher: wurde bisher aufgrund mangelnder Anmeldungen immer wieder vertagt und zunaechst pausiert. Vielleicht spaeter?\r\nErmahnung aus der Raffinerieleitung: alle Aktivitaeten des Wettkreises gelten als reine Freizeit und duerfen daher den Arbeitsablauf nicht beeinflussen. Treffen werden entsprechend angepasst. Jetzkreis wird jedoch fuer Anerkennung als Betriebssport in Erwaegung gezogen.",
+      "timestamp": "11:39 - 25-07-130 NVS"
+    },
+    {
+      "author": "H. Lastal",
+      "title": "MEMO DER LEITUNG: Versammlungen & Aushaenge",
+      "content": "Politische Kundgebungen auf dem Firmengel\u00e4nde sind nicht gestattet.\r\nAushaenge an Gemeinschaftstafeln: nur mit Stempel der Verwaltung.\r\nFuer Diskussionsrunden stehen moderierte Slots (Mediationskreis) in der Cantina  zur Verfuegung. Anmeldung bei H. Lastal, Sondergenehmigung f\u00fcr Apri f\u00fcr die Kurlott-Versammlung ueber A. Ceeda.",
+      "timestamp": "21:23 - 29-07-130 NVS"
+    },
+    {
+      "author": "E.P. Rinsmitt",
+      "title": "Externe Einfluesse & Schmuggel: Meldepflichten",
+      "content": "In den gro\u00dfen Staedten ist verstaerkte Aktivitaet krimineller Netzwerke insbesondere im Bereich Sabotage beobachtet worden. Erinnerung, dass auch Quash\u2019Tal seit einigen Monaten offiziell als kriminell eingestuft ist. Verstaerkte Kontrollen durch die Security auch fuer Qail angeordnet.\r\nPrivate Absprachen mit Externen sind meldepflichtig, wenn betriebliche Informationen betroffen sind.\r\nUngelistete Wetten, Substanzen, nicht genehmigte Warenbewegungen: untersagt auf dem Gelaende.\r\nBei Verdacht: anonym in den Wachbereich oder direkt an die Security. Zeugenschutz intern moeglich.",
+      "timestamp": "13:05 - 02-08-130 NVS"
+    },
+    {
+      "author": "Q. Dran",
+      "title": "Sicherheitsdrills & Gedenkmoment Minenunglueck (Jahrestag)",
+      "content": "In Erinnerung an die Verstorbenen findet ein stillen Gedenken im Speisesaal statt.\r\nPflichtteilnahme an Evakuierungs- und Erste-Hilfe-Drills in allen Schichten.\r\nBetriebshalt-Regel bekraeftigt: Jede:r darf Arbeit bei Gefahr sofort unterbrechen. Keine Nachteile.\r\nMeldewege f\u00fcr Beinahe-Unfaelle: Schichtleitung oder direkt an Medics.",
+      "timestamp": "19:11 - 11-08-130 NVS"
+    },
+    {
+      "author": "T. Qail",
+      "title": "MEMO DER LEITUNG: Personelle Veraenderung",
+      "content": "A. Ceeda uebernimmt die Schichtleitung fuer Schicht 2.\r\nRueckfragen und Feedback zur Uebergabe: bitte an H. Lastal oder direkt an A. Ceeda (Sprechzeiten abseits der Dienstzeiten).\r\nErinnerung: Respektvolle Zusammenarbeit ist verbindlich.",
+      "timestamp": "08:11 - 15-08-130 NVS"
+    },
+    {
+      "author": "T. Qail",
+      "title": "MEMO DER LEITUNG: Kommunikation",
+      "content": "Fuer den anstehenden Feiertag wurde eine imperiale Delegation in Noburn bestaetigt.\r\nDie Qail-Raffinerie bleibt im Normalbetrieb. Dienstreisen/Pressetermine nur nach Freigabe.\r\nPolitische Stellungnahmen in Dienstkleidung oder auf dem Firmengelaende sind untersagt.\r\nExterne Anfragen bitte ausschlie\u00dflich an Assistenz (Kontakt: H. Lastal).\r\nGrundsatz bei Kommunikation mit imperialem Personell: hoefliche Professionalitaet, sachliche Distanz.",
+      "timestamp": "10:11 - 18-09-130 NVS"
+    },
+    {
+      "author": "D. Scafcar",
+      "title": "Zwei Welten",
+      "content": "Qail Station, 130 NVS\r\nZuhause fuehlt sich die Luft anders an. Still, warm, ein bisschen staubig - aber vertraut. Keine Pieptoene, keine Warnlichter, kein Kantinengeruch nach synthetischer Bruehe. Kein Taktgeber ausser dem eigenen Koerper.\r\nDie Tage in der Raffinerie laufen anders. Strukturiert. Klar. Es gibt Ablaeufe, Plaene, Richtlinien. Man weiss, was man zu tun hat. Manchmal mehr, als offiziell irgendwo steht \u2013 aber das ergibt sich schon mit der Zeit. Wer laenger dort ist, kennt die Wege.\r\nIch sage das ohne Vorwurf. Es funktioniert. Meistens.\r\nWenn man dann nach Wochen wieder heimkehrt, ist es fast, als muesste man umschalten. Der eigene Name klingt fremd, wenn ihn jemand ohne Nachdruck ausspricht. Der eigene Rhythmus braucht ein, zwei Tage, bis er wieder in Gang kommt. Dann merkt man erst, wie viel man sich unterwegs angewoehnt hat.\r\nDas ist nicht unbedingt schlecht. Nur... anders.\r\nMeine Tante meinte neulich beim Abendessen, dass ich ruhiger geworden bin. Und vielleicht hat sie recht. Man lernt in der Raffinerie, die Dinge f\u00fcr sich zu behalten. Nicht aus Angst - einfach, weil es so praktischer ist. Weil viele sowieso wissen, was gemeint ist, auch ohne Worte.\r\nZuhause wird mehr gefragt. Mehr gelacht. Manchmal auch mehr gestritten. Alles ein bisschen ungeordneter. Aber auch echter.\r\nIch glaube, beides hat seinen Platz. Das Geordnete, das klare Funktionieren \u2013 und das Chaos, in dem Raum ist fuer Fragen, die nicht sofort eine Antwort brauchen.\r\nIch bin gern hier. Und ich gehe auch wieder gern zurueck. Vielleicht liegt genau darin die Schwierigkeit: zu wissen, dass beides sein darf. Und dass manches besser unausgesprochen bleibt - auch wenn es trotzdem gesagt werden will.",
+      "timestamp": "16:10 - 20-09-130 NVS"
+    }
+  ]
+}

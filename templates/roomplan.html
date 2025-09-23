@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ filetype|capitalize }} Files - Qail Collective</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="starwars-bg">
+  {% include "_header.html" %}
+
+<div class="content">
+  <h1 class="title">{{ t["roomplan"] }}</h1>
+  <table class="file-table">
+    <tr>
+      <th>{{ t["keys"].get("room") }}</th>
+      <th>{{ t["occupants"] }}</th>
+    </tr>
+    {% for room, occupants in roomplan.items() %}
+      <tr>
+        <td class="file-key">{{ room }}</td>
+        <td class="file-value">{{ occupants|join(", ") }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+<style>
+table.file-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.file-table th, .file-table td {
+  padding: 8px 12px;
+  border: 1px solid #224466;
+}
+
+.file-table th {
+  background: #112244;
+  color: #33ccff;
+  text-align: left;
+}
+
+.file-key {
+  font-weight: bold;
+  color: #33ccff;
+  text-shadow: 0 0 4px #33ccff;
+}
+
+.file-value {
+  color: #e0f7ff;
+}
+</style>
+
+</body>
+</html>

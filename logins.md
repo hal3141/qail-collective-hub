@@ -16,6 +16,7 @@
 | A. Ceeda         | 731         |
 | F.M. Latatga     | 248         |
 | J. Latatga       | 564         |
+| R. Latatga       | 789         |
 | K. Cagla         | 119         |
 | L. Cagla         | 802         |
 | G. Kitaff        | 393         |
