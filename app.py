@@ -32,7 +32,12 @@ characters = {
     "V. Kulata": "774",
     "S. Ceeda": "155",
     "C. So'miss": "506",
-    "P. Ceeda": "630"
+    "P. Ceeda": "630",
+    "S. Rakorr": "000",
+    "R. Shif": "111",
+    "S. Ancil": "222",
+    "G. Ormaanda": "333",
+    "S. Tuggs": "444"
 }
 
 GM_USER = "GM"
@@ -402,7 +407,7 @@ def files(filetype):
             allowed[user] = all_files[user]["security"]
 
         # Own medical file
-        if filetype == "medical" and user in ["Q. Dran", "D. Scafcar"] and user != "T. Qail":
+        if filetype == "medical" and user in all_files and user != "T. Qail":
             allowed[user] = all_files[user]["medical"]
 
     # --- Handle file updates (POST) ---
