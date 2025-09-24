@@ -507,4 +507,4 @@ if __name__ == "__main__":
         save_json(MESSAGES_FILE, {})
     if not os.path.exists(FILES_FILE):
         save_json(FILES_FILE, {})
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
