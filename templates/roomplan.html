@@ -12,7 +12,7 @@
   <h1 class="title">{{ t["roomplan"] }}</h1>
   <table class="file-table">
     <tr>
-      <th>{{ t["room"] }}</th>
+      <th>{{ t["keys"].get("room") }}</th>
       <th>{{ t["occupants"] }}</th>
     </tr>
     {% for room, occupants in roomplan.items() %}

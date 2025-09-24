@@ -176,6 +176,31 @@
           "read": false
         }
       ]
+    },
+    {
+      "id": 10,
+      "chat_name": "geheime testnachricht ",
+      "participants": [
+        "R. Kesyk",
+        "T. Qail"
+      ],
+      "messages": [
+        {
+          "from": "R. Kesyk",
+          "content": "eine geheime testnachricht an den chef wegen filelock",
+          "read": true
+        },
+        {
+          "from": "T. Qail",
+          "content": "ich kann auch darauf antworten",
+          "read": false
+        },
+        {
+          "from": "CIS",
+          "content": "und ich auch!",
+          "read": true
+        }
+      ]
     }
   ],
   "Chat: None": {
@@ -204,6 +229,85 @@
       {
         "from": "Krasser NPC",
         "content": "awdiawflaijwda",
+        "read": false
+      },
+      {
+        "from": "GM",
+        "content": "Supplies will arrive tomorrow.",
+        "read": false
+      }
+    ]
+  },
+  "Chat: awd": {
+    "participants": [
+      "V. Kulata",
+      "R. Kesyk"
+    ],
+    "messages": [
+      {
+        "from": "V. Kulata",
+        "content": "awdawf",
+        "read": true
+      },
+      {
+        "from": "test",
+        "content": "awdafaw",
+        "read": true
+      },
+      {
+        "from": "V. Kulata",
+        "content": "awdfawdawf",
+        "read": true
+      },
+      {
+        "from": "R. Kesyk",
+        "content": "glawidgananananananananananaaaa",
+        "read": true
+      },
+      {
+        "from": "Qail",
+        "content": "Ruhe hier",
+        "read": true
+      },
+      {
+        "from": "V. Kulata",
+        "content": "aaaaaaaa ja mami",
+        "read": true
+      },
+      {
+        "from": "V. Kulata",
+        "content": "22222",
+        "read": true
+      }
+    ]
+  },
+  "Chat: ruu": {
+    "participants": [
+      "R. Kesyk",
+      "Ruu Qail"
+    ],
+    "messages": [
+      {
+        "from": "R. Kesyk",
+        "content": "456123",
+        "read": false
+      },
+      {
+        "from": "Ruu Qail",
+        "content": "alalalala",
+        "read": true
+      }
+    ]
+  },
+  "Chat: new chat": {
+    "participants": [
+      "V. Kulata",
+      "Ruu Qail"
+    ],
+    "messages": [
+      {
+        "from": "V. Kulata",
+        "content": "test",
         "read": false
       }
     ]
