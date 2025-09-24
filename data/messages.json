@@ -94,6 +94,66 @@
           "read": false
         }
       ]
+    },
+    {
+      "id": 8,
+      "chat_name": "Thema: Beschlagnahmung",
+      "participants": [
+        "S. Nito",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Raumhafenverwaltung Noburn",
+          "content": "Werte Frau Nito, im FOlgenden wollen wir Sie erneut auf den aktuellen Status Ihres Schiffes aufmerksam machen. Das auf Ihren Namen registrierte Cargoschiff wird mit sofortiger Wirkung bis auf Weiteres von der Raumhafenbehoerde in beschlag genommen. Grund sind ausstehende Steuerschulden und unvollstaendige Meldedaten in Zocarro. Wir bitten um Stellungnahme und Begleichung der Schulden. Bis zu diesem Zeitpunkt befindet sich Ihr SChiff weiter in unserem Gewahrsam.",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "chat_name": "Wie geht's?",
+      "participants": [
+        "S. Nito",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Bav Leegold",
+          "content": "So, 2 Monate sind rum. Wie steht es bei euch? Seid ihr voran gekommen? Ich schicke euch bald einen Kontakt vorbei, um eure Extraktion zu besprechen. Sie wird sich mit Urihaki vorstellen. Versucht mal, sie in einem ruhigen Moment zu erwischen.",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "chat_name": "Wie geht's?",
+      "participants": [
+        "R. Kesyk",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Bav Leegold",
+          "content": "So, 2 Monate sind rum. Wie steht es bei euch? Seid ihr voran gekommen? Ich schicke euch bald einen Kontakt vorbei, um eure Extraktion zu besprechen. Sie wird sich mit Urihaki vorstellen. Versucht mal, sie in einem ruhigen Moment zu erwischen.",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "chat_name": "Wie geht's?",
+      "participants": [
+        "V. Kulata",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Bav Leegold",
+          "content": "So, 2 Monate sind rum. Wie steht es bei euch? Seid ihr voran gekommen? Ich schicke euch bald einen Kontakt vorbei, um eure Extraktion zu besprechen. Sie wird sich mit Urihaki vorstellen. Versucht mal, sie in einem ruhigen Moment zu erwischen.",
+          "read": false
+        }
+      ]
     }
   ]
 }
