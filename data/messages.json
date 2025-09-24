@@ -1,315 +1,159 @@
 {
   "messages": [
     {
-      "id": 3,
-      "chat_name": "Chat: Engine Repairs",
-      "participants": [
-        "A. Ceeda",
-        "F.M. Latatga",
-        "Fleet Command"
-      ],
-      "messages": [
-        {
-          "from": "A. Ceeda",
-          "content": "We need to check engine 2.",
-          "read": false
-        },
-        {
-          "from": "F.M. Latatga",
-          "content": "Copy that, I\u2019ll handle it.",
-          "read": true
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "chat_name": "Chat: awd ",
-      "participants": [
-        "A. Ceeda",
-        "A. Ceeda"
-      ],
-      "messages": [
-        {
-          "from": "A. Ceeda",
-          "content": "awd",
-          "read": false
-        }
-      ]
-    },
-    {
       "id": 2,
-      "chat_name": "Chat: 123456 ",
+      "chat_name": "Planmaessige Berichterstattung ",
       "participants": [
-        "A. Ceeda",
-        "R. Kesyk",
-        "F.M. Latatga"
+        "H. Lastal",
+        "Ruu Qail"
       ],
       "messages": [
         {
-          "from": "A. Ceeda",
-          "content": "95667567",
-          "read": true
-        },
+          "from": "H. Lastal",
+          "content": "T. setzt trotz deiner Warnungen seinen Kopf durch und hat begonnen, die Reformen in der Besetzung von Positionen durchzuf\u00fchren.\r\nEinzelne Unruhen und laute Stimmen als Konsequenz, leicht positive Grundstimmung unter den Apri. H\u00e4lt sich bisher noch in Grenzen, aber Potential zu Aufruhr.\r\nEs hilft nicht, dass sich das Gefl\u00fcster \u00fcber die Aff\u00e4re zwischen T. und Kitaff verbreitet.\r\nInstruktionen? N\u00e4chster planm\u00e4\u00dfiger Bericht in einem Monat.\r\nGez. H. L.\r\n",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chat_name": "Externe Kommunikationsaktivit\u00e4t von D. Scafcar (Blog) \u2013 Risiko- & Ma\u00dfnahmenbewertung ",
+      "participants": [
+        "H. Lastal",
+        "T. Qail"
+      ],
+      "messages": [
         {
-          "from": "Krasser NPC",
-          "content": "Testnachricht von GM",
-          "read": true
+          "from": "H. Lastal",
+          "content": "In den letzten Wochen hat D. Scafcar (Medic-Assistenz) mehrere Blogeintr\u00e4ge ver\u00f6ffentlicht, die - trotz bem\u00fchter Anonymisierung - meiner Einsch\u00e4tzung nach betrieblich zuordenbare Inhalte enthalten (Schichtlogiken, Ger\u00e4temodelle, Unfallprozeduren in groben Z\u00fcgen). Die Tonalit\u00e4t ist zunehmend aktionistisch (Forderungen nach strengeren Standards, Verweisen auf strukturelle Ungleichheit, sehr pers\u00f6nliche Momentaufnahmen aus dem Schichtbetrieb). Einzelne Passagen werden intern bereits zitiert und diskutiert; externe Resonanz ist nicht auszuschlie\u00dfen.\r\nEinsch\u00e4tzung: Scafcar agiert idealistisch, nicht destruktiv; Anerkennung berechtigter Anliegen kombiniert mit klaren Vertraulichkeitsgrenzen verspricht die beste Deeskalation. Im Hinblick auf anstehende imperiale Besichtigungen w\u00e4re auch ein Publikationsstop denkbar.\r\n",
+          "read": false
         }
       ]
     },
     {
       "id": 4,
-      "chat_name": "message test ",
-      "participants": [
-        "A. Ceeda",
-        "D. Scafcar"
-      ],
-      "messages": [
-        {
-          "from": "A. Ceeda",
-          "content": "1234567879854",
-          "read": false
-        },
-        {
-          "from": "A. Ceeda",
-          "content": "122344555",
-          "read": false
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "chat_name": "123 ",
-      "participants": [
-        "A. Ceeda",
-        "C. So'miss"
-      ],
-      "messages": [
-        {
-          "from": "A. Ceeda",
-          "content": "123",
-          "read": true
-        },
-        {
-          "from": "A. Ceeda",
-          "content": "telefonstreich!",
-          "read": true
-        },
-        {
-          "from": "C. So'miss",
-          "content": "HALLOOOOOO",
-          "read": true
-        },
-        {
-          "from": "Krasser NPC",
-          "content": "Testnachricht von GM",
-          "read": true
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "chat_name": "Chat: Streng geheim",
+      "chat_name": "Weiterleitung: Vorschlag AVV",
       "participants": [
         "T. Qail",
         "GM"
       ],
       "messages": [
         {
-          "from": "Krasser NPC",
-          "content": "awdafaw",
+          "from": "Ruu Qail",
+          "content": "Ich leite dir einmal einen Vorschlag meines Stabs weiter. Bitte um Diskretion und Bewertung der Umsetzbarkeit:",
           "read": false
         },
         {
-          "from": "Krasser NPC",
-          "content": "awdafaw",
+          "from": "Ruu Qail",
+          "content": "Vorschlag. Gr\u00fcndung Arbeiter Versorgungs Vereinigung AVV durch gesteuerte Mitarbeiter -  \t\t\u201cNeuen\u201d Mitarbeiter einschleusen -  \t\tErst-Investition notwendig - \t\tMitglied zahlt einmalige Aufnahmegeb\u00fchr von 700 \t\tJeden bis Dienstende erh\u00e4lt Mitglied pro Monat 100 \t\tAuszahlungen von \u00e4lteren Mitgliedern werden durch Aufnahmegeb\u00fchr neuer gezahlt - \t\tAuszahlung an Qail pro Monat - \t\tWenn gew\u00fcnschte Summe erreicht, entfernt sich gesteuerter Mitarbeiter - \tVeruntreuung wird Pseudonym angeh\u00e4ngt - \t\tMitarbeiter nimmt wieder Posten in unserer Abteilung auf",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chat_name": "Vertraulich: Fall Vaktrock Inc",
+      "participants": [
+        "T. Qail",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Ruu Qail",
+          "content": "Ich baue auf deine Vertraulichkeit, was folgende Information angeht. Es wird eine Operation zur Infiltrierung und \u00dcbernahme von Vaktrock Inc gestartet. Der Klassiker: Mitarbeiter einschleusen, Projektdaten abgreifen, falsche Daten der \u00d6ffentlichkeit pr\u00e4sentieren, anschliessend insolvent gehen lassen. Sollten die Cagla in deinem WIrkungskreis Aufschrei wegen einem neuen Bohrort nahe deren Siedlung veranstalten, weist du von nichts.",
+          "read": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "chat_name": "Dein Engagement",
+      "participants": [
+        "D. Scafcar",
+        "GM"
+      ],
+      "messages": [
+        {
+          "from": "Auroramedia",
+          "content": "Werter Daril;",
           "read": false
         }
       ]
     },
     {
       "id": 7,
-      "chat_name": "Chat: Streng geheim",
+      "chat_name": "Dein Engagement",
       "participants": [
-        "A. Ceeda",
+        "D. Scafcar",
         "GM"
       ],
       "messages": [
         {
-          "from": "Qail",
-          "content": "Ruhe hier",
-          "read": false
-        },
-        {
-          "from": "Qail",
-          "content": "Ruhe hier",
+          "from": "Gar Keet",
+          "content": "Werter Daril; um an die vorherige Korrespondenz anzuschliessen: wir verfolgen dein Engagement weiterhin mit grossen Interesse. Allerdings sind wir in der letzten Sitzung ueberein gekommen, dass du gerade in deiner Position bei Qail besser aufgehoben bist als an einem Schreibtisch in Noburn oder irgendeiner Universit\u00e4t. Wir beobachten Qail aufgrund mehrere Vorkommnisse schon eine Weile, und deine Insider-Infos sind enorm wertvoll. Ja, wir wissen von deinem Wunsch, in die Politik zu gehen. Aber das hier ist wichtiger. Halt noch eine Weile durch. Gar Keet, Auroramedia, Noburn",
           "read": false
         }
       ]
     },
     {
       "id": 8,
-      "chat_name": "Chat: message test",
+      "chat_name": "Thema: Beschlagnahmung",
       "participants": [
-        "R. Kesyk",
+        "S. Nito",
         "GM"
       ],
       "messages": [
         {
-          "from": "test",
-          "content": "Testnachricht von GM",
-          "read": true
+          "from": "Raumhafenverwaltung Noburn",
+          "content": "Werte Frau Nito, im FOlgenden wollen wir Sie erneut auf den aktuellen Status Ihres Schiffes aufmerksam machen. Das auf Ihren Namen registrierte Cargoschiff wird mit sofortiger Wirkung bis auf Weiteres von der Raumhafenbehoerde in beschlag genommen. Grund sind ausstehende Steuerschulden und unvollstaendige Meldedaten in Zocarro. Wir bitten um Stellungnahme und Begleichung der Schulden. Bis zu diesem Zeitpunkt befindet sich Ihr SChiff weiter in unserem Gewahrsam.",
+          "read": false
         }
       ]
     },
     {
       "id": 9,
-      "chat_name": "message test ",
+      "chat_name": "Wie geht's?",
       "participants": [
-        "V. Kulata",
-        "random"
+        "S. Nito",
+        "GM"
       ],
       "messages": [
         {
-          "from": "V. Kulata",
-          "content": "kommt das bei GM an?",
+          "from": "Bav Leegold",
+          "content": "So, 2 Monate sind rum. Wie steht es bei euch? Seid ihr voran gekommen? Ich schicke euch bald einen Kontakt vorbei, um eure Extraktion zu besprechen. Sie wird sich mit Urihaki vorstellen. Versucht mal, sie in einem ruhigen Moment zu erwischen.",
           "read": false
         }
       ]
     },
     {
       "id": 10,
-      "chat_name": "geheime testnachricht ",
+      "chat_name": "Wie geht's?",
       "participants": [
         "R. Kesyk",
-        "T. Qail"
+        "GM"
       ],
       "messages": [
         {
-          "from": "R. Kesyk",
-          "content": "eine geheime testnachricht an den chef wegen filelock",
-          "read": true
-        },
-        {
-          "from": "T. Qail",
-          "content": "ich kann auch darauf antworten",
+          "from": "Bav Leegold",
+          "content": "So, 2 Monate sind rum. Wie steht es bei euch? Seid ihr voran gekommen? Ich schicke euch bald einen Kontakt vorbei, um eure Extraktion zu besprechen. Sie wird sich mit Urihaki vorstellen. Versucht mal, sie in einem ruhigen Moment zu erwischen.",
           "read": false
-        },
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "chat_name": "Wie geht's?",
+      "participants": [
+        "V. Kulata",
+        "GM"
+      ],
+      "messages": [
         {
-          "from": "CIS",
-          "content": "und ich auch!",
-          "read": true
+          "from": "Bav Leegold",
+          "content": "So, 2 Monate sind rum. Wie steht es bei euch? Seid ihr voran gekommen? Ich schicke euch bald einen Kontakt vorbei, um eure Extraktion zu besprechen. Sie wird sich mit Urihaki vorstellen. Versucht mal, sie in einem ruhigen Moment zu erwischen.",
+          "read": false
         }
       ]
     }
-  ],
-  "Chat: None": {
-    "id": 6,
-    "chat_name": "Chat: None",
-    "participants": [
-      null,
-      "GM"
-    ],
-    "messages": [
-      {
-        "from": "Krasser NPC",
-        "content": "Testnachricht von GM",
-        "read": false
-      }
-    ]
-  },
-  "Chat: Streng geheim": {
-    "id": 6,
-    "chat_name": "Chat: Streng geheim",
-    "participants": [
-      "R. Kesyk",
-      "GM"
-    ],
-    "messages": [
-      {
-        "from": "Krasser NPC",
-        "content": "awdiawflaijwda",
-        "read": false
-      },
-      {
-        "from": "GM",
-        "content": "Supplies will arrive tomorrow.",
-        "read": false
-      }
-    ]
-  },
-  "Chat: awd": {
-    "participants": [
-      "V. Kulata",
-      "R. Kesyk"
-    ],
-    "messages": [
-      {
-        "from": "V. Kulata",
-        "content": "awdawf",
-        "read": true
-      },
-      {
-        "from": "test",
-        "content": "awdafaw",
-        "read": true
-      },
-      {
-        "from": "V. Kulata",
-        "content": "awdfawdawf",
-        "read": true
-      },
-      {
-        "from": "R. Kesyk",
-        "content": "glawidgananananananananananaaaa",
-        "read": true
-      },
-      {
-        "from": "Qail",
-        "content": "Ruhe hier",
-        "read": true
-      },
-      {
-        "from": "V. Kulata",
-        "content": "aaaaaaaa ja mami",
-        "read": true
-      },
-      {
-        "from": "V. Kulata",
-        "content": "22222",
-        "read": true
-      }
-    ]
-  },
-  "Chat: ruu": {
-    "participants": [
-      "R. Kesyk",
-      "Ruu Qail"
-    ],
-    "messages": [
-      {
-        "from": "R. Kesyk",
-        "content": "456123",
-        "read": false
-      },
-      {
-        "from": "Ruu Qail",
-        "content": "alalalala",
-        "read": true
-      }
-    ]
-  },
-  "Chat: new chat": {
-    "participants": [
-      "V. Kulata",
-      "Ruu Qail"
-    ],
-    "messages": [
-      {
-        "from": "V. Kulata",
-        "content": "test",
-        "read": false
-      }
-    ]
-  }
+  ]
 }
