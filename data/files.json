@@ -2,390 +2,390 @@
   "A. Ceeda": {
     "personnel": {
       "name": "A. Ceeda",
-      "data first registered": "150",
-      "birth year": "125",
-      "birth planet": "Mars",
-      "citizen id": "00/3/01/125/54765",
-      "company role": "Mechanic",
-      "company education": "Basic Engineering",
-      "pay grade": "lower",
-      "political stance": "Neutral?",
-      "status": "entlassen",
-      "station": "Outpost 7",
-      "shift": "1",
-	  "room": "Sacanium",
-      "company cv": "Role Mechanic assigned 2 months ago"
+      "data first registered": "125",
+      "birth year": "96",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/44/96/12860",
+      "company role": "Vorarbeiter:in Arbeiter",
+      "company education": "-",
+      "pay grade": "mittel",
+      "political stance": "firmentreu",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
+      "shift": "2",
+      "room": "Sacanium",
+      "company cv": "125 Arbeiter:in Probezeit - 126 Arbeiter:in - 130 Bef\u00f6rderung Vorarbeiter:in Probezeit"
     },
     "security": {
-      "security note": "Observe for unusual activity",
-      "incidents on record": "None"
+      "security note": "Politische Aktivitaeten (Kurlottvorstand), Beobachtung empfohlen.",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "O+",
-      "fitness level": "B+",
-      "last fitness check": "2 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "Healthy"
+      "blood type": "A+",
+      "fitness level": "A",
+      "last fitness check": "13 Monate",
+      "allergies": "Klee-Klee-Nuesse (Nahrung)",
+      "active medical diagnosis": "130 Belastungsstoerungen durch hohe Verantwortung, unter Beobachtung.",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level"
     }
   },
   "F.M. Latatga": {
     "personnel": {
       "name": "F.M. Latatga",
-      "data first registered": 151,
-      "birth year": 126,
-      "birth planet": "Venus",
-      "citizen id": "00/3/01/126/54766",
-      "company role": "Technician",
-      "company education": "Advanced Mechanics",
-      "pay grade": "lower",
-      "political stance": "Neutral",
-      "status": "active",
-      "station": "Station Z-4",
+      "data first registered": "115",
+      "birth year": "91",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/18/91/09223",
+      "company role": "Arbeiter:in",
+      "company education": "-",
+      "pay grade": "niedrig",
+      "political stance": "problematisch",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
       "shift": "2",
-	  "room": "Sacanium",
-      "company cv": "Transferred to maintenance 5 months ago"
+      "room": "Sacanium",
+      "company cv": "115 Arbeiter:in Probezeit - 116 Arbeiter:in - 125 Jubilaeum: 10 Jahre angestellt"
     },
     "security": {
-      "security note": "Frequent late arrivals",
-      "incidents on record": "2 warnings"
+      "security note": "Stark traditionell und sehr vokal. Unter Beobachtung wegen moeglicher politischer Aktivitaeten. Gelegentliche spontane Aggressionsausbrueche bei sozialen Themen.",
+      "incidents on record": "119 Ermahnung und temporaere Freistellung (2 Wochen) wegen koerperlicher Auseinandersetzung in der Cantina - 127 Erneute temporaere Freistellung nach mehreren Auseinandersetzungen"
     },
     "medical": {
       "blood type": "A-",
-      "fitness level": "A",
-      "last fitness check": "1 month ago",
-      "allergies": "Dust",
-      "active medical diagnosis": "None",
-      "medication regime": "Vitamin supplements",
-      "comments": "/"
+      "fitness level": "B",
+      "last fitness check": "13 Monate",
+      "allergies": "Tallira-Gras",
+      "active medical diagnosis": "-",
+      "medication regime": "Vitaminpraeparate",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei Jaehrlicher Ueberpruefung an Medikation erinnern"
     }
   },
   "J. Latatga": {
     "personnel": {
       "name": "J. Latatga",
-      "data first registered": 152,
-      "birth year": 128,
-      "birth planet": "Europa",
-      "citizen id": "00/3/01/128/54767",
-      "company role": "Security Officer",
-      "company education": "Security Academy",
-      "pay grade": "medium",
-      "political stance": "Pro-Collective",
-      "status": "active",
-      "station": "Checkpoint Alpha",
-      "shift": "3",
-	  "room": "Keshel",
-      "company cv": "Promoted to security role 1 year ago"
+      "data first registered": "123",
+      "birth year": "105",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/18/105/19345",
+      "company role": "Arbeiter:in",
+      "company education": "-",
+      "pay grade": "niedrig",
+      "political stance": "neutral",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
+      "shift": "1",
+      "room": "Keshel",
+      "company cv": "-"
     },
     "security": {
-      "security note": "Trustworthy",
-      "incidents on record": "Cleared incident 2 years ago"
+      "security note": "Stichproben ob Trunkenheit im Dienst",
+      "incidents on record": "129 Musste aus der Cantina entfernt werden, Berauschter Zustand - 130 Musste aus der Cantina entfernt werden, Berauschter Zustand"
     },
     "medical": {
-      "blood type": "B+",
-      "fitness level": "A-",
-      "last fitness check": "3 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "Fit for duty"
+      "blood type": "0+",
+      "fitness level": "C",
+      "last fitness check": "13 Monate",
+      "allergies": "Tallira-Gras, Kiwip-Gras (Nahrung)",
+      "active medical diagnosis": "129 Anzeichen Rauschmittel",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei letzer Ueberpruefung: Diverse Medikamentenspiegel erhoeht - Wenige alte Narben, vermutlich klassische Kindheitsverletzungen"
     }
   },
   "R. Latatga": {
     "personnel": {
       "name": "R. Latatga",
-      "data first registered": 151,
-      "birth year": 126,
-      "birth planet": "Venus",
-      "citizen id": "00/3/01/126/54766",
-      "company role": "Technician",
-      "company education": "Advanced Mechanics",
-      "pay grade": "lower",
+      "data first registered": "124",
+      "birth year": "108",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/18/108/12572",
+      "company role": "Security",
+      "company education": "-",
+      "pay grade": "niedrig",
       "political stance": "Neutral",
-      "status": "active",
-      "station": "Station Z-4",
-      "shift": "2",
-	  "room": "Rondium",
-      "company cv": "Transferred to maintenance 5 months ago"
+      "status": "aktiv",
+      "station": "Security",
+      "shift": "-",
+      "room": "Rondium",
+      "company cv": "124 Arbeiter:in Probezeit - 125 Arbeiter:in - 130 Security Probezeit"
     },
     "security": {
-      "security note": "Frequent late arrivals",
-      "incidents on record": "2 warnings"
+      "security note": "Verlaengerte Probezeit auf Anordnung von E.P. Rinsmitt",
+      "incidents on record": "130 Buerge fuer J. Latatga, Arrestzelle"
     },
     "medical": {
       "blood type": "A-",
-      "fitness level": "A",
-      "last fitness check": "1 month ago",
-      "allergies": "Dust",
-      "active medical diagnosis": "None",
-      "medication regime": "Vitamin supplements",
-      "comments": "/"
+      "fitness level": "C",
+      "last fitness check": "7 Monate",
+      "allergies": "Bavo Six (Schmerzmittel), Pishne (Tier)",
+      "active medical diagnosis": "126 Allergie: Bavo Six (Schmerzmittel)",
+      "medication regime": "-",
+      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level"
     }
   },
   "K. Cagla": {
     "personnel": {
       "name": "K. Cagla",
-      "data first registered": "153",
-      "birth year": "129",
-      "birth planet": "Earth",
-      "citizen id": "00/3/01/129/54768",
-      "company role": "Engineer",
-      "company education": "Engineering School",
-      "pay grade": "medium",
+      "data first registered": "121",
+      "birth year": "104",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/36/104/13089",
+      "company role": "Arbeiter:in",
+      "company education": "121 Firmenausbildung (Zocarro)",
+      "pay grade": "niedrig",
       "political stance": "Neutral",
-      "status": "freigestellt",
-      "station": "Station Delta",
-      "shift": "1",
-	  "room": "Sacanium",
-      "company cv": "Assigned to reactor maintenance"
+      "status": "aktiv",
+      "station": "Arbeitsstation",
+      "shift": "2",
+      "room": "Sacanium",
+      "company cv": "126 Arbeiter:in Probezeit - 127 Arbeiter:in"
     },
     "security": {
-      "security note": "No incidents",
-      "incidents on record": "None"
+      "security note": "Beobachtung der geschwisterlichen Beziehung zu L. Cagla: buergt fuer L. Cagla nach Festnahme und Freistellung.",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "AB+",
+      "blood type": "B+",
       "fitness level": "B",
-      "last fitness check": "6 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "/"
+      "last fitness check": "13 Monate",
+      "allergies": "Fleck-Melone (Nahrung), Stickli-Wurzel (Nahrung)",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Jetz-Ring - Robust, nur kleinere Verletzungen durch Arbeit."
     }
   },
   "L. Cagla": {
     "personnel": {
       "name": "L. Cagla",
-      "data first registered": 154,
-      "birth year": 130,
-      "birth planet": "Mars",
-      "citizen id": "00/3/01/130/54769",
-      "company role": "Logistics Officer",
-      "company education": "Supply Chain Training",
-      "pay grade": "lower",
-      "political stance": "Neutral",
-      "status": "active",
-      "station": "Cargo Bay 2",
-      "shift": "2",
-	  "room": "Sacanium",
-      "company cv": "Assigned to cargo inspections"
+      "data first registered": "126",
+      "birth year": "107",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/36/107/44724",
+      "company role": "Arbeiter:in",
+      "company education": "126 Firmenausbildung (Zocarro)",
+      "pay grade": "ausgesetzt",
+      "political stance": "problematisch",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
+      "shift": "1",
+      "room": "Sacanium",
+      "company cv": "126 Arbeiter:in Probezeit - 127 Arbeiter:in - 130 Arbeiter:in freigestellt wegen Aufwiegeln"
     },
     "security": {
-      "security note": "Often around sensitive cargo",
-      "incidents on record": "None"
+      "security note": "Regelmaessige Kontrollen; darf das Gelaende nicht verlassen",
+      "incidents on record": "130 Musste aus der Cantina entfernt werden, Aufwiegelung und politischer Aktivismus"
     },
     "medical": {
-      "blood type": "O-",
+      "blood type": "O+",
       "fitness level": "B",
-      "last fitness check": "4 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "/"
+      "last fitness check": "13 Monate",
+      "allergies": "Falleen-Baum",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level"
     }
   },
   "G. Kitaff": {
     "personnel": {
       "name": "G. Kitaff",
-      "data first registered": 155,
-      "birth year": 131,
-      "birth planet": "Titan",
-      "citizen id": "00/3/01/131/54770",
-      "company role": "Technician",
-      "company education": "Electrical Systems",
-      "pay grade": "lower",
-      "political stance": "Neutral",
-      "status": "active",
-      "station": "Maintenance Bay",
-      "shift": "3",
-	  "room": "Essurtanium",
-      "company cv": "Shift rotations in diagnostics"
+      "data first registered": "117",
+      "birth year": "101",
+      "birth planet": "Sulara",
+      "citizen id": "13/1/04/101/18552",
+      "company role": "Arbeiter:in",
+      "company education": "117 Firmenausbildung",
+      "pay grade": "hoch",
+      "political stance": "firmentreu",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
+      "shift": "2",
+      "room": "Essurtanium",
+      "company cv": "122 Arbeiter:in Probezeit - 123 Arbeiter:in"
     },
     "security": {
-      "security note": "Quiet, solitary",
-      "incidents on record": "None"
+      "security note": "Bekannt fuer Kommunikationsgeschick, private Verbindung zu T. Qail.",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "B-",
-      "fitness level": "C+",
-      "last fitness check": "7 months ago",
-      "allergies": "Metal dust",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "Prone to colds"
+      "blood type": "0-",
+      "fitness level": "C",
+      "last fitness check": "13 Monate",
+      "allergies": "Vratixia-Pflanze",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Jetz-Ring - Alte Sportverletzung, gelegentliche Schulterprobleme."
     }
   },
   "J. Reltec": {
     "personnel": {
       "name": "J. Reltec",
-      "data first registered": 156,
-      "birth year": 132,
-      "birth planet": "Io",
-      "citizen id": "00/3/01/132/54771",
-      "company role": "Scientist",
-      "company education": "Research Academy",
-      "pay grade": "high",
+      "data first registered": "120",
+      "birth year": "98",
+      "birth planet": "Onderon",
+      "citizen id": "13/1/01/98/21873",
+      "company role": "Arbeiter:in",
+      "company education": "120 Firmenausbildung",
+      "pay grade": "mittel",
       "political stance": "Neutral",
-      "status": "active",
-      "station": "Research Lab 4",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
       "shift": "1",
-	  "room": "Essurtanium",
-      "company cv": "Assigned to xenobiology"
+      "room": "Essurtanium",
+      "company cv": "125 Arbeiter:in Probezeit - 126 Arbeiter:in"
     },
     "security": {
-      "security note": "No record",
-      "incidents on record": "None"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "A+",
-      "fitness level": "B",
-      "last fitness check": "2 weeks ago",
-      "allergies": "None",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "/"
+      "blood type": "B+",
+      "fitness level": "C",
+      "last fitness check": "13 Monate",
+      "allergies": "Tallira-Gras",
+      "active medical diagnosis": "129 Grippaler Infekt",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level"
     }
   },
   "R. Eibeqx": {
     "personnel": {
       "name": "R. Eibeqx",
-      "data first registered": 157,
-      "birth year": 133,
-      "birth planet": "Ganymede",
-      "citizen id": "00/3/01/133/54772",
-      "company role": "Technician",
-      "company education": "Systems Repair",
-      "pay grade": "lower",
-      "political stance": "Neutral",
-      "status": "active",
+      "data first registered": "91",
+      "birth year": "77",
+      "birth planet": "Sulara",
+      "citizen id": "13/1/04/77/00097",
+      "company role": "Arbeiter:in",
+      "company education": "91 Firmenschule - 95 Firmenausbildung",
+      "pay grade": "niedrig",
+      "political stance": "firmentreu",
+      "status": "aktiv",
       "station": "Docking Bay 1",
-      "shift": "2",
-	  "room": "Essurtanium",
-      "company cv": "Currently in docking operations"
+      "shift": "1",
+      "room": "Essurtanium",
+      "company cv": "100 Arbeiter:in Probezeit - 101 Arbeiter:in - 110 Jubil\u00e4um: 10 Jahre angestellt - 120 Jubil\u00e4um: 20 Jahre angestellt - 121 Freigestellt f\u00fcr Milit\u00e4rdienst - 130 Jubilaeum: 30 Jahre angestellt (wegen Militaerdienst erst 131) - Urgestein, vertrauensw\u00fcrdig. Empfehlungen fuer Enscheidungen einholen"
     },
     "security": {
-      "security note": "Sometimes tardy",
-      "incidents on record": "One lateness report"
+      "security note": "Keine Vorfaelle, als verlaessliche Person eingestuft. Hat sich 121 fuer Militaerdienst freistellen lassen.",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "AB-",
-      "fitness level": "C",
-      "last fitness check": "1 year ago",
-      "allergies": "Alle",
-      "active medical diagnosis": "Asthma",
-      "medication regime": "Inhaler",
-      "comments": "Fit for light duty"
+      "blood type": "0+",
+      "fitness level": "E",
+      "last fitness check": "13 Monate",
+      "allergies": "Ottegan-Baum, Stickli-Wurzel (Nahrung)",
+      "active medical diagnosis": "117 Gebrechen haeufen sich, 128 Muskelschwund",
+      "medication regime": "Bavo Six (Schmerzmittel), Vitaminpraeparate, Muskelaufbaupraeparat",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Arthrose, wiederkehrende Atemprobleme; regelmaessige Untersuchungen erforderlich - Bei letzer Ueberpruefung: Diverse Medikamentenspiegel erhoeht"
     }
   },
   "W. Proluk": {
     "personnel": {
       "name": "W. Proluk",
-      "data first registered": 158,
-      "birth year": 134,
-      "birth planet": "Ceres",
-      "citizen id": "00/3/01/134/54773",
-      "company role": "Engineer",
-      "company education": "Energy Systems",
-      "pay grade": "medium",
-      "political stance": "Pro-Collective",
-      "status": "active",
-      "station": "Power Core",
-      "shift": "3",
-	  "room": "Essurtanium",
-      "company cv": "Maintains station reactors"
+      "data first registered": "115",
+      "birth year": "94",
+      "birth planet": "Jelucan",
+      "citizen id": "13/1/01/94/09552",
+      "company role": "Arbeiter:in",
+      "company education": "110 Firmenausbildung (Jelucan) - 114 Fortbildung Mineralfoerderung",
+      "pay grade": "mittel",
+      "political stance": "firmentreu",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
+      "shift": "1",
+      "room": "Essurtanium",
+      "company cv": "112 Arbeiter:in Probezeit - 113 Arbeiter:in - 115 Versetzung nach Sulara - 125 Jubilaeum: 10 Jahre angestellt"
     },
     "security": {
-      "security note": "Trusted",
-      "incidents on record": "None"
+      "security note": "Mehrfach gemeldet wegen verbaler Auseinandersetzungen ueber Abluesung aelterer Kolleg:innen.",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "O+",
+      "blood type": "A+",
       "fitness level": "B+",
-      "last fitness check": "3 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "/"
+      "last fitness check": "13 Monate",
+      "allergies": "Murrian-Moos",
+      "active medical diagnosis": "-",
+      "medication regime": "Vitaminpr\u00e4parate",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level"
     }
   },
   "T. Shaaret": {
     "personnel": {
       "name": "T. Shaaret",
-      "data first registered": 159,
-      "birth year": 135,
-      "birth planet": "Callisto",
-      "citizen id": "00/3/01/135/54774",
-      "company role": "Team Lead",
-      "company education": "Leadership Program",
-      "pay grade": "high",
+      "data first registered": "112",
+      "birth year": "82",
+      "birth planet": "Sulara",
+      "citizen id": "13/1/01/82/13997",
+      "company role": "Vorarbeiter:in Arbeiter",
+      "company education": "-",
+      "pay grade": "hoch",
       "political stance": "Neutral",
-      "status": "active",
-      "station": "Command Module",
+      "status": "aktiv",
+      "station": "Abeitsstation",
       "shift": "1",
-	  "room": "Essurtanium",
-      "company cv": "Promoted to team leadership"
+      "room": "Essurtanium",
+      "company cv": "112 Arbeiter:in Probezeit - 113 Arbeiter:in - 122 Jubil\u00e4um: 10 Jahre angestellt - 124 Befoerderung Vorarbeiter:in Probezeit - 125 Vorarbeiter:in"
     },
     "security": {
-      "security note": "Leadership clearance",
-      "incidents on record": "None"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "A-",
-      "fitness level": "A",
-      "last fitness check": "1 month ago",
-      "allergies": "None",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "/"
+      "blood type": "A+",
+      "fitness level": "D",
+      "last fitness check": "13 Monate",
+      "allergies": "Fyrnocks-Fisch (Nahrung)",
+      "active medical diagnosis": "124 Nervoeses Leiden",
+      "medication regime": "Tranqarest (leichtes Beruhigungsmittel)",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei Jaehrlicher Ueberpruefung an Medikation erinnern"
     }
   },
   "Q. Dran": {
     "personnel": {
       "name": "Q. Dran",
-      "data first registered": 120,
-      "birth year": 90,
+      "data first registered": "120",
+      "birth year": "90",
       "birth planet": "Serenno",
       "citizen id": "00/3/01/90/72393",
       "company role": "Medic",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "neutral",
       "status": "active",
-      "station": "Med Bay",
+      "station": "Medicstation",
       "shift": "2",
-	  "room": "Lucryt",
-      "company cv": "Station medic, 3 years service"
+      "room": "Lucryt",
+      "company cv": "120 Medic - 130 JubilaEum: 10 Jahre angestellt (anstehend)"
     },
     "security": {
-      "security note": "Trusted medical staff",
-      "incidents on record": "None"
+      "security note": "-",
+      "incidents on record": "130 Musste aus der Cantina entfernt werden, Streit mit diversen Anwesenden"
     },
     "medical": {
-      "blood type": "B+",
-      "fitness level": "A",
-      "last fitness check": "1 week ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "Excellent condition"
+      "blood type": "0+",
+      "fitness level": "-",
+      "last fitness check": "-",
+      "allergies": "Helium",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "-"
     }
   },
   "D. Scafcar": {
     "personnel": {
       "name": "D. Scafcar",
-      "data first registered": 129,
-      "birth year": 81,
+      "data first registered": "129",
+      "birth year": "81",
       "birth planet": "Sulara",
       "citizen id": "00/1/04/81/34126",
-      "company role": "Medic",
+      "company role": "Medicassistenz",
       "company education": "/",
-      "pay grade": "lower",
-      "political stance": "potenziell aufrüherisch",
+      "pay grade": "niedrig",
+      "political stance": "potenziell aufruehrerisch",
       "status": "aktiv",
       "station": "Medicstation",
-      "shift": "-",
-	  "room": "Lucryt",
+      "shift": "1",
+      "room": "Lucryt",
       "company cv": "129 Assistenz Medic"
     },
     "security": {
@@ -396,17 +396,17 @@
       "blood type": "0-",
       "fitness level": "-",
       "last fitness check": "-",
-      "allergies": "Pollen",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "/"
+      "allergies": "Tooka-Katze (Tier), Mosska-Kolben (Nahrung)",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "-"
     }
   },
   "H. Lastal": {
     "personnel": {
       "name": "H. Lastal",
-      "data first registered": 100,
-      "birth year": 88,
+      "data first registered": "100",
+      "birth year": "88",
       "birth planet": "Sulara",
       "citizen id": "13/1/01/88/00235",
       "company role": "Assistenz",
@@ -416,8 +416,8 @@
       "status": "aktiv",
       "station": "Buero",
       "shift": "-",
-	  "room": "Essurtanium",
-      "company cv": "Leadership role, 5 years service"
+      "room": "Essurtanium",
+      "company cv": "106 Assistenz R. Qail - 116 Assistenz T. Qail - 126 Jubil\u00e4um: 10 Jahre erfolgreiche Zusammenarbeit T. Qail"
     },
     "security": {
       "security note": "Bei Stoerungen im Betrieb primaer ansprechen",
@@ -427,28 +427,28 @@
       "blood type": "A+",
       "fitness level": "C",
       "last fitness check": "13 Monate",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "Bavo Six",
-      "comments": "Healthy"
+      "allergies": "Aurodium (Metall/Schmuck)",
+      "active medical diagnosis": "-",
+      "medication regime": "Bavo Six, Vitaminpraeparate",
+      "comments": "Jaehrliche ueberpruefung: Buero Fitness Level - Bei Jaehrlicher ueberpruefung an Medikation erinnern"
     }
   },
   "T. Qail": {
     "personnel": {
       "name": "T. Qail",
-      "data first registered": 97,
-      "birth year": 97,
+      "data first registered": "97",
+      "birth year": "97",
       "birth planet": "Sulara",
       "citizen id": "14/1/01/97/00003",
       "company role": "Raffinerieleitung",
       "company education": "103 Familientutor - 109 Firmenschule - 113 CEO Mentoring",
-      "pay grade": "high",
+      "pay grade": "aussertariflich",
       "political stance": "firmentreu",
       "status": "aktiv",
       "station": "Buero",
       "shift": "-",
-	  "room": "Wroshit",
-      "company cv": "Promoted to leadership"
+      "room": "Wroshit",
+      "company cv": "116 Raffinerieleitung - 126 Jubil\u00e4um: 10 Jahre Leitung"
     },
     "security": {
       "security note": "VIP",
@@ -456,184 +456,184 @@
     },
     "medical": {
       "blood type": "A+",
-      "fitness level": "/",
-      "last fitness check": "/",
-      "allergies": "/",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "/"
+      "fitness level": "-",
+      "last fitness check": "-",
+      "allergies": "Keler-Fisch (Nahrung)",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "Keine Ueberpruefungen notwendig"
     }
   },
   "E.P. Rinsmitt": {
     "personnel": {
       "name": "E.P. Rinsmitt",
-      "data first registered": 164,
-      "birth year": 140,
+      "data first registered": "105",
+      "birth year": "93",
       "birth planet": "Titan",
-      "citizen id": "00/3/01/140/54779",
-      "company role": "Security & Team Lead",
-      "company education": "Security Training",
-      "pay grade": "high",
-      "political stance": "Neutral",
-      "status": "active",
-      "station": "Security HQ",
-      "shift": "3",
-	  "room": "Rondium",
-      "company cv": "Senior security, promoted to team lead"
+      "citizen id": "13/1/01/93/00471",
+      "company role": "Vorarbeiter:in Security",
+      "company education": "105 Firmenschule - 109 Ausbildung Sicherheit",
+      "pay grade": "hoch",
+      "political stance": "firmentreu",
+      "status": "aktiv",
+      "station": "Security",
+      "shift": "-",
+      "room": "Rondium",
+      "company cv": "111 Security - 121 Jubil\u00e4um: 10 Jahre angestellt - 125 Befoerderung Vorarbeiter:in Security Probezeit - 126 Vorarbeiter:in Security"
     },
     "security": {
-      "security note": "Trusted, high clearance",
-      "incidents on record": "Minor altercation cleared"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "B+",
+      "blood type": "A+",
       "fitness level": "A",
-      "last fitness check": "3 weeks ago",
-      "allergies": "None",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "Strong health"
+      "last fitness check": "7 Monate",
+      "allergies": "Malvil-Pilzbaum, Gort (Tier)",
+      "active medical diagnosis": "129 Erh\u00f6hter Blutdruck",
+      "medication regime": "Tranqarest (leichtes Beruhigungsmittel)",
+      "comments": "Halbjaehrliche ueberpruefung: Security Fitness Level - Fragen ueber medizinische Daten der Kollegen mit Vorsicht begegnen - Bei halbjaehrlicher Ueberpruefung an Medikation erinnern"
     }
   },
   "E.T. Jeyik": {
     "personnel": {
       "name": "E.T. Jeyik",
-      "data first registered": 165,
-      "birth year": 141,
-      "birth planet": "Venus",
-      "citizen id": "00/3/01/141/54780",
+      "data first registered": "126",
+      "birth year": "106",
+      "birth planet": "Qiilura",
+      "citizen id": "13/3/01/106/21588",
       "company role": "Security",
-      "company education": "Security Academy",
-      "pay grade": "medium",
+      "company education": "",
+      "pay grade": "mittel",
       "political stance": "Neutral",
-      "status": "active",
-      "station": "Security Post Gamma",
-      "shift": "1",
-	  "room": "Rondium",
-      "company cv": "Security detail, 2 years"
+      "status": "aktiv",
+      "station": "Security",
+      "shift": "",
+      "room": "Rondium",
+      "company cv": "126 Security Probezeit - 127 Security - "
     },
     "security": {
-      "security note": "Reliable officer",
-      "incidents on record": "None"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
       "blood type": "O+",
-      "fitness level": "B+",
-      "last fitness check": "6 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "/"
+      "fitness level": "B",
+      "last fitness check": "7 Monate",
+      "allergies": "Shyrack-Gras, Ribkatze (Tier)",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level - Hang zur Aggression - Empfehlung, regelmaessig Ausgleich zu suchen. - Jetz-Ring"
     }
   },
   "B.R. Briskat": {
     "personnel": {
       "name": "B.R. Briskat",
-      "data first registered": 166,
-      "birth year": 142,
-      "birth planet": "Mars",
-      "citizen id": "00/3/01/142/54781",
+      "data first registered": "104",
+      "birth year": "92",
+      "birth planet": "Sulara",
+      "citizen id": "13/1/01/92/00527",
       "company role": "Security",
-      "company education": "Security Academy",
-      "pay grade": "medium",
-      "political stance": "Neutral",
-      "status": "active",
-      "station": "Security Post Delta",
-      "shift": "2",
-	  "room": "Rondium",
-      "company cv": "Assigned to guard detail"
+      "company education": "104 Firmenschule - 108 Ausbildung Sicherheit",
+      "pay grade": "mittel",
+      "political stance": "firmentreu",
+      "status": "aktiv",
+      "station": "Security",
+      "shift": "-",
+      "room": "Rondium",
+      "company cv": "110 Security - 120 Jubilaeum: 10 Jahre angestellt - 121 Freigestellt f\u00fcr Milit\u00e4rdienst - 122 Security - 130 Jubil\u00e4um: 20 Jahre angestellt (wegen Milit\u00e4rdienst erst 131)"
     },
     "security": {
-      "security note": "Trusted",
-      "incidents on record": "None"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "A-",
-      "fitness level": "B",
-      "last fitness check": "5 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "/"
+      "blood type": "AB-",
+      "fitness level": "C",
+      "last fitness check": "7 Monate",
+      "allergies": "Nysillin-Pilzkraut, Praxium (Aufputschmittel)",
+      "active medical diagnosis": "121 Allergie: Praxium (Aufputschmittel), 121 Blasterverletzung verheilt (Schulter, rechts)",
+      "medication regime": "Vitaminpr\u00e4parate",
+      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level - Bei halbjaehrlicher Ueberpruefung an Medikation erinnern"
     }
   },
   "R. Kesyk": {
     "personnel": {
       "name": "R. Kesyk",
-      "data first registered": 130,
-      "birth year": 104,
+      "data first registered": "130",
+      "birth year": "104",
       "birth planet": "Lotho Minor",
       "citizen id": "00/3/01/104/54765",
       "company role": "Mechaniker:in",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
-      "status": "active",
+      "status": "aktiv (tempor\u00e4rer Vertrag)",
       "station": "Arbeitsstation",
       "shift": "1",
-	  "room": "Teniline",
+      "room": "Teniline",
       "company cv": "130 Rolle Mechaniker:in zugewiesen, befristeter Vertrag"
     },
     "security": {
-      "security note": "wenn möglich mehr Daten sammeln, Eintraege unvollständig",
+      "security note": "wenn moeglich mehr Daten sammeln, Eintraege unvollstaendig",
       "incidents on record": "/"
     },
     "medical": {
       "blood type": "0+",
       "fitness level": "B+",
       "last fitness check": "2 Monate",
-      "allergies": "Dust",
-      "active medical diagnosis": "/",
+      "allergies": "Jogan-Beeren (Nahrung)",
+      "active medical diagnosis": "130 kybernetische Erweiterung - 130 Hypermetabolismus",
       "medication regime": "/",
-      "comments": "/"
+      "comments": "J\u00e4hrliche Ueberpruefung: Arbeiter:in Fitness Level - Monatliche \u00dcberpruefung: Vertraeglichkeit Koerper und Implantat - Bei Einstellung: Diverse Medikamentenspiegel erhoeht, Ursache Implantat?"
     }
   },
   "S. Nito": {
     "personnel": {
       "name": "S. Nito",
-      "data first registered": 130,
-      "birth year": 97,
+      "data first registered": "130",
+      "birth year": "97",
       "birth planet": "Sulara",
       "citizen id": "00/3/01/97/09453",
       "company role": "Security",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
-      "status": "aktiv",
+      "status": "aktiv (tempor\u00e4rer Vertrag)",
       "station": "Security",
       "shift": "-",
-	  "room": "Teniline",
+      "room": "Teniline",
       "company cv": "130 Rolle Security zugewiesen, befristeter Vertrag"
     },
     "security": {
-      "security note": "/",
-      "incidents on record": "/"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
       "blood type": "A+",
       "fitness level": "A",
       "last fitness check": "2 Monate",
-      "allergies": "/",
+      "allergies": "Tooka-Katze (Tier) - Gannesa-Saft (Nahrung)",
       "active medical diagnosis": "/",
       "medication regime": "/",
-      "comments": "/"
+      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level"
     }
   },
   "V. Kulata": {
     "personnel": {
       "name": "V. Kulata",
-      "data first registered": 130,
-      "birth year": 102,
+      "data first registered": "130",
+      "birth year": "102",
       "birth planet": "Sulara",
       "citizen id": "00/2/102/102/32946",
       "company role": "Logistiker:in",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
-      "status": "aktiv",
+      "status": "aktiv (tempor\u00e4rer Vertrag)",
       "station": "Abeitsstation",
       "shift": "2",
-	  "room": "Teniline",
+      "room": "Teniline",
       "company cv": "130 Rolle Logistik zugewiesen, befristeter Vertrag"
     },
     "security": {
@@ -644,208 +644,208 @@
       "blood type": "B+",
       "fitness level": "B",
       "last fitness check": "2 Monate",
-      "allergies": "/",
+      "allergies": "Schlicksand (kristallin)",
       "active medical diagnosis": "/",
       "medication regime": "/",
-      "comments": "/"
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Jetz-Ring"
     }
   },
   "S. Ceeda": {
     "personnel": {
       "name": "S. Ceeda",
-      "data first registered": 170,
-      "birth year": 146,
-      "birth planet": "Ceres",
-      "citizen id": "00/3/01/146/54785",
-      "company role": "Technician",
-      "company education": "Basic Mechanics",
-      "pay grade": "lower",
+      "data first registered": "124",
+      "birth year": "108",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/44/108/08637",
+      "company role": "Arbeiter:in",
+      "company education": "124 Firmenschule",
+      "pay grade": "niedrig",
       "political stance": "Neutral",
-      "status": "active",
-      "station": "Repair Bay",
-      "shift": "3",
-	  "room": "Sacanium",
-      "company cv": "Entry-level technician"
+      "status": "aktiv",
+      "station": "Arbeitsstation",
+      "shift": "2",
+      "room": "Sacanium",
+      "company cv": "128 Arbeiter:in Probezeit - 129 Arbeiter:in"
     },
     "security": {
-      "security note": "No record",
-      "incidents on record": "None"
+      "security note": "Vermehrte Fehlzeiten. Unter Beobachtung wegen m\u00f6glicher illegaler Aktivit\u00e4ten.",
+      "incidents on record": "130 Ermahnung aufgrund von Fehlzeiten, Belehrung ueber Pflichten und Konsequenzen"
     },
     "medical": {
-      "blood type": "AB+",
+      "blood type": "B+",
       "fitness level": "C",
-      "last fitness check": "1 year ago",
-      "allergies": "None",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "Minor fatigue"
+      "last fitness check": "13 Monate",
+      "allergies": "Ottegan-Baum, Stickli-Wurzel (Nahrung)",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Leichte chronische Erschoepfung, keine ernsten Einschraenkungen."
     }
   },
   "C. So'miss": {
     "personnel": {
       "name": "C. So'miss",
-      "data first registered": 124,
-      "birth year": 95,
+      "data first registered": "124",
+      "birth year": "95",
       "birth planet": "Dohu VII",
       "citizen id": "00/3/01/95/29554",
       "company role": "Cantina",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "neutral",
       "status": "aktiv",
       "station": "Getraenkeausgabe",
       "shift": "-",
-	  "room": "Durelium",
+      "room": "Durelium",
       "company cv": "124 Getraenkeausgabe"
     },
     "security": {
-      "security note": "Intiator des Wettkreises, an massvolles Verhalten erinnern",
+      "security note": "Intiator des Wettkreises, an massvolles Verhalten erinnern - Neutrale Person, ggf fuer Informationen nutzen, nur ohne Druck",
       "incidents on record": "Grosse Unruhe nach Wette gegen Q. Dran, Ermahnung"
     },
     "medical": {
       "blood type": "A+",
       "fitness level": "A",
       "last fitness check": "5 Monate",
-      "allergies": "Apfel, Haselnuss, Bavo Six",
+      "allergies": "Warra-Nuesse (Nahrung), Gor-Apfel (Nahrung), Bravo Six",
       "active medical diagnosis": "/",
       "medication regime": "/",
-      "comments": "/"
+      "comments": "Jaehrliche Ueberpruefung: Cantina Fitness Level"
     }
   },
   "P. Ceeda": {
     "personnel": {
       "name": "P. Ceeda",
-      "data first registered": 172,
-      "birth year": 148,
-      "birth planet": "Mars",
-      "citizen id": "00/3/01/148/54787",
-      "company role": "Technician",
-      "company education": "Systems Maintenance",
-      "pay grade": "lower",
-      "political stance": "Neutral",
-      "status": "active",
-      "station": "Dock 12",
+      "data first registered": "125",
+      "birth year": "104",
+      "birth planet": "Sulara",
+      "citizen id": "00/2/44/104/15832",
+      "company role": "Arbeiter:in",
+      "company education": "-",
+      "pay grade": "niedrig",
+      "political stance": "problematisch",
+      "status": "aktiv",
+      "station": "Arbeitsstation",
       "shift": "2",
-	  "room": "Keshel",
-      "company cv": "Technician, joined 6 months ago"
+      "room": "Keshel",
+      "company cv": "126 Arbeiter:in"
     },
     "security": {
-      "security note": "Under observation",
-      "incidents on record": "None"
+      "security note": "Mehrfach auffaellig wegen aggressiver Rhetorik im Kurlott.",
+      "incidents on record": "-"
     },
     "medical": {
-      "blood type": "A+",
-      "fitness level": "B-",
-      "last fitness check": "9 months ago",
-      "allergies": "None",
-      "active medical diagnosis": "None",
-      "medication regime": "None",
-      "comments": "/"
+      "blood type": "AB+",
+      "fitness level": "C",
+      "last fitness check": "13 Monate",
+      "allergies": "Falleen-Baum",
+      "active medical diagnosis": "-",
+      "medication regime": "-",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level"
     }
   },
   "S. Rakorr": {
     "personnel": {
       "name": "S. Rakorr",
-      "data first registered": 120,
-      "birth year": 99,
+      "data first registered": "120",
+      "birth year": "99",
       "birth planet": "Korvaii",
       "citizen id": "00/3/01/99/18554",
       "company role": "Putzkraft",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
       "status": "aktiv",
       "station": "-",
       "shift": "-",
       "room": "Durelium",
-      "company cv": "120 Putzkraft"
+      "company cv": "119 Putzkraft - 129 Jubil\u00e4um: 10 Jahre angestellt"
     },
     "security": {
-      "security note": "/",
-      "incidents on record": "/"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
       "blood type": "AB-",
       "fitness level": "D",
       "last fitness check": "5 Monate",
       "allergies": "-",
-      "active medical diagnosis": "keine",
+      "active medical diagnosis": "-",
       "medication regime": "-",
-      "comments": "/"
+      "comments": "Jaehrliche ueberpruefung: Putzkraft Fitness Level"
     }
   },
   "R. Shif": {
     "personnel": {
       "name": "R. Shif",
-      "data first registered": 120,
-      "birth year": 95,
+      "data first registered": "120",
+      "birth year": "95",
       "birth planet": "Korvaii",
       "citizen id": "00/3/01/95/18555",
       "company role": "Putzkraft",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
       "status": "aktiv",
       "station": "-",
       "shift": "-",
       "room": "Mantium",
-      "company cv": "120 Putzkraft"
+      "company cv": "119 Putzkraft - 129 Jubil\u00e4um: 10 Jahre angestellt"
     },
     "security": {
-      "security note": "/",
-      "incidents on record": "/"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
       "blood type": "AB+",
       "fitness level": "B",
       "last fitness check": "5 Monate",
       "allergies": "-",
-      "active medical diagnosis": "keine",
+      "active medical diagnosis": "-",
       "medication regime": "-",
-      "comments": "/"
+      "comments": "Jaehrliche ueberpruefung: Putzkraft Fitness Level"
     }
   },
   "S. Ancil": {
     "personnel": {
       "name": "S. Ancil",
-      "data first registered": 120,
-      "birth year": 105,
+      "data first registered": "119",
+      "birth year": "105",
       "birth planet": "Korvaii",
       "citizen id": "00/3/01/105/18556",
       "company role": "Putzkraft",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
       "status": "aktiv",
       "station": "-",
       "shift": "-",
       "room": "Mantium",
-      "company cv": "120 Putzkraft"
+      "company cv": "119 Putzkraft - 129 Jubil\u00e4um: 10 Jahre angestellt"
     },
     "security": {
-      "security note": "/",
-      "incidents on record": "/"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
       "blood type": "B-",
       "fitness level": "C",
       "last fitness check": "5 Monate",
       "allergies": "-",
-      "active medical diagnosis": "keine",
+      "active medical diagnosis": "-",
       "medication regime": "-",
-      "comments": "/"
+      "comments": "Jaehrliche Ueberpruefung: Putzkraft Fitness Level"
     }
   },
   "G. Ormaanda": {
     "personnel": {
       "name": "G. Ormaanda",
-      "data first registered": 122,
-      "birth year": 102,
+      "data first registered": "122",
+      "birth year": "102",
       "birth planet": "Nentan",
       "citizen id": "00/3/01/102/30885",
       "company role": "Cantina",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
       "status": "aktiv",
       "station": "Essensausgabe",
@@ -854,29 +854,29 @@
       "company cv": "122 Assistenz Kueche"
     },
     "security": {
-      "security note": "/",
-      "incidents on record": "/"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
       "blood type": "B+",
       "fitness level": "C",
       "last fitness check": "5 Monate",
       "allergies": "-",
-      "active medical diagnosis": "keine",
+      "active medical diagnosis": "-",
       "medication regime": "-",
-      "comments": "/"
+      "comments": "Jaehrliche Ueberpruefung: Cantina Fitness Level"
     }
   },
   "S. Tuggs": {
     "personnel": {
       "name": "S. Tuggs",
-      "data first registered": 122,
-      "birth year": 100,
+      "data first registered": "122",
+      "birth year": "100",
       "birth planet": "Nentan",
-      "citizen id": "00/3/01/102/30885",
+      "citizen id": "00/3/01/100/31313",
       "company role": "Cantina",
       "company education": "/",
-      "pay grade": "lower",
+      "pay grade": "niedrig",
       "political stance": "/",
       "status": "aktiv",
       "station": "Essensausgabe",
@@ -885,17 +885,17 @@
       "company cv": "122 Kuechenchef"
     },
     "security": {
-      "security note": "/",
-      "incidents on record": "/"
+      "security note": "-",
+      "incidents on record": "-"
     },
     "medical": {
       "blood type": "0+",
       "fitness level": "C",
       "last fitness check": "5 Monate",
       "allergies": "-",
-      "active medical diagnosis": "keine",
+      "active medical diagnosis": "-",
       "medication regime": "-",
-      "comments": "/"
+      "comments": "Jaehrliche Ueberpruefung: Cantina Fitness Level"
     }
   }
 }
