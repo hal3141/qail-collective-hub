@@ -8,17 +8,17 @@
       "citizen id": "00/2/44/96/12860",
       "company role": "Vorarbeiter:in Arbeiter",
       "company education": "-",
-      "pay grade": "mittel",
+      "pay grade": "niedrig",
       "political stance": "firmentreu",
       "status": "aktiv",
       "station": "Arbeitsstation",
       "shift": "2",
       "room": "Sacanium",
-      "company cv": "125 Arbeiter:in Probezeit - 126 Arbeiter:in - 130 Bef\u00f6rderung Vorarbeiter:in Probezeit"
+      "company cv": "125 Arbeiter:in Probezeit - 126 Arbeiter:in - 130 Bef\u00f6rderung Vorarbeiter:in Probezeit - 130 Degradation zur Arbeiter:in"
     },
     "security": {
-      "security note": "Politische Aktivitaeten (Kurlottvorstand), Beobachtung empfohlen.",
-      "incidents on record": "-"
+      "security note": "Politische Aktivitaeten (Kurlottvorstand), Beobachtung Stattgegeben. Disziplinarmassnahmen durchgef\u00fchrt.",
+      "incidents on record": "26.09.130 Verursachen von Aufruhr, Arbeitsniederlegung und offener Widerstand gegen\u00fcber eindeutigen Dienstanweisungen Vorgesetzter., w\u00e4hrend der Arbeitszeit \"Herbstritual\" durchgef\u00fchrt"
     },
     "medical": {
       "blood type": "A+",
@@ -40,7 +40,7 @@
       "company role": "Arbeiter:in",
       "company education": "-",
       "pay grade": "niedrig",
-      "political stance": "problematisch",
+      "political stance": "Traditionell Apri, sehr (Archiviert/vormals: problematisch)",
       "status": "aktiv",
       "station": "Arbeitsstation",
       "shift": "2",
@@ -49,16 +49,16 @@
     },
     "security": {
       "security note": "Stark traditionell und sehr vokal. Unter Beobachtung wegen moeglicher politischer Aktivitaeten. Gelegentliche spontane Aggressionsausbrueche bei sozialen Themen.",
-      "incidents on record": "119 Ermahnung und temporaere Freistellung (2 Wochen) wegen koerperlicher Auseinandersetzung in der Cantina - 127 Erneute temporaere Freistellung nach mehreren Auseinandersetzungen"
+      "incidents on record": "119 Ermahnung und temporaere Freistellung (2 Wochen) wegen koerperlicher Auseinander, w\u00e4hrend der Arbeitszeit \"Herbstritual\" durchgef\u00fchrtsetzung in der Cantina - 127 Erneute temporaere Freistellung nach mehreren Auseinandersetzungen"
     },
     "medical": {
       "blood type": "A-",
-      "fitness level": "B",
-      "last fitness check": "13 Monate",
+      "fitness level": "A",
+      "last fitness check": "27.09.130",
       "allergies": "Tallira-Gras",
-      "active medical diagnosis": "-",
+      "active medical diagnosis": "Veraetzung der Augen aufgrund reizmittel",
       "medication regime": "Vitaminpraeparate",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei Jaehrlicher Ueberpruefung an Medikation erinnern"
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei Jaehrlicher Ueberpruefung an Medikation erinnern ---- 26.09.130 Die Behandlung der heutigen Augenreizung hat wirkung gezeigt, keine weiteren Beanstandungen, Antibiothikum verarbreicht, ---- 27.09.130 Fitnesstest wurde durch gesteigerte Leistung au A erh\u00f6ht, nachuntersuchung nach einer Woche vorgesehen"
     }
   },
   "J. Latatga": {
@@ -79,17 +79,17 @@
       "company cv": "-"
     },
     "security": {
-      "security note": "Stichproben ob Trunkenheit im Dienst",
-      "incidents on record": "129 Musste aus der Cantina entfernt werden, Berauschter Zustand - 130 Musste aus der Cantina entfernt werden, Berauschter Zustand"
+      "security note": "Stichproben ob Trunkenheit im Dienst. ",
+      "incidents on record": "129 Musste aus der Cantina entfernt werden, Berauschter Zustand - 130 Musste aus der Cantina entfernt werden, Berauschter Zustand 130 Verwarnung wegen Waffenbesitz"
     },
     "medical": {
       "blood type": "0+",
       "fitness level": "C",
-      "last fitness check": "13 Monate",
+      "last fitness check": "27.09.130",
       "allergies": "Tallira-Gras, Kiwip-Gras (Nahrung)",
-      "active medical diagnosis": "129 Anzeichen Rauschmittel",
-      "medication regime": "-",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei letzer Ueberpruefung: Diverse Medikamentenspiegel erhoeht - Wenige alte Narben, vermutlich klassische Kindheitsverletzungen"
+      "active medical diagnosis": "Veraetzung an den Augen aufgrund eines Reizmittels",
+      "medication regime": "Vitaminpraeparate",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei letzer Ueberpruefung: Diverse Medikamentenspiegel erhoeht - Wenige alte Narben, vermutlich klassische Kindheitsverletzungen --- 26.09.130 BehanDlung gegen die Augenreizung hat gut angeschlagen, leichte Empfindlichekeit der Augen noch vorhanden, Antibiothikum gegeben, nachUntersuchung ---- 27.09.130 Fitness Test ohne grossen auff\u00e4lligkeiten, Blutwerte dieses Mal normal, muss zur weiteren Bluttest kommen"
     }
   },
   "R. Latatga": {
@@ -115,12 +115,12 @@
     },
     "medical": {
       "blood type": "A-",
-      "fitness level": "C",
-      "last fitness check": "7 Monate",
+      "fitness level": "B",
+      "last fitness check": "26.09.130",
       "allergies": "Bavo Six (Schmerzmittel), Pishne (Tier)",
       "active medical diagnosis": "126 Allergie: Bavo Six (Schmerzmittel)",
       "medication regime": "-",
-      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level"
+      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level, Keine Auff\u00e4lligkeiten im Blut, "
     }
   },
   "K. Cagla": {
@@ -133,25 +133,25 @@
       "company role": "Arbeiter:in",
       "company education": "121 Firmenausbildung (Zocarro)",
       "pay grade": "niedrig",
-      "political stance": "Neutral",
+      "political stance": "traditiobell Apri (Vormals: Neutral)",
       "status": "aktiv",
       "station": "Arbeitsstation",
       "shift": "2",
       "room": "Sacanium",
-      "company cv": "126 Arbeiter:in Probezeit - 127 Arbeiter:in"
+      "company cv": "126 Arbeiter:in Probezeit - 127 Arbeiter:in- 130 - Abmahnung wegen Drohung an Auroramedia "
     },
     "security": {
       "security note": "Beobachtung der geschwisterlichen Beziehung zu L. Cagla: buergt fuer L. Cagla nach Festnahme und Freistellung.",
-      "incidents on record": "-"
+      "incidents on record": "- Provokant und Bennenung des Kurlott als Legislative - Gegen\u00fcber Imperialen verletzung des NDA und unangem\u00e4ssener Humorbeitrag"
     },
     "medical": {
       "blood type": "B+",
       "fitness level": "B",
       "last fitness check": "13 Monate",
       "allergies": "Fleck-Melone (Nahrung), Stickli-Wurzel (Nahrung)",
-      "active medical diagnosis": "-",
+      "active medical diagnosis": "schwere veraetzung des linken auges, aufgrund dessen nicht arbeitfaehig.he",
       "medication regime": "-",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Jetz-Ring - Robust, nur kleinere Verletzungen durch Arbeit."
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Jetz-Ring - Robust, nur kleinere Verletzungen durch Arbeit. ---- 26.09.130 Schwere Augenverletzung durch Reizgas, Theraphie schlug an, keine weiteren Schaeden zu vermelden."
     }
   },
   "L. Cagla": {
@@ -192,7 +192,7 @@
       "birth year": "101",
       "birth planet": "Sulara",
       "citizen id": "13/1/04/101/18552",
-      "company role": "Arbeiter:in",
+      "company role": "Schichtleitung Schicht 2",
       "company education": "117 Firmenausbildung",
       "pay grade": "hoch",
       "political stance": "firmentreu",
@@ -200,10 +200,10 @@
       "station": "Arbeitsstation",
       "shift": "2",
       "room": "Essurtanium",
-      "company cv": "122 Arbeiter:in Probezeit - 123 Arbeiter:in"
+      "company cv": "122 Arbeiter:in Probezeit - 123 Arbeiter:in - 130 Jetz-Ring-Instruktorin"
     },
     "security": {
-      "security note": "Bekannt fuer Kommunikationsgeschick, private Verbindung zu T. Qail.",
+      "security note": "Bekannt fuer Kommunikationsgeschick, private Verbindung zu T. Qail (Ger\u00fcchte).",
       "incidents on record": "-"
     },
     "medical": {
@@ -231,7 +231,7 @@
       "station": "Arbeitsstation",
       "shift": "1",
       "room": "Essurtanium",
-      "company cv": "125 Arbeiter:in Probezeit - 126 Arbeiter:in"
+      "company cv": "125 Arbeiter:in Probezeit - 126 Arbeiter:in- 130 - Abmahnung wegen Drohung an Auroramedia "
     },
     "security": {
       "security note": "-",
@@ -239,12 +239,12 @@
     },
     "medical": {
       "blood type": "B+",
-      "fitness level": "C",
-      "last fitness check": "13 Monate",
+      "fitness level": "B",
+      "last fitness check": "27.09.130",
       "allergies": "Tallira-Gras",
       "active medical diagnosis": "129 Grippaler Infekt",
-      "medication regime": "-",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level"
+      "medication regime": "1x t\u00e4glich Bavo Six hochdosiert (Schmerzmittel), 2x T\u00e4gl. Vitaminpraeparate",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level ---- 27.09.130 Untersuchung mit Leistungssteigerung auf Lvl B, leichte Schmerzen am Rechten Arm, l\u00e4ngere BTM Gabe wird fortgesetzt"
     }
   },
   "R. Eibeqx": {
@@ -270,12 +270,12 @@
     },
     "medical": {
       "blood type": "0+",
-      "fitness level": "E",
-      "last fitness check": "13 Monate",
+      "fitness level": "C",
+      "last fitness check": "26.09.130",
       "allergies": "Ottegan-Baum, Stickli-Wurzel (Nahrung)",
-      "active medical diagnosis": "117 Gebrechen haeufen sich, 128 Muskelschwund",
-      "medication regime": "Bavo Six (Schmerzmittel), Vitaminpraeparate, Muskelaufbaupraeparat",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Arthrose, wiederkehrende Atemprobleme; regelmaessige Untersuchungen erforderlich - Bei letzer Ueberpruefung: Diverse Medikamentenspiegel erhoeht"
+      "active medical diagnosis": "Lungentest_Lvl a, Beweglichkeit_LvL D, allg. Vital_LVl C",
+      "medication regime": "Bavo Six (Schmerzmittel), 2x T\u00e4gl. Vitaminpraeparate, Muskelaufbaupraeparat, 2x W\u00f6chentlich Muskel-Entspannung",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Arthrose, wiederkehrende Atemprobleme; regelmaessige Untersuchungen erforderlich -\"Bei letzer Ueberpruefung: Diverse Medikamentenspiegel erhoeht, Nachuntersuchung ergab, Grund lag an Rueckstaenden einer verordnenten Medikation_______ Fitness Test 26.09.130: Atemprobleme sind leichter, Beweglichkeit dem Alter entsprechend, allg. Vitalwerte sind derzeit sehr gut. Keine Auff\u00e4lligkeiten in den Blutwerten, weiterhin Bewegung foerdern, abendliche Nachuntersuchung ergab Vitamingabe ist korrekt"
     }
   },
   "W. Proluk": {
@@ -287,7 +287,7 @@
       "citizen id": "13/1/01/94/09552",
       "company role": "Arbeiter:in",
       "company education": "110 Firmenausbildung (Jelucan) - 114 Fortbildung Mineralfoerderung",
-      "pay grade": "mittel",
+      "pay grade": "Mittel",
       "political stance": "firmentreu",
       "status": "aktiv",
       "station": "Arbeitsstation",
@@ -302,11 +302,11 @@
     "medical": {
       "blood type": "A+",
       "fitness level": "B+",
-      "last fitness check": "13 Monate",
+      "last fitness check": "26.09.130",
       "allergies": "Murrian-Moos",
       "active medical diagnosis": "-",
       "medication regime": "Vitaminpr\u00e4parate",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level"
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level, \u00dcberpr\u00fcfuung Atemwege - Husten? --- 26.09.130 Patient kam mit toxischen Rauch in Verbindung, Therapie hat positiv angeschlagen, spaeter am Abend gab es starkes Nasenbluten, was laut meiner Amnamnese auf den gewaltigen Psychischen Stress zurueckzufuehren ist, der aufgrund der \"Loyalitaetseinstufung\" durch Mister Qail ausgeloest wurde."
     }
   },
   "T. Shaaret": {
@@ -332,12 +332,12 @@
     },
     "medical": {
       "blood type": "A+",
-      "fitness level": "D",
-      "last fitness check": "13 Monate",
+      "fitness level": "C",
+      "last fitness check": "27.09.130",
       "allergies": "Fyrnocks-Fisch (Nahrung)",
       "active medical diagnosis": "124 Nervoeses Leiden",
       "medication regime": "Tranqarest (leichtes Beruhigungsmittel)",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei Jaehrlicher Ueberpruefung an Medikation erinnern"
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Bei Jaehrlicher Ueberpruefung an Medikation erinnern, --- 27.09.130 Fitness Test war gut, durch die Verl\u00e4ngerte Pause konnte sie sich gut regenerieen"
     }
   },
   "Q. Dran": {
@@ -363,12 +363,12 @@
     },
     "medical": {
       "blood type": "0+",
-      "fitness level": "-",
-      "last fitness check": "-",
+      "fitness level": "B",
+      "last fitness check": "26.09.130",
       "allergies": "Helium",
-      "active medical diagnosis": "-",
-      "medication regime": "-",
-      "comments": "-"
+      "active medical diagnosis": "Angehendes Rheuma rechtes Knie",
+      "medication regime": "Leichte Schmerzmittel, Anti-Rheuma-Mittel",
+      "comments": ""
     }
   },
   "D. Scafcar": {
@@ -381,25 +381,25 @@
       "company role": "Medicassistenz",
       "company education": "/",
       "pay grade": "niedrig",
-      "political stance": "potenziell aufruehrerisch",
+      "political stance": "Firmenschaedigend",
       "status": "aktiv",
       "station": "Medicstation",
       "shift": "1",
       "room": "Lucryt",
-      "company cv": "129 Assistenz Medic"
+      "company cv": "129 Assistenz Medic - 130 Abmahnung Verletzung des Corporate NDA"
     },
     "security": {
-      "security note": "gesondert beobachten aufgrund politischer Aussagen",
-      "incidents on record": "/"
+      "security note": "Entzug des Net-zugangs, Verlust aller Kommunikationsrechte",
+      "incidents on record": "130 - mehrfache NDA-Verletzung"
     },
     "medical": {
       "blood type": "0-",
-      "fitness level": "-",
-      "last fitness check": "-",
+      "fitness level": "A",
+      "last fitness check": "26.09.130",
       "allergies": "Tooka-Katze (Tier), Mosska-Kolben (Nahrung)",
-      "active medical diagnosis": "-",
-      "medication regime": "-",
-      "comments": "-"
+      "active medical diagnosis": "keine",
+      "medication regime": "keine",
+      "comments": "Sehr Fit"
     }
   },
   "H. Lastal": {
@@ -409,18 +409,18 @@
       "birth year": "88",
       "birth planet": "Sulara",
       "citizen id": "13/1/01/88/00235",
-      "company role": "Assistenz",
+      "company role": "Raffinerieleitung",
       "company education": "100 Firmenschule - 104 Ausbildung Bueroassistenz",
-      "pay grade": "mittel",
+      "pay grade": "aussertariflich",
       "political stance": "firmentreu",
       "status": "aktiv",
       "station": "Buero",
       "shift": "-",
       "room": "Essurtanium",
-      "company cv": "106 Assistenz R. Qail - 116 Assistenz T. Qail - 126 Jubil\u00e4um: 10 Jahre erfolgreiche Zusammenarbeit T. Qail"
+      "company cv": "106 Assistenz R. Qail - 116 Assistenz T. Qail - 126 Jubil\u00e4um: 10 Jahre erfolgreiche Zusammenarbeit T. Qail - 130 Befoerderung zur Geschaeftsleitung"
     },
     "security": {
-      "security note": "Bei Stoerungen im Betrieb primaer ansprechen",
+      "security note": "Bei Stoerungen im Betrieb primaer ansprechen. Regelmaessig durchsuchen, potenziell korrupt.",
       "incidents on record": "None"
     },
     "medical": {
@@ -440,15 +440,15 @@
       "birth year": "97",
       "birth planet": "Sulara",
       "citizen id": "14/1/01/97/00003",
-      "company role": "Raffinerieleitung",
+      "company role": "Assistenz Raffinerieleitung",
       "company education": "103 Familientutor - 109 Firmenschule - 113 CEO Mentoring",
-      "pay grade": "aussertariflich",
+      "pay grade": "Mittel",
       "political stance": "firmentreu",
       "status": "aktiv",
       "station": "Buero",
       "shift": "-",
       "room": "Wroshit",
-      "company cv": "116 Raffinerieleitung - 126 Jubil\u00e4um: 10 Jahre Leitung"
+      "company cv": "116 Raffinerieleitung - 126 Jubil\u00e4um: 10 Jahre  - 130 Degradation zur Assistenz"
     },
     "security": {
       "security note": "VIP",
@@ -471,15 +471,15 @@
       "birth year": "93",
       "birth planet": "Titan",
       "citizen id": "13/1/01/93/00471",
-      "company role": "Vorarbeiter:in Security",
+      "company role": "Ehemalige Vorarbeiter:in Security",
       "company education": "105 Firmenschule - 109 Ausbildung Sicherheit",
-      "pay grade": "hoch",
-      "political stance": "firmentreu",
-      "status": "aktiv",
+      "pay grade": "entlassen",
+      "political stance": "entlassen",
+      "status": "Entlassen",
       "station": "Security",
       "shift": "-",
       "room": "Rondium",
-      "company cv": "111 Security - 121 Jubil\u00e4um: 10 Jahre angestellt - 125 Befoerderung Vorarbeiter:in Security Probezeit - 126 Vorarbeiter:in Security"
+      "company cv": "111 Security - 121 Jubil\u00e4um: 10 Jahre angestellt - 125 Befoerderung Vorarbeiter:in Security Probezeit - 126 Vorarbeiter:in Security - 130 Entlassung wegen Amtsmissbrauch "
     },
     "security": {
       "security note": "-",
@@ -502,15 +502,15 @@
       "birth year": "106",
       "birth planet": "Qiilura",
       "citizen id": "13/3/01/106/21588",
-      "company role": "Security",
+      "company role": "Stellv. Vorbeiter:in Security",
       "company education": "",
       "pay grade": "mittel",
-      "political stance": "Neutral",
+      "political stance": "Imperial",
       "status": "aktiv",
       "station": "Security",
       "shift": "",
       "room": "Rondium",
-      "company cv": "126 Security Probezeit - 127 Security - "
+      "company cv": "126 Security Probezeit - 127 Security - 130 Belobigung f\u00fcr besondere Leistungen und Einsatzwillen"
     },
     "security": {
       "security note": "-",
@@ -549,12 +549,12 @@
     },
     "medical": {
       "blood type": "AB-",
-      "fitness level": "C",
-      "last fitness check": "7 Monate",
+      "fitness level": "B+",
+      "last fitness check": "27.09.130",
       "allergies": "Nysillin-Pilzkraut, Praxium (Aufputschmittel)",
       "active medical diagnosis": "121 Allergie: Praxium (Aufputschmittel), 121 Blasterverletzung verheilt (Schulter, rechts)",
       "medication regime": "Vitaminpr\u00e4parate",
-      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level - Bei halbjaehrlicher Ueberpruefung an Medikation erinnern"
+      "comments": "Halbjaehrliche Ueberpruefung: Security Fitness Level - Bei halbjaehrlicher Ueberpruefung an Medikation erinnern ---- 27.09.130 Fitnesstest ohne Auffaelligkeiten"
     }
   },
   "R. Kesyk": {
@@ -572,7 +572,7 @@
       "station": "Arbeitsstation",
       "shift": "1",
       "room": "Teniline",
-      "company cv": "130 Rolle Mechaniker:in zugewiesen, befristeter Vertrag"
+      "company cv": "130 Rolle Mechaniker:in zugewiesen, befristeter Vertrag, Aussicht auf Projektingenieur Automatisierung -> Ersatz MA durch droiden"
     },
     "security": {
       "security note": "wenn moeglich mehr Daten sammeln, Eintraege unvollstaendig",
@@ -624,30 +624,30 @@
       "name": "V. Kulata",
       "data first registered": "130",
       "birth year": "102",
-      "birth planet": "Sulara",
+      "birth planet": "Sulara (\"Apri\" aus dem Dorf \"Kulata\")",
       "citizen id": "00/2/102/102/32946",
       "company role": "Logistiker:in",
       "company education": "/",
       "pay grade": "niedrig",
-      "political stance": "/",
-      "status": "aktiv (tempor\u00e4rer Vertrag)",
+      "political stance": "Firmentreu",
+      "status": "aktiv",
       "station": "Abeitsstation",
       "shift": "2",
       "room": "Teniline",
-      "company cv": "130 Rolle Logistik zugewiesen, befristeter Vertrag"
+      "company cv": "130 Rolle Logistik zugewiesen, befristeter Vertrag - 130 - Belobigung wegen Firmentreue, Entfristung  - 130 - Abmahnung wegen Drohung an Auroramedia "
     },
     "security": {
-      "security note": "wenn moeglich mehr Daten sammeln, Eintraege unvollstaendig",
+      "security note": "wenn moeglich mehr Daten sammeln, Eintraege unvollstaendig. Wird vom Imperium genauer befragt, unter Aufsicht stellen: potenzieller Syndikatskontakt?",
       "incidents on record": "/"
     },
     "medical": {
       "blood type": "B+",
-      "fitness level": "B",
-      "last fitness check": "2 Monate",
+      "fitness level": "b",
+      "last fitness check": "27.09.130",
       "allergies": "Schlicksand (kristallin)",
-      "active medical diagnosis": "/",
-      "medication regime": "/",
-      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Jetz-Ring"
+      "active medical diagnosis": "Gebrochene Nase, Schnittwunde am Unerarm",
+      "medication regime": "Schmerzmittel Bravo Six",
+      "comments": "Jaehrliche Ueberpruefung: Arbeiter:in Fitness Level - Jetz-Ring, 27.09.130 durch Streitigkeiten herbeigefuehrten Bruch der nase, Schnittwunde am linken Unterarm, beide gut behandelt, Medikamenengabe ---- 27.09.130 Nachtraegliche Medizinische Untersuchung f\u00fcr den Sicherheitsdienst ergab neue Werte, Aufgrund der zwei Monatigen harten Arbeit im Qail Collektive hat sich das Fitness-Lvl auf \"B\" verbessert. "
     }
   },
   "S. Ceeda": {
@@ -658,14 +658,14 @@
       "birth planet": "Sulara",
       "citizen id": "00/2/44/108/08637",
       "company role": "Arbeiter:in",
-      "company education": "124 Firmenschule",
+      "company education": "124 Firmenschule 130 Praktikum QC Medic Bay",
       "pay grade": "niedrig",
       "political stance": "Neutral",
       "status": "aktiv",
       "station": "Arbeitsstation",
       "shift": "2",
       "room": "Sacanium",
-      "company cv": "128 Arbeiter:in Probezeit - 129 Arbeiter:in"
+      "company cv": "128 Arbeiter:in Probezeit - 129 Arbeiter:in - 130 - Abmahnung wegen Drohung an Auroramedia "
     },
     "security": {
       "security note": "Vermehrte Fehlzeiten. Unter Beobachtung wegen m\u00f6glicher illegaler Aktivit\u00e4ten.",

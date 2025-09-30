@@ -1,5 +1,5 @@
 #!/bin/bash
-SHARE_DIR="$HOME/qail-datahub"
+SHARE_DIR="/home/Desktop/qail-collective-hub"
 
 # Ensure Samba installed
 if ! command -v smbd >/dev/null 2>&1; then

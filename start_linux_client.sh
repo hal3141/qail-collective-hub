@@ -1,6 +1,6 @@
 #!/bin/bash
-HOST_IP="192.168.1.42"
-MOUNT_POINT="$HOME/datahub"
+HOST_IP="192.168.1.101"
+MOUNT_POINT="/home/Desktop/qail-collective-hub"
 USER="YOURUSER"
 PASS="YOURPASS"
 

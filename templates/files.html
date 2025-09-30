@@ -60,7 +60,7 @@
         {% endif %}
 
         <!-- Editable form for Security -->
-        {% if filetype == "security" and (user == "T. Qail" or user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "J. Latatga", "S. Nito"]) %}
+        {% if filetype == "security" and (user == "T. Qail" or user in ["B.R. Briskat", "E.P. Rinsmitt", "E.T. Jeyik", "R. Latatga", "S. Nito"]) %}
         <h3>{{ t["edit_security"] }}</h3>
         <form method="POST" action="{{ url_for('files', filetype=filetype) }}">
             <input type="hidden" name="char" value="{{ name }}">
